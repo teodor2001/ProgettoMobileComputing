@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_progetto_ila_e_teo/Login.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp(), Type);
 }
 
 class MyApp extends StatelessWidget {
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: LoginPage(),
     );
   }
 }
