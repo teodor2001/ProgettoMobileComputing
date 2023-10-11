@@ -1,4 +1,4 @@
-# progetto_mobile_computing_ila_e_teo
+# flutter_progetto_ila_e_teo
 
 A new Flutter project.
 

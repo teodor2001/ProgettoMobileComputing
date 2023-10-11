@@ -1,10 +1,10 @@
 # Project-level configuration.
 cmake_minimum_required(VERSION 3.14)
-project(progetto_mobile_computing_ila_e_teo LANGUAGES CXX)
+project(flutter_progetto_ila_e_teo LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
-set(BINARY_NAME "progetto_mobile_computing_ila_e_teo")
+set(BINARY_NAME "flutter_progetto_ila_e_teo")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.

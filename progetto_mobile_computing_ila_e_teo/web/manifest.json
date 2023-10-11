@@ -1,6 +1,6 @@
 {
-    "name": "progetto_mobile_computing_ila_e_teo",
-    "short_name": "progetto_mobile_computing_ila_e_teo",
+    "name": "flutter_progetto_ila_e_teo",
+    "short_name": "flutter_progetto_ila_e_teo",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
