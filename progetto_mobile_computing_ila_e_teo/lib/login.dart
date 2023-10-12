@@ -1,6 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -43,14 +47,13 @@ class _LoginPageState extends State<LoginPage> {
                   prefixIcon: Icon(Icons.email),
                 ),
                 validator: (value) {
-                  bool emailValid = RegExp(
-                          r"^[a-zA-z0-9.a-zA-Z0-9.!#$%&'*-/=?^_'{|}]+@[a-<A-Z0-9]+\.[a-zA-Z]+")
-                      .hasMatch(value!);
+                  bool emailValid = RegExp(range).hasMatch(value!);
                   if (value.isEmpty) {
                     return "Enter Email";
                   } else if (!emailValid) {
                     return "Enter Valid Email";
                   }
+                  return null;
                 },
               ),
               const SizedBox(height: 20),
@@ -74,17 +77,20 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return "Enter Password";
+                    return 'Enter Password';
                   } else if (passController.text.length < 6) {
-                    return "Password Lenght Should not be more than 6 characters";
+                    return 'Password Lenght Should not be more than 6 characters';
                   }
+                  return null;
                 },
               ),
               const SizedBox(height: 60),
               InkWell(
                 onTap: () {
                   if (_formfield.currentState!.validate()) {
-                    print("Data Added Successfully");
+                    //meglio usare log invece di print perché si possono anche allegare eventuali errori e si evitano problemi di sicurezza
+                    //del tipo passare informazioni private
+                    log("Data Added Successfully");
                     emailController.clear();
                     passController.clear();
                   }
@@ -134,4 +140,7 @@ class _LoginPageState extends State<LoginPage> {
       )),
     );
   }
+
+  String get range =>
+      r'^[a-zA-z0-9.a-zA-Z0-9.!#$%&*-/=?^{|}]+@[a-<A-Z0-9]+\.[a-zA-Z]+';
 }
