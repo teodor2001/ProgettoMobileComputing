@@ -47,7 +47,9 @@ class _LoginPageState extends State<LoginPage> {
                   prefixIcon: Icon(Icons.email),
                 ),
                 validator: (value) {
-                  bool emailValid = RegExp(range).hasMatch(value!);
+                  bool emailValid = RegExp(
+                          r"[a-zA-z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                      .hasMatch(value!);
                   if (value.isEmpty) {
                     return "Enter Email";
                   } else if (!emailValid) {
@@ -140,7 +142,4 @@ class _LoginPageState extends State<LoginPage> {
       )),
     );
   }
-
-  String get range =>
-      r'^[a-zA-z0-9.a-zA-Z0-9.!#$%&*-/=?^{|}]+@[a-<A-Z0-9]+\.[a-zA-Z]+';
 }
