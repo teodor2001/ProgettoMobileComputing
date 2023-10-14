@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_progetto_ila_e_teo/Login.dart';
+import 'login.dart';
+import 'home.dart';
 
 void main() {
-  runApp(const MyApp(), Type);
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -32,7 +33,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginPage(),
+            initialRoute: '/', // Specifica la rotta iniziale
+      routes: {
+        '/': (context) => const LoginPage(),
+        '/home': (context) => HomeScreen(),
+      },
     );
   }
 }

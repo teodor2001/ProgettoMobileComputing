@@ -1,6 +1,6 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -92,9 +92,10 @@ class _LoginPageState extends State<LoginPage> {
                   if (_formfield.currentState!.validate()) {
                     //meglio usare log invece di print perché si possono anche allegare eventuali errori e si evitano problemi di sicurezza
                     //del tipo passare informazioni private
-                    log("Data Added Successfully");
+                    log("I dati sono stati registrati correttamente, reindirizzo alla homa page");
                     emailController.clear();
                     passController.clear();
+                    Navigator.pushNamed(context, '/home');
                   }
                 },
                 child: Container(
@@ -112,7 +113,8 @@ class _LoginPageState extends State<LoginPage> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                    )),
+                    )
+                    ),
               ),
               const SizedBox(height: 20),
               Row(
