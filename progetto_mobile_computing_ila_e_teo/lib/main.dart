@@ -6,7 +6,7 @@ import 'home.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-  runApp(const MyApp(), Type);
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/', // Specifica la rotta iniziale
       routes: {
         '/': (context) => const LoginPage(),
-        '/home': (context) => HomeScreen(),
+        '/home': (context) => const SideBarMenu(),
       },
     );
   }

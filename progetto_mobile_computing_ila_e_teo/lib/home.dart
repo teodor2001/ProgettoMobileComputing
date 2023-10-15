@@ -12,7 +12,7 @@ class SideBarMenu extends StatelessWidget {
           children: [
             UserAccountsDrawerHeader(
                 accountName: Text("Sviluppatori App"),
-                accountEmail: Text("ilariapuliani@libero.it, teo")),
+                accountEmail: Text("ilariapuliani@libero.it, teodorpascu2001@gmail.com")),
             ListTile(
               onTap: () => null,
               leading: Icon(Icons.home_filled, color: Colors.white, size: 30),
@@ -87,7 +87,7 @@ class SideBarMenu extends StatelessWidget {
   }
 }
 
-class HomeScreen extends StatelessWidget {
+/*class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     home:
@@ -101,4 +101,4 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-}
+}*/
