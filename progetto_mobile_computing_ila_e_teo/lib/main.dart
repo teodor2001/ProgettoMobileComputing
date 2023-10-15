@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'login.dart';
 import 'home.dart';
 
 void main() {
-  runApp(const MyApp());
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  runApp(const MyApp(), Type);
 }
 
 class MyApp extends StatelessWidget {
@@ -33,7 +36,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-            initialRoute: '/', // Specifica la rotta iniziale
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/', // Specifica la rotta iniziale
       routes: {
         '/': (context) => const LoginPage(),
         '/home': (context) => HomeScreen(),
