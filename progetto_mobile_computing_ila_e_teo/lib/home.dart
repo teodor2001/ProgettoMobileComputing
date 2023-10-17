@@ -1,3 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class SideBarMenu extends StatelessWidget {
@@ -7,16 +11,23 @@ class SideBarMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        backgroundColor: Color(0xff784abc),
+        backgroundColor: const Color(0xff784abc),
         child: ListView(
           children: [
-            UserAccountsDrawerHeader(
-                accountName: Text("Sviluppatori App"),
-                accountEmail: Text("ilariapuliani@libero.it, teodorpascu2001@gmail.com")),
+            const UserAccountsDrawerHeader(
+              accountName: Text(""),
+              accountEmail: Text(""),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/prova.png"),
+                ),
+              ),
+            ),
             ListTile(
-              onTap: () => null,
-              leading: Icon(Icons.home_filled, color: Colors.white, size: 30),
-              title: Text(
+              onTap: () => 'null',
+              leading:
+                  const Icon(Icons.home_filled, color: Colors.white, size: 30),
+              title: const Text(
                 "Home",
                 style: TextStyle(
                   color: Colors.white,
@@ -26,9 +37,10 @@ class SideBarMenu extends StatelessWidget {
               ),
             ),
             ListTile(
-              onTap: () => null,
-              leading: Icon(Icons.favorite, color: Colors.white, size: 30),
-              title: Text(
+              onTap: () => 'null',
+              leading:
+                  const Icon(Icons.favorite, color: Colors.white, size: 30),
+              title: const Text(
                 "Favorite",
                 style: TextStyle(
                   color: Colors.white,
@@ -38,9 +50,10 @@ class SideBarMenu extends StatelessWidget {
               ),
             ),
             ListTile(
-              onTap: () => null,
-              leading: Icon(Icons.notifications, color: Colors.white, size: 30),
-              title: Text(
+              onTap: () => 'null',
+              leading: const Icon(Icons.notifications,
+                  color: Colors.white, size: 30),
+              title: const Text(
                 "Notifiche",
                 style: TextStyle(
                   color: Colors.white,
@@ -49,13 +62,14 @@ class SideBarMenu extends StatelessWidget {
                 ),
               ),
             ),
-            Divider(
+            const Divider(
               color: Colors.white,
             ),
             ListTile(
-              onTap: () => null,
-              leading: Icon(Icons.settings, color: Colors.white, size: 30),
-              title: Text(
+              onTap: () => 'null',
+              leading:
+                  const Icon(Icons.settings, color: Colors.white, size: 30),
+              title: const Text(
                 "Impostazioni",
                 style: TextStyle(
                   color: Colors.white,
@@ -65,9 +79,9 @@ class SideBarMenu extends StatelessWidget {
               ),
             ),
             ListTile(
-              onTap: () => null,
-              leading: Icon(Icons.logout, color: Colors.white, size: 30),
-              title: Text(
+              onTap: () => 'null',
+              leading: const Icon(Icons.logout, color: Colors.white, size: 30),
+              title: const Text(
                 "Logout",
                 style: TextStyle(
                   color: Colors.white,
@@ -80,20 +94,21 @@ class SideBarMenu extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        title: Text('Side Menu'),
-        backgroundColor: Color(0xff784abc),
+        title: const Text('Side Menu'),
+        backgroundColor: const Color(0xff784abc),
       ),
     );
   }
 }
 
-/*class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     home:
     const SideBarMenu();
     return Scaffold(
       appBar: AppBar(
+        // ignore: prefer_const_constructors
         title: Text('Benvenuto'),
       ),
       body: Center(
@@ -101,4 +116,4 @@ class SideBarMenu extends StatelessWidget {
       ),
     );
   }
-}*/
+}

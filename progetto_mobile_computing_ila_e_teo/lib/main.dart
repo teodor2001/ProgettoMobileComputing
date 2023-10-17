@@ -5,8 +5,8 @@ import 'home.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-  runApp(const MyApp());
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  runApp(const MyApp(), Type);
 }
 
 class MyApp extends StatelessWidget {
