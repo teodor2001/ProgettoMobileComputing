@@ -1,6 +1,4 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'dart:ffi';
+// ignore_for_file: prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
 
@@ -10,6 +8,7 @@ class SideBarMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 188, 160, 230),
       drawer: Drawer(
         backgroundColor: const Color(0xff784abc),
         child: ListView(
@@ -94,25 +93,30 @@ class SideBarMenu extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        title: const Text('Side Menu'),
+        title: Text(
+          'Guida turistica Roma',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 30,
+          ),
+        ),
+        centerTitle: true,
         backgroundColor: const Color(0xff784abc),
       ),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    home:
-    const SideBarMenu();
-    return Scaffold(
-      appBar: AppBar(
-        // ignore: prefer_const_constructors
-        title: Text('Benvenuto'),
-      ),
       body: Center(
-        child: Text('Prova'),
+        Image.asset(
+          'assets/images/menu.png',
+          height: 200,
+          width: 200,
+        ),
+        child: Text(
+          "Benvenuto, \nquesta guida ti permetterà di scoprire le bellezze di questa città, a orientarti e trovare l'itinerario perfetto per te in base ai tuoi interessi.\nTi daremo tutte le informazioni utili che devi sapere prima di venire qui, in modo da goderti a pieno la tua esperienza!!",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            fontSize: 20,
+          ),
+        ),
       ),
     );
   }
