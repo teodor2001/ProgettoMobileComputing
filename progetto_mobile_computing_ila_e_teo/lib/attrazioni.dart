@@ -11,30 +11,29 @@ class Data {
     required this.text,
   });
 }
+  final List _photos = [
+    Data(image: "assets/images/menu.png", text: "Colosseo"),
+    Data(image: "assets/images/fontanaTrevi.png", text: "Fontana di Trevi"),
+    Data(image: "assets/images/altarePatria.png", text: "Altare della Patria"),
+    Data(image: "assets/images/piazzaPopolo.png", text: "Piazza del popolo"),
+    Data(image: "assets/images/piazzaNavona.png", text: "Piazza Navona"),
+    Data(image: "assets/images/sanPietro.png", text: "San Pietro"),
+    Data(
+        image: "assets/images/piazzaSpagna.png",
+        text: "Piazza di Spagna e la Barcaccia"),
+    Data(image: "assets/images/foriImperiali.png", text: "Fori Imperiali"),
+    Data(image: "assets/images/angelo.png", text: "Caste Sant'Angelo"),
+    Data(image: "assets/images/viaCorso.png", text: "Via del corso"),
+  ];
+
 
 class Attrazioni extends StatelessWidget {
-  final List _photos = [
-    Data(image: "assets/menu.png", text: "Colosseo"),
-    Data(image: "assets/fontanaTrevi.png", text: "Fontana di Trevi"),
-    Data(image: "assets/altarePatria.png", text: "Altare della Patria"),
-    Data(image: "assets/piazzaPopolo.png", text: "Piazza del popolo"),
-    Data(image: "assets/piazzaNavona.png", text: "Piazza Navona"),
-    Data(image: "assets/sanPietro.png", text: "San Pietro"),
-    Data(
-        image: "assets/piazzaSpagna.png",
-        text: "Piazza di Spagna e la Barcaccia"),
-    Data(image: "assets/foriImperiali.png", text: "Fori Imperiali"),
-    Data(image: "assets/angelo.png", text: "Caste Sant'Angelo"),
-    Data(image: "assets/viaCorso.png", text: "Via del corso"),
-  ];
-  Attrazioni({super.key});
-}
-
-class SideBarMenu extends StatelessWidget {
-  const SideBarMenu({Key? key}) : super(key: key);
+  const Attrazioni({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 188, 160, 230),
       drawer: Drawer(
@@ -51,7 +50,7 @@ class SideBarMenu extends StatelessWidget {
               ),
             ),
             ListTile(
-              onTap: () => 'null',
+              onTap: () => Navigator.pushNamed(context, '/home'),
               leading:
                   const Icon(Icons.home_filled, color: Colors.white, size: 30),
               title: const Text(
@@ -106,7 +105,7 @@ class SideBarMenu extends StatelessWidget {
               ),
             ),
             ListTile(
-              onTap: () => 'null',
+              onTap: () => Navigator.pushNamed(context, '/'),
               leading: const Icon(Icons.logout, color: Colors.white, size: 30),
               title: const Text(
                 "Logout",
@@ -132,27 +131,37 @@ class SideBarMenu extends StatelessWidget {
         backgroundColor: const Color(0xff784abc),
       ),
       body: GridView.builder(
-          itemCount: _photos.lenght,
+          itemCount: _photos.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
+              crossAxisCount: 2, crossAxisSpacing: 1, mainAxisSpacing: 1),
           itemBuilder: (context, index) {
             return Column(
               children: [
+                          Padding(
+                  padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                  child: SizedBox(
+                    height: height*0.01,
+                    width: width*0.01,
+                  ),
+                ),
                 Container(
                   width: double.infinity,
-                  height: 200,
+                  height:  height*0.75,
                   decoration: BoxDecoration(
                       color: Colors.orange,
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
                         image: AssetImage(_photos[index].image),
                         fit: BoxFit.cover,
                       )),
                 ),
-                const SizedBox(
-                  height: 10,
+                SizedBox(
+                  height: 30,
                 ),
-                Text(_photos[index].text),
+                Text(_photos[index].text, style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,)),
               ],
             );
           }),

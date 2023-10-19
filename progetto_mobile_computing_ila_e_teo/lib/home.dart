@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 
 class SideBarMenu extends StatelessWidget {
   const SideBarMenu({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 188, 160, 230),
       drawer: Drawer(
@@ -23,7 +24,7 @@ class SideBarMenu extends StatelessWidget {
               ),
             ),
             ListTile(
-              onTap: () => 'null',
+              onTap: () => Navigator.pushNamed(context, '/') ,
               leading:
                   const Icon(Icons.home_filled, color: Colors.white, size: 30),
               title: const Text(
@@ -78,7 +79,7 @@ class SideBarMenu extends StatelessWidget {
               ),
             ),
             ListTile(
-              onTap: () => 'null',
+              onTap: () => Navigator.pushNamed(context, '/'),
               leading: const Icon(Icons.logout, color: Colors.white, size: 30),
               title: const Text(
                 "Logout",
@@ -105,11 +106,31 @@ class SideBarMenu extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Image.asset(
-            'assets/images/menu.png',
-            height: 500,
-            width: 500,
+                    Padding(
+            padding: EdgeInsets.only(left: 16.0, top: 8.0),
+            child: SizedBox(
+              height: height*0.05,
+              width: width*0.05,
+            ),
           ),
+          Material(
+        child: InkWell(
+          onTap: () {
+                Navigator.pushNamed(context, '/attrazioni');
+              },
+              child: Image.asset('assets/images/menu.png',
+                  width: width*0.50, height: height*0.50,
+                  fit:BoxFit.cover),
+
+        ),
+    ),
+              Padding(
+  padding: EdgeInsets.only(left: 16.0, top: 8.0),
+  child: SizedBox(
+    height: 100,
+    width: 100,
+  ),
+),
           Center(
             child: Text(
               "Benvenuto, \nquesta guida ti permetterà di scoprire le bellezze di questa città, a orientarti e trovare l'itinerario perfetto per te in base ai tuoi interessi.\nTi daremo tutte le informazioni utili che devi sapere prima di venire qui, in modo da goderti a pieno la tua esperienza!!",
@@ -120,6 +141,17 @@ class SideBarMenu extends StatelessWidget {
               ),
             ),
           ),
+          Padding(
+  padding: EdgeInsets.only(left: 16.0, top: 8.0),
+  child: SizedBox(
+    height: 100,
+    width: 100,
+  ),
+),
+                  TextButton(
+  onPressed: () { Navigator.pushNamed(context, '/attrazioni');},
+  child: Text('Clicca qua per fare un tour della attrazioni'),
+)
         ],
       ),
     );
