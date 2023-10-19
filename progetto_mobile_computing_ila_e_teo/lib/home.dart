@@ -6,8 +6,8 @@ class SideBarMenu extends StatelessWidget {
   const SideBarMenu({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+    double larghezza = MediaQuery.of(context).size.width;
+    double altezza = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 188, 160, 230),
       drawer: Drawer(
@@ -109,8 +109,8 @@ class SideBarMenu extends StatelessWidget {
                     Padding(
             padding: EdgeInsets.only(left: 16.0, top: 8.0),
             child: SizedBox(
-              height: height*0.05,
-              width: width*0.05,
+              height: larghezza*0.05,
+              width: altezza*0.05,
             ),
           ),
           Material(
@@ -119,7 +119,7 @@ class SideBarMenu extends StatelessWidget {
                 Navigator.pushNamed(context, '/attrazioni');
               },
               child: Image.asset('assets/images/menu.png',
-                  width: width*0.50, height: height*0.50,
+                  width: larghezza*0.50, height: altezza*0.50,
                   fit:BoxFit.cover),
 
         ),

@@ -32,8 +32,8 @@ class Attrazioni extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+    double larghezza = MediaQuery.of(context).size.width;
+    double altezza = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 188, 160, 230),
       drawer: Drawer(
@@ -140,13 +140,13 @@ class Attrazioni extends StatelessWidget {
                           Padding(
                   padding: EdgeInsets.only(left: 16.0, top: 8.0),
                   child: SizedBox(
-                    height: height*0.01,
-                    width: width*0.01,
+                    height: larghezza*0.01,
+                    width: altezza*0.01,
                   ),
                 ),
                 Container(
-                  width: double.infinity,
-                  height:  height*0.75,
+                  width: larghezza*1,
+                  height:  altezza*0.75,
                   decoration: BoxDecoration(
                       color: Colors.orange,
                       borderRadius: BorderRadius.circular(10),
