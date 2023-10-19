@@ -140,12 +140,12 @@ class Attrazioni extends StatelessWidget {
                           Padding(
                   padding: EdgeInsets.only(left: 16.0, top: 8.0),
                   child: SizedBox(
-                    height: altezza*0.01,
-                    width: larghezza*0.01,
+                    height: larghezza*0.01,
+                    width: altezza*0.01,
                   ),
                 ),
                 Container(
-                  width: double.infinity,
+                  width: larghezza*1,
                   height:  altezza*0.75,
                   decoration: BoxDecoration(
                       color: Colors.orange,
