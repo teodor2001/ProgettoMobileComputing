@@ -24,6 +24,8 @@ class Attrazioni extends StatelessWidget {
         image: "assets/piazzaSpagna.png",
         text: "Piazza di Spagna e la Barcaccia"),
     Data(image: "assets/foriImperiali.png", text: "Fori Imperiali"),
+    Data(image: "assets/angelo.png", text: "Caste Sant'Angelo"),
+    Data(image: "assets/viaCorso.png", text: "Via del corso"),
   ];
   Attrazioni({super.key});
 }
