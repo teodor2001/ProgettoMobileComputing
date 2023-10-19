@@ -1,6 +1,32 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+
+class Data {
+  String image;
+  String text;
+
+  Data({
+    required this.image,
+    required this.text,
+  });
+}
+
+class Attrazioni extends StatelessWidget {
+  final List _photos = [
+    Data(image: "assets/menu.png", text: "Colosseo"),
+    Data(image: "assets/fontanaTrevi.png", text: "Fontana di Trevi"),
+    Data(image: "assets/altarePatria.png", text: "Altare della Patria"),
+    Data(image: "assets/piazzaPopolo.png", text: "Piazza del popolo"),
+    Data(image: "assets/piazzaNavona.png", text: "Piazza Navona"),
+    Data(image: "assets/sanPietro.png", text: "San Pietro"),
+    Data(
+        image: "assets/piazzaSpagna.png",
+        text: "Piazza di Spagna e la Barcaccia"),
+    Data(image: "assets/foriImperiali.png", text: "Fori Imperiali"),
+  ];
+  Attrazioni({super.key});
+}
 
 class SideBarMenu extends StatelessWidget {
   const SideBarMenu({Key? key}) : super(key: key);
@@ -94,7 +120,7 @@ class SideBarMenu extends StatelessWidget {
       ),
       appBar: AppBar(
         title: Text(
-          'Guida turistica Roma',
+          'Le attrazioni più amate',
           style: TextStyle(
             color: Colors.white,
             fontSize: 30,
@@ -103,25 +129,31 @@ class SideBarMenu extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color(0xff784abc),
       ),
-      body: Column(
-        children: [
-          Image.asset(
-            'assets/images/menu.png',
-            height: 500,
-            width: 500,
-          ),
-          Center(
-            child: Text(
-              "Benvenuto, \nquesta guida ti permetterà di scoprire le bellezze di questa città, a orientarti e trovare l'itinerario perfetto per te in base ai tuoi interessi.\nTi daremo tutte le informazioni utili che devi sapere prima di venire qui, in modo da goderti a pieno la tua esperienza!!",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                fontSize: 20,
-              ),
-            ),
-          ),
-        ],
-      ),
+      body: GridView.builder(
+          itemCount: _photos.lenght,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
+          itemBuilder: (context, index) {
+            return Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  height: 200,
+                  decoration: BoxDecoration(
+                      color: Colors.orange,
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        image: AssetImage(_photos[index].image),
+                        fit: BoxFit.cover,
+                      )),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(_photos[index].text),
+              ],
+            );
+          }),
     );
   }
 }
