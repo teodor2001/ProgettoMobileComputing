@@ -3,11 +3,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_progetto_ila_e_teo/attrazioni.dart';
 import 'login.dart';
 import 'home.dart';
+import 'itinerario.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-  runApp(const MyApp());
+  runApp(const MyApp(), Type);
 }
 
 class MyApp extends StatelessWidget {
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const LoginPage(),
         '/home': (context) => const SideBarMenu(),
-        '/attrazioni' : (context) => const Attrazioni(),
+        '/attrazioni': (context) => const Attrazioni(),
+        '/itinerario': (context) => const Itinerario(),
       },
     );
   }

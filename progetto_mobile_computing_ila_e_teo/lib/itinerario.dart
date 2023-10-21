@@ -2,33 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class Data {
-  String image;
-  String text;
-
-  Data({
-    required this.image,
-    required this.text,
-  });
-}
-
-final List _photos = [
-  Data(image: "assets/images/menu.png", text: "Colosseo"),
-  Data(image: "assets/images/fontanaTrevi.png", text: "Fontana di Trevi"),
-  Data(image: "assets/images/altarePatria.png", text: "Altare della Patria"),
-  Data(image: "assets/images/piazzaPopolo.png", text: "Piazza del popolo"),
-  Data(image: "assets/images/piazzaNavona.png", text: "Piazza Navona"),
-  Data(image: "assets/images/sanPietro.png", text: "San Pietro"),
-  Data(
-      image: "assets/images/piazzaSpagna.png",
-      text: "Piazza di Spagna e la Barcaccia"),
-  Data(image: "assets/images/foriImperiali.png", text: "Fori Imperiali"),
-  Data(image: "assets/images/angelo.png", text: "Caste Sant'Angelo"),
-  Data(image: "assets/images/viaCorso.png", text: "Via del corso"),
-];
-
-class Attrazioni extends StatelessWidget {
-  const Attrazioni({Key? key}) : super(key: key);
+class Itinerario extends StatelessWidget {
+  const Itinerario({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +94,7 @@ class Attrazioni extends StatelessWidget {
       ),
       appBar: AppBar(
         title: Text(
-          'Le attrazioni più amate',
+          'Scegli il tuo itinerario',
           style: TextStyle(
             color: Colors.white,
             fontSize: 30,
@@ -129,39 +104,27 @@ class Attrazioni extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color(0xff784abc),
       ),
-      body: GridView.builder(
-          itemCount: _photos.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
-          itemBuilder: (context, index) {
-            return Column(
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: 120,
-                  decoration: BoxDecoration(
-                      color: Colors.orange,
-                      borderRadius: BorderRadius.circular(15),
-                      image: DecorationImage(
-                        image: AssetImage(_photos[index].image),
-                        fit: BoxFit.cover,
-                      )),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  _photos[index].text,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 19,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            );
-          }),
+      body: ListView.separated(
+        itemCount: 4,
+        itemBuilder: (BuildContext context, index) {
+          return ListTile(
+            title: Text(
+              "Itinerario per 1 giorno di permanenza: ",
+              style: TextStyle(
+                background: Paint()
+                  ..color = Colors.white
+                  ..style = PaintingStyle.fill,
+              ),
+            ),
+            onTap: () {},
+            leading: Icon(Icons.favorite),
+          );
+        },
+        separatorBuilder: (BuildContext context, index) => Divider(
+          color: Colors.white,
+        ),
+        scrollDirection: Axis.vertical,
+      ),
     );
   }
 }
