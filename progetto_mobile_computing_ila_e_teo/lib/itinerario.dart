@@ -2,6 +2,21 @@
 
 import 'package:flutter/material.dart';
 
+class Data {
+  String text;
+
+  Data({
+    required this.text,
+  });
+}
+
+final List _text = [
+  Data(text: "Itinerario per 1 giorno di permanenza:"),
+  Data(text: "Itinerario per 2 giorni di permanenza:"),
+  Data(text: "Itinerario per 3 giorni di permanenza:"),
+  Data(text: "Itinerario per 5 giorni di permanenza:"),
+];
+
 class Itinerario extends StatelessWidget {
   const Itinerario({Key? key}) : super(key: key);
 
@@ -109,15 +124,15 @@ class Itinerario extends StatelessWidget {
         itemBuilder: (BuildContext context, index) {
           return ListTile(
             title: Text(
-              "Itinerario per 1 giorno di permanenza: ",
+              _text[index].text,
               style: TextStyle(
-                background: Paint()
-                  ..color = Colors.white
-                  ..style = PaintingStyle.fill,
+                color: Colors.white,
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
               ),
             ),
             onTap: () {},
-            leading: Icon(Icons.favorite),
+            leading: Icon(Icons.map),
           );
         },
         separatorBuilder: (BuildContext context, index) => Divider(

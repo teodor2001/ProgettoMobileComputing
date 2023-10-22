@@ -149,12 +149,22 @@ class SideBarMenu extends StatelessWidget {
                   width: 5,
                 ),
               ),
+              Image.asset('assets/images/botton1.png',
+                  width: 400, height: 300, fit: BoxFit.cover),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/attrazioni');
+                  color:
+                  Colors.purple;
+                  textColor:
+                  Colors.white;
+                  highlightColor:
+                  Colors.red;
+                  splashColor:
+                  Colors.black26;
                 },
                 child: Text(
-                  'Clicca qua per fare un tour della attrazioni',
+                  'Clicca qui per fare un tour della attrazioni',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -167,12 +177,14 @@ class SideBarMenu extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
+              Image.asset('assets/images/botton2.png',
+                  width: 400, height: 300, fit: BoxFit.cover),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/itinerario');
                 },
                 child: Text(
-                  "Clicca qua per scegliere l'itinerario perfetto per te",
+                  "Clicca qui per scegliere l'itinerario perfetto per te",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
