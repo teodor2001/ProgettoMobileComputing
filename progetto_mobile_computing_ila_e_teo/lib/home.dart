@@ -100,6 +100,8 @@ class SideBarMenu extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.bold,
             ),
           ),
           centerTitle: true,
@@ -154,22 +156,17 @@ class SideBarMenu extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/attrazioni');
-                  color:
-                  Colors.purple;
-                  textColor:
-                  Colors.white;
-                  highlightColor:
-                  Colors.red;
-                  splashColor:
-                  Colors.black26;
                 },
+                style: TextButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 92, 46, 221),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
                 child: Text(
                   'Clicca qui per fare un tour della attrazioni',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
-                    decoration: TextDecoration.underline,
                     background: Paint()
                       ..color = Color.fromARGB(255, 92, 46, 221)
                       ..style = PaintingStyle.fill,
@@ -183,13 +180,16 @@ class SideBarMenu extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, '/itinerario');
                 },
+                style: TextButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 92, 46, 221),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
                 child: Text(
                   "Clicca qui per scegliere l'itinerario perfetto per te",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
-                    decoration: TextDecoration.underline,
                     background: Paint()
                       ..color = Color.fromARGB(255, 92, 46, 221)
                       ..style = PaintingStyle.fill,

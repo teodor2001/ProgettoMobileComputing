@@ -114,6 +114,7 @@ class Itinerario extends StatelessWidget {
             color: Colors.white,
             fontSize: 30,
             fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
           ),
         ),
         centerTitle: true,
