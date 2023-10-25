@@ -132,7 +132,26 @@ class Itinerario extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              switch (index) {
+                case 0:
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Itinerario1()));
+                  break; // The switch statement must be told to exit, or it will execute every case.
+                case 1:
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Itinerario2()));
+                  break;
+                case 2:
+                    Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => Itinerario3()));
+                  break;
+                case 3:
+                    Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => Itinerario4()));
+                  break;
+              }
+            },
             leading: Icon(Icons.map),
           );
         },
@@ -140,6 +159,87 @@ class Itinerario extends StatelessWidget {
           color: Colors.white,
         ),
         scrollDirection: Axis.vertical,
+      ),
+    );
+  }
+}
+
+class Itinerario1 extends StatelessWidget{
+  const Itinerario1({super.key});
+      @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Text('ITINERARIO 1 GIORNO '),
+          backgroundColor: Colors.green,
+        ),
+        body: Center(
+          child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Text(
+                'PROVA 1 GIORNO',
+              )),
+        ),
+      );
+    }
+}
+
+class Itinerario2 extends StatelessWidget {
+  const Itinerario2({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('ITINERARIO 2 GIORNI '),
+        backgroundColor: Colors.green,
+      ),
+      body: Center(
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Text(
+              'PROVA 2 GIORNI',
+            )),
+      ),
+    );
+  }
+}
+
+class Itinerario3 extends StatelessWidget {
+  const Itinerario3({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('ITINERARIO 3 GIORNI '),
+        backgroundColor: Colors.green,
+      ),
+      body: Center(
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Text(
+              'PROVA 3 GIORNI',
+            )),
+      ),
+    );
+  }
+}
+
+
+class Itinerario4 extends StatelessWidget {
+  const Itinerario4({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('ITINERARIO 5 GIORNI '),
+        backgroundColor: Colors.green,
+      ),
+      body: Center(
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Text(
+              'PROVA 5 GIORNI',
+            )),
       ),
     );
   }
