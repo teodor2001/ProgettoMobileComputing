@@ -143,12 +143,12 @@ class Itinerario extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => Itinerario2()));
                   break;
                 case 2:
-                    Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => Itinerario3()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Itinerario3()));
                   break;
                 case 3:
-                    Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => Itinerario4()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Itinerario4()));
                   break;
               }
             },
@@ -164,24 +164,31 @@ class Itinerario extends StatelessWidget {
   }
 }
 
-class Itinerario1 extends StatelessWidget{
+class Itinerario1 extends StatelessWidget {
   const Itinerario1({super.key});
-      @override
-    Widget build(BuildContext context) {
-      return Scaffold(
-        appBar: AppBar(
-          title: const Text('ITINERARIO 1 GIORNO '),
-          backgroundColor: Colors.green,
-        ),
-        body: Center(
-          child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Text(
-                'PROVA 1 GIORNO',
-              )),
-        ),
-      );
-    }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('ITINERARIO 1 GIORNO ',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.bold,
+            )),
+        centerTitle: true,
+        backgroundColor: Color(0xff784abc),
+      ),
+      body: Center(
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Text(
+              'PROVA 1 GIORNO',
+            )),
+      ),
+    );
+  }
 }
 
 class Itinerario2 extends StatelessWidget {
@@ -190,8 +197,15 @@ class Itinerario2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ITINERARIO 2 GIORNI '),
-        backgroundColor: Colors.green,
+        title: const Text('ITINERARIO 2 GIORNI ',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.bold,
+            )),
+        centerTitle: true,
+        backgroundColor: Color(0xff784abc),
       ),
       body: Center(
         child: Padding(
@@ -210,8 +224,15 @@ class Itinerario3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ITINERARIO 3 GIORNI '),
-        backgroundColor: Colors.green,
+        title: const Text('ITINERARIO 3 GIORNI ',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.bold,
+            )),
+        centerTitle: true,
+        backgroundColor: Color(0xff784abc),
       ),
       body: Center(
         child: Padding(
@@ -224,15 +245,21 @@ class Itinerario3 extends StatelessWidget {
   }
 }
 
-
 class Itinerario4 extends StatelessWidget {
   const Itinerario4({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ITINERARIO 5 GIORNI '),
-        backgroundColor: Colors.green,
+        title: const Text('ITINERARIO 5 GIORNI ',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.bold,
+            )),
+        centerTitle: true,
+        backgroundColor: Color(0xff784abc),
       ),
       body: Center(
         child: Padding(

@@ -8,7 +8,7 @@ import 'itinerario.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-  runApp(const MyApp());
+  runApp(const MyApp(), Type);
 }
 
 class MyApp extends StatelessWidget {
