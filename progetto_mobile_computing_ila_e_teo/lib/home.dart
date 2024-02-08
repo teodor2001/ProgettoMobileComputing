@@ -62,6 +62,18 @@ class SideBarMenu extends StatelessWidget {
                   ),
                 ),
               ),
+                ListTile(
+                onTap: () => Navigator.pushNamed(context, '/meteo'),
+                leading: const Icon(Icons.sunny, color: Colors.white, size: 30),
+                title: const Text(
+                  "Meteo",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
               const Divider(
                 color: Colors.white,
               ),

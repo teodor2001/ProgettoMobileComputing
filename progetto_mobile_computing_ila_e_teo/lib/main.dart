@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_progetto_ila_e_teo/attrazioni.dart';
+import 'package:flutter_progetto_ila_e_teo/meteo.dart';
 import 'login.dart';
 import 'home.dart';
 import 'itinerario.dart';
@@ -8,7 +9,7 @@ import 'itinerario.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-  runApp(const MyApp(), Type);
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const SideBarMenu(),
         '/attrazioni': (context) => const Attrazioni(),
         '/itinerario': (context) => const Itinerario(),
+        '/meteo' : (context) => const Meteo(),
       },
     );
   }
