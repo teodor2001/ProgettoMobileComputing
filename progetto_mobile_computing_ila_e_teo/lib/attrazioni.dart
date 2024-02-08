@@ -137,7 +137,25 @@ class Attrazioni extends StatelessWidget {
           itemBuilder: (context, index) {
             return Column(
               children: [
-                Container(
+                InkWell(
+                  onTap: ()
+                  {
+                      switch (index) {
+                      case 0:
+                        Navigator.pushNamed(context, '/');
+                        break; // The switch statement must be told to exit, or it will execute every case.
+                      case 1:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 2:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 3:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                    }
+                  },
+                  child:Container(
                   width: double.infinity,
                   height: 120,
                   decoration: BoxDecoration(
@@ -148,17 +166,36 @@ class Attrazioni extends StatelessWidget {
                         fit: BoxFit.cover,
                       )),
                 ),
+                ),
                 SizedBox(
                   height: 10,
                 ),
-                Text(
-                  _photos[index].text,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 19,
+                InkWell(
+                  onTap: () {
+                    switch (index) {
+                      case 0:
+                        Navigator.pushNamed(context, '/meteo');
+                        break; // The switch statement must be told to exit, or it will execute every case.
+                      case 1:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 2:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 3:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                    }
+                  },
+                  child: Text(
+                    _photos[index].text,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 19,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
                 ),
               ],
             );
