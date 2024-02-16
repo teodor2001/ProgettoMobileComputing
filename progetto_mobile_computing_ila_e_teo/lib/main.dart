@@ -5,6 +5,7 @@ import 'package:flutter_progetto_ila_e_teo/meteo.dart';
 import 'login.dart';
 import 'home.dart';
 import 'itinerario.dart';
+import 'colosseo.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const SideBarMenu(),
         '/attrazioni': (context) => const Attrazioni(),
         '/itinerario': (context) => const Itinerario(),
-        '/meteo' : (context) => const Meteo(),
+        '/meteo': (context) => const Meteo(),
+        '/colosseo': (context) => const Colosseo(),
       },
     );
   }

@@ -138,11 +138,10 @@ class Attrazioni extends StatelessWidget {
             return Column(
               children: [
                 InkWell(
-                  onTap: ()
-                  {
-                      switch (index) {
+                  onTap: () {
+                    switch (index) {
                       case 0:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/colosseo');
                         break; // The switch statement must be told to exit, or it will execute every case.
                       case 1:
                         Navigator.pushNamed(context, '/');
@@ -155,17 +154,17 @@ class Attrazioni extends StatelessWidget {
                         break;
                     }
                   },
-                  child:Container(
-                  width: double.infinity,
-                  height: 120,
-                  decoration: BoxDecoration(
-                      color: Colors.orange,
-                      borderRadius: BorderRadius.circular(15),
-                      image: DecorationImage(
-                        image: AssetImage(_photos[index].image),
-                        fit: BoxFit.cover,
-                      )),
-                ),
+                  child: Container(
+                    width: double.infinity,
+                    height: 120,
+                    decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                          image: AssetImage(_photos[index].image),
+                          fit: BoxFit.cover,
+                        )),
+                  ),
                 ),
                 SizedBox(
                   height: 10,
@@ -174,7 +173,7 @@ class Attrazioni extends StatelessWidget {
                   onTap: () {
                     switch (index) {
                       case 0:
-                        Navigator.pushNamed(context, '/meteo');
+                        Navigator.pushNamed(context, '/colosseo');
                         break; // The switch statement must be told to exit, or it will execute every case.
                       case 1:
                         Navigator.pushNamed(context, '/');

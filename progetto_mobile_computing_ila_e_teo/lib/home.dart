@@ -24,7 +24,7 @@ class SideBarMenu extends StatelessWidget {
                 ),
               ),
               ListTile(
-                onTap: () => Navigator.pushNamed(context, '/'),
+                onTap: () => Navigator.pushNamed(context, '/home'),
                 leading: const Icon(Icons.home_filled,
                     color: Colors.white, size: 30),
                 title: const Text(
@@ -62,7 +62,7 @@ class SideBarMenu extends StatelessWidget {
                   ),
                 ),
               ),
-                ListTile(
+              ListTile(
                 onTap: () => Navigator.pushNamed(context, '/meteo'),
                 leading: const Icon(Icons.sunny, color: Colors.white, size: 30),
                 title: const Text(

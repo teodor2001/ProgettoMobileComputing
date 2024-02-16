@@ -30,6 +30,7 @@ class MeteoPageState extends State<Meteo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 188, 160, 230),
       appBar: AppBar(
         title: const Text('METEO ',
             style: TextStyle(
@@ -169,10 +170,12 @@ class MeteoPageState extends State<Meteo> {
     return Container(
       height: MediaQuery.sizeOf(context).height * 0.15,
       width: MediaQuery.sizeOf(context).width * 0.80,
-      decoration: BoxDecoration(color: Colors.deepPurpleAccent, borderRadius: BorderRadius.circular(20),
+      decoration: BoxDecoration(
+        color: Colors.deepPurpleAccent,
+        borderRadius: BorderRadius.circular(20),
       ),
       padding: const EdgeInsets.all(
-      8.0,
+        8.0,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -183,11 +186,12 @@ class MeteoPageState extends State<Meteo> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("Max: ${infometeo?.tempMax?.celsius?.toStringAsFixed(0)} °C",
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 15,
-              ),
+              Text(
+                "Max: ${infometeo?.tempMax?.celsius?.toStringAsFixed(0)} °C",
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                ),
               ),
               Text(
                 "Min: ${infometeo?.tempMin?.celsius?.toStringAsFixed(0)} °C",
@@ -196,9 +200,9 @@ class MeteoPageState extends State<Meteo> {
                   fontSize: 15,
                 ),
               )
-          ],
+            ],
           ),
-                    Row(
+          Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
