@@ -86,6 +86,18 @@ class Attrazioni extends StatelessWidget {
                 ),
               ),
             ),
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, '/meteo'),
+              leading: const Icon(Icons.sunny, color: Colors.white, size: 30),
+              title: const Text(
+                "Meteo",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
             const Divider(
               color: Colors.white,
             ),
@@ -147,9 +159,21 @@ class Attrazioni extends StatelessWidget {
                         Navigator.pushNamed(context, '/');
                         break;
                       case 2:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/altare');
                         break;
                       case 3:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 4:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 5:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 6:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 7:
                         Navigator.pushNamed(context, '/');
                         break;
                     }
@@ -179,9 +203,21 @@ class Attrazioni extends StatelessWidget {
                         Navigator.pushNamed(context, '/');
                         break;
                       case 2:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/altare');
                         break;
                       case 3:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 4:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 5:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 6:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 7:
                         Navigator.pushNamed(context, '/');
                         break;
                     }

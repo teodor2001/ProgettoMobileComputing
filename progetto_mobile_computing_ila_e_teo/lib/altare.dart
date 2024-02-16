@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
-class Colosseo extends StatelessWidget {
-  const Colosseo({Key? key}) : super(key: key);
+class Altare extends StatelessWidget {
+  const Altare({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,7 +106,7 @@ class Colosseo extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text(
-            'Il Colosseo',
+            "L'Altare della Patria",
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
@@ -129,7 +129,7 @@ class Colosseo extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  "Il Colosseo, originariamente conosciuto come Anfiteatro Flavio (in latino: Amphitheatrum Flavium) è il più grande anfiteatro romano del mondo (in grado di contenere un numero di spettatori stimato tra 50 000 e 87 000), situato nel centro della città di Roma, nonché il più imponente monumento dell'antica Roma che sia giunto fino a noi. Inserito nel 1980 nella lista dei Patrimoni dell'umanità dell'UNESCO è stato anche inserito fra le Nuove sette meraviglie del mondo. L'anfiteatro fu edificato in epoca Flavia su un'area al limite orientale del Foro Romano. La sua costruzione, iniziata da Vespasiano nel 70 d.C., fu conclusa da Tito, che lo inaugurò il 21 aprile nell'80 d.C. Anticamente era usato per gli spettacoli dei gladiatori e altre manifestazioni pubbliche (spettacoli di caccia, battaglie navali, rievocazioni di battaglie famose e drammi basati sulla mitologia classica) Ad oggi è possibile effettuare una prenotazione per una visita guidata al suo interno al seguente link: \n https://www.getyourguide.it/roma-l33/roma-tour-di-gruppo-salta-fila-colosseo-foro-palatino-t405524/?ranking_uuid=6abbbdc6-1766-4783-b1a5-257dc030e0db",
+                  "Il Monumento nazionale a Vittorio Emanuele II , noto come Altare della Patria, è un monumento nazionale italiano situato a Roma, in piazza Venezia. Con la sua dimensione imponente un’altezza di ben 70m il monumento fu inaugurato ufficialmente ed aperto al pubblico in occasione delle celebrazioni del cinquantenario dell'Unità d'Italia. Da un punto di vista architettonico è stato pensato come un moderno foro, un'agorà su tre livelli collegati da scalinate e sovrastati da un portico caratterizzato da un colonnato. Ha un grande valore rappresentativo, essendo architettonicamente e artisticamente incentrato sul Risorgimento, il complesso processo di unità nazionale e liberazione dalla dominazione straniera portato a compimento sotto il regno di Vittorio Emanuele II di Savoia, cui il monumento è dedicato: per tale motivo il Vittoriano è considerato uno dei simboli patri italiani. Il monumento accoglie anche la tomba del Milite Ignoto, militare italiano caduto al fronte durante la prima guerra mondiale. La tomba del Milite Ignoto è sempre piantonata da due militari (posizionati alle estremità della tomba) appartenenti alle diverse armi delle forze armate italiane che si alternano nel servizio. È possibile visitare l’ampio museo del Risorgimento custodito al suo interno nonché prendere l’ascensore panoramico e godersi la vista su Roma. Visita per maggiori informazioni il seguente link: \nhttps://www.getyourguide.it/roma-l33/roma-ascensore-di-vetro-musei-e-biglietti-per-autobus-hop-on-hop-off-t447482/?ranking_uuid=6fb3416f-f56f-4d04-9e40-89dd8315c38a",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -146,7 +146,7 @@ class Colosseo extends StatelessWidget {
                 width: 5,
               ),
             ),
-            Image.asset('assets/images/c2.png',
+            Image.asset('assets/images/altare2.png',
                 width: 400, height: 300, fit: BoxFit.cover),
           ]),
         ));
