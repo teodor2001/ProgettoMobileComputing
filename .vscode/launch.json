@@ -5,6 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
+<<<<<<< Updated upstream
             "name": "Flutter",
             "type": "dart",
             "request": "launch",
@@ -27,5 +28,26 @@
 
     
        
+=======
+            "name": "progetto_mobile_computing_ila_e_teo",
+            "cwd": "progetto_mobile_computing_ila_e_teo",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "progetto_mobile_computing_ila_e_teo (profile mode)",
+            "cwd": "progetto_mobile_computing_ila_e_teo",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "progetto_mobile_computing_ila_e_teo (release mode)",
+            "cwd": "progetto_mobile_computing_ila_e_teo",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+>>>>>>> Stashed changes
     ]
 }
