@@ -38,6 +38,13 @@ class MeteoPageState extends State<Meteo> {
               fontSize: 30,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
+              shadows: [
+                Shadow(
+                  color: Colors.black,
+                  offset: Offset(2, 2),
+                  blurRadius: 3,
+                ),
+              ],
             )),
         centerTitle: true,
         backgroundColor: const Color(0xff784abc),

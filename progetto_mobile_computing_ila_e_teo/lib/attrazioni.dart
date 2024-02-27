@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -137,6 +137,13 @@ class Attrazioni extends StatelessWidget {
             fontSize: 30,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
+            shadows: [
+              Shadow(
+                color: Colors.black,
+                offset: Offset(2, 2),
+                blurRadius: 3,
+              ),
+            ],
           ),
         ),
         centerTitle: true,
@@ -174,6 +181,12 @@ class Attrazioni extends StatelessWidget {
                         Navigator.pushNamed(context, '/pspagna');
                         break;
                       case 7:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 8:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 9:
                         Navigator.pushNamed(context, '/');
                         break;
                     }
@@ -220,6 +233,12 @@ class Attrazioni extends StatelessWidget {
                       case 7:
                         Navigator.pushNamed(context, '/');
                         break;
+                      case 8:
+                        Navigator.pushNamed(context, '/');
+                        break;
+                      case 9:
+                        Navigator.pushNamed(context, '/');
+                        break;
                     }
                   },
                   child: Text(
@@ -228,6 +247,13 @@ class Attrazioni extends StatelessWidget {
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 19,
+                      shadows: [
+                        Shadow(
+                          color: Colors.black,
+                          offset: Offset(2, 2),
+                          blurRadius: 3,
+                        ),
+                      ],
                     ),
                     textAlign: TextAlign.center,
                   ),

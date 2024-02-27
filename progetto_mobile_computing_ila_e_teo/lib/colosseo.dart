@@ -112,6 +112,13 @@ class Colosseo extends StatelessWidget {
               fontSize: 30,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
+              shadows: [
+                Shadow(
+                  color: Colors.black,
+                  offset: Offset(2, 2),
+                  blurRadius: 3,
+                ),
+              ],
             ),
           ),
           centerTitle: true,
@@ -121,19 +128,34 @@ class Colosseo extends StatelessWidget {
           child: Column(children: [
             Center(
               child: Container(
-                padding:
-                    EdgeInsets.all(30.0), // padding intorno al testo nel box
+                padding: EdgeInsets.all(25.0),
+                margin: EdgeInsets.all(20), // padding intorno al testo nel box
                 decoration: BoxDecoration(
                   border: Border.all(
+                    width: 5,
+                    style: BorderStyle.solid,
                     color: Colors.white,
                   ),
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                        color: const Color.fromARGB(75, 0, 0, 0),
+                        blurRadius: 15.0,
+                        offset: Offset(0.0, 0.75))
+                  ],
                 ),
                 child: Text(
-                  "Il Colosseo, originariamente conosciuto come Anfiteatro Flavio (in latino: Amphitheatrum Flavium) è il più grande anfiteatro romano del mondo (in grado di contenere un numero di spettatori stimato tra 50 000 e 87 000), situato nel centro della città di Roma, nonché il più imponente monumento dell'antica Roma che sia giunto fino a noi. Inserito nel 1980 nella lista dei Patrimoni dell'umanità dell'UNESCO è stato anche inserito fra le Nuove sette meraviglie del mondo. L'anfiteatro fu edificato in epoca Flavia su un'area al limite orientale del Foro Romano. La sua costruzione, iniziata da Vespasiano nel 70 d.C., fu conclusa da Tito, che lo inaugurò il 21 aprile nell'80 d.C. Anticamente era usato per gli spettacoli dei gladiatori e altre manifestazioni pubbliche (spettacoli di caccia, battaglie navali, rievocazioni di battaglie famose e drammi basati sulla mitologia classica). Ad oggi è possibile effettuare una prenotazione per una visita guidata al suo interno al seguente link: \n https://www.getyourguide.it/roma-l33/roma-tour-di-gruppo-salta-fila-colosseo-foro-palatino-t405524/?ranking_uuid=6abbbdc6-1766-4783-b1a5-257dc030e0db",
+                  "Il Colosseo, originariamente conosciuto come Anfiteatro Flavio (in latino: Amphitheatrum Flavium) è il più grande anfiteatro romano del mondo (in grado di contenere un numero di spettatori stimato tra 50 000 e 87 000), situato nel centro della città di Roma, nonché il più imponente monumento dell'antica Roma che sia giunto fino a noi. Inserito nel 1980 nella lista dei Patrimoni dell'umanità dell'UNESCO è stato anche inserito fra le Nuove sette meraviglie del mondo. L'anfiteatro fu edificato in epoca Flavia su un'area al limite orientale del Foro Romano. La sua costruzione, iniziata da Vespasiano nel 70 d.C., fu conclusa da Tito, che lo inaugurò il 21 aprile nell'80 d.C. Anticamente era usato per gli spettacoli dei gladiatori e altre manifestazioni pubbliche (spettacoli di caccia, battaglie navali, rievocazioni di battaglie famose e drammi basati sulla mitologia classica). \nAd oggi è possibile effettuare una prenotazione per una visita guidata al suo interno al seguente link: \n https://www.getyourguide.it/roma-l33/roma-tour-di-gruppo-salta-fila-colosseo-foro-palatino-t405524/?ranking_uuid=6abbbdc6-1766-4783-b1a5-257dc030e0db",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -146,8 +168,31 @@ class Colosseo extends StatelessWidget {
                 width: 5,
               ),
             ),
-            Image.asset('assets/images/c2.png',
-                width: 400, height: 300, fit: BoxFit.cover),
+            Container(
+              width: 400,
+              height: 300,
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 104, 104, 104).withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset('assets/images/c2.png',
+                    width: 400, height: 300, fit: BoxFit.cover),
+              ),
+            ),
+            Padding(
+                padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                child: SizedBox(
+                  height: 15,
+                  width: 5,
+                )),
           ]),
         ));
   }

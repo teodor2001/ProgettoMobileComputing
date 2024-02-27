@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, prefer_const_literals_to_create_immutables
 //prova
 import 'package:flutter/material.dart';
 
@@ -114,6 +114,13 @@ class SideBarMenu extends StatelessWidget {
               fontSize: 30,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
+              shadows: [
+                Shadow(
+                  color: Colors.black,
+                  offset: Offset(2, 2),
+                  blurRadius: 3,
+                ),
+              ],
             ),
           ),
           centerTitle: true,
@@ -129,15 +136,8 @@ class SideBarMenu extends StatelessWidget {
                   width: altezza * 0.05,
                 ),
               ),
-              Material(
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/attrazioni');
-                  },
-                  child: Image.asset('assets/images/menu.png',
-                      width: 400, height: 300, fit: BoxFit.cover),
-                ),
-              ),
+              Image.asset('assets/images/menu.png',
+                  width: 400, height: 300, fit: BoxFit.cover),
               Padding(
                 padding: EdgeInsets.only(left: 16.0, top: 8.0),
                 child: SizedBox(
@@ -152,6 +152,13 @@ class SideBarMenu extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -165,6 +172,13 @@ class SideBarMenu extends StatelessWidget {
               ),
               Image.asset('assets/images/botton1.png',
                   width: 400, height: 300, fit: BoxFit.cover),
+              Padding(
+                padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                child: SizedBox(
+                  height: 5,
+                  width: 5,
+                ),
+              ),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/attrazioni');
@@ -179,6 +193,13 @@ class SideBarMenu extends StatelessWidget {
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
                     background: Paint()
                       ..color = Color.fromARGB(255, 92, 46, 221)
                       ..style = PaintingStyle.fill,
@@ -186,8 +207,22 @@ class SideBarMenu extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
+              Padding(
+                padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                child: SizedBox(
+                  height: 5,
+                  width: 5,
+                ),
+              ),
               Image.asset('assets/images/botton2.png',
                   width: 400, height: 300, fit: BoxFit.cover),
+              Padding(
+                padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                child: SizedBox(
+                  height: 5,
+                  width: 5,
+                ),
+              ),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/itinerario');
@@ -202,13 +237,26 @@ class SideBarMenu extends StatelessWidget {
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
                     background: Paint()
                       ..color = Color.fromARGB(255, 92, 46, 221)
                       ..style = PaintingStyle.fill,
                   ),
                   textAlign: TextAlign.center,
                 ),
-              )
+              ),
+              Padding(
+                  padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                  child: SizedBox(
+                    height: 15,
+                    width: 5,
+                  )),
             ],
           ),
         ));

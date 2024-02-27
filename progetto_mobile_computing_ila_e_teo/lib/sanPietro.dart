@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, file_names
+// ignore_for_file: prefer_const_constructors, file_names, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -112,6 +112,13 @@ class Sanpietro extends StatelessWidget {
               fontSize: 30,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
+              shadows: [
+                Shadow(
+                  color: Colors.black,
+                  offset: Offset(2, 2),
+                  blurRadius: 3,
+                ),
+              ],
             ),
           ),
           centerTitle: true,
@@ -121,12 +128,20 @@ class Sanpietro extends StatelessWidget {
           child: Column(children: [
             Center(
               child: Container(
-                padding:
-                    EdgeInsets.all(30.0), // padding intorno al testo nel box
+                padding: EdgeInsets.all(30.0),
+                margin: EdgeInsets.all(20), // padding intorno al testo nel box
                 decoration: BoxDecoration(
                   border: Border.all(
+                    width: 5,
+                    style: BorderStyle.solid,
                     color: Colors.white,
                   ),
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                        color: const Color.fromARGB(75, 0, 0, 0),
+                        blurRadius: 15.0,
+                        offset: Offset(0.0, 0.75))
+                  ],
                 ),
                 child: Text(
                   "La basilica di San Pietro in Vaticano, ufficialmente papale basilica maggiore di San Pietro in Vaticano, è una basilica cattolica ubicata in Piazza San Pietro nello stato della Città del Vaticano; è un capolavoro dell'arte italiana e uno dei simboli di Roma, di cui domina il panorama con la sua cupola. È indicata come la più grande chiesa del mondo sia per le sue dimensioni sia, metaforicamente, per la sua importanza come centro del cattolicesimo, nonché Patrimonio dell'umanità UNESCO denominato Città del Vaticano e istituito nel 1984. La sistemazione della piazza fu realizzata da Gian Lorenzo Bernini, di forma ovale con l'imponente colonnato architravato sormontato da sculture. La basilica di San Pietro vanta una lunghezza di ben 218 metri e un’altezza fino alla cupola 132,30 metri, la superficie totale è di circa 23 000 metri quadrati e può contenere 60 000 fedeli. L'edificio è interamente percorribile lungo il suo perimetro, attraverso cui possiamo accedere anche agli adiacenti Musei Vaticani, i quali sono ogni giorno visitati ogni giorno da migliaia di turisti, in particolare per il famoso affresco di Michelangelo nella cappella Sistina. Vi suggeriamo di effettuare una visita guidata per poter esplorare al meglio questi ambienti e lasciarsi trasportare dalla spiegazione di una guida qualificata. Al seguente link: \n “https://www.getyourguide.it/musei-vaticani-l2738/evita-la-coda-musei-vaticani-e-cappella-sistina-t62214/?ranking_uuid=36d76887-65eb-48f8-bfbd-73c8ecf1f747” ",
@@ -134,6 +149,13 @@ class Sanpietro extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -146,16 +168,56 @@ class Sanpietro extends StatelessWidget {
                 width: 5,
               ),
             ),
-            Image.asset('assets/images/sanp.png',
-                width: 400, height: 450, fit: BoxFit.cover),
+            Container(
+              width: 400,
+              height: 500,
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 104, 104, 104).withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset('assets/images/sanp.png',
+                    width: 400, height: 450, fit: BoxFit.cover),
+              ),
+            ),
             Padding(
                 padding: EdgeInsets.only(left: 16.0, top: 8.0),
                 child: SizedBox(
                   height: 5,
                   width: 5,
                 )),
-            Image.asset('assets/images/sistina.png',
-                width: 400, height: 300, fit: BoxFit.cover),
+            Container(
+              width: 400,
+              height: 300,
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 104, 104, 104).withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset('assets/images/sistina.png',
+                    width: 400, height: 300, fit: BoxFit.cover),
+              ),
+            ),
+            Padding(
+                padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                child: SizedBox(
+                  height: 15,
+                  width: 5,
+                )),
           ]),
         ));
   }

@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -127,6 +127,13 @@ class Itinerario extends StatelessWidget {
             fontSize: 30,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
+            shadows: [
+              Shadow(
+                color: Colors.black,
+                offset: Offset(2, 2),
+                blurRadius: 3,
+              ),
+            ],
           ),
         ),
         centerTitle: true,
@@ -188,6 +195,13 @@ class Itinerario1 extends StatelessWidget {
               fontSize: 30,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
+              shadows: [
+                Shadow(
+                  color: Colors.black,
+                  offset: Offset(2, 2),
+                  blurRadius: 3,
+                ),
+              ],
             )),
         centerTitle: true,
         backgroundColor: Color(0xff784abc),
@@ -215,6 +229,13 @@ class Itinerario2 extends StatelessWidget {
               fontSize: 30,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
+              shadows: [
+                Shadow(
+                  color: Colors.black,
+                  offset: Offset(2, 2),
+                  blurRadius: 3,
+                ),
+              ],
             )),
         centerTitle: true,
         backgroundColor: Color(0xff784abc),
@@ -242,17 +263,21 @@ class Itinerario3 extends StatelessWidget {
               fontSize: 30,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
+              shadows: [
+                Shadow(
+                  color: Colors.black,
+                  offset: Offset(2, 2),
+                  blurRadius: 3,
+                ),
+              ],
             )),
         centerTitle: true,
         backgroundColor: Color(0xff784abc),
       ),
       body: Center(
-        child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Text(
-              'PROVA 3 GIORNI',
-            )),
-      ),
+          child: Text(
+        'PROVA 3 GIORNI',
+      )),
     );
   }
 }
@@ -269,6 +294,13 @@ class Itinerario4 extends StatelessWidget {
               fontSize: 30,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
+              shadows: [
+                Shadow(
+                  color: Colors.black,
+                  offset: Offset(2, 2),
+                  blurRadius: 3,
+                ),
+              ],
             )),
         centerTitle: true,
         backgroundColor: Color(0xff784abc),
