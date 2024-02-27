@@ -122,7 +122,7 @@ class Altare extends StatelessWidget {
             Center(
               child: Container(
                 padding:
-                    EdgeInsets.all(20.0), // padding intorno al testo nel box
+                    EdgeInsets.all(30.0), // padding intorno al testo nel box
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.white,

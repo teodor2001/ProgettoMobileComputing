@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
-class Colosseo extends StatelessWidget {
-  const Colosseo({Key? key}) : super(key: key);
+class Fontana extends StatelessWidget {
+  const Fontana({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,7 +106,7 @@ class Colosseo extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text(
-            'Il Colosseo',
+            'La Fontana di Trevi',
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
@@ -129,7 +129,7 @@ class Colosseo extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  "Il Colosseo, originariamente conosciuto come Anfiteatro Flavio (in latino: Amphitheatrum Flavium) è il più grande anfiteatro romano del mondo (in grado di contenere un numero di spettatori stimato tra 50 000 e 87 000), situato nel centro della città di Roma, nonché il più imponente monumento dell'antica Roma che sia giunto fino a noi. Inserito nel 1980 nella lista dei Patrimoni dell'umanità dell'UNESCO è stato anche inserito fra le Nuove sette meraviglie del mondo. L'anfiteatro fu edificato in epoca Flavia su un'area al limite orientale del Foro Romano. La sua costruzione, iniziata da Vespasiano nel 70 d.C., fu conclusa da Tito, che lo inaugurò il 21 aprile nell'80 d.C. Anticamente era usato per gli spettacoli dei gladiatori e altre manifestazioni pubbliche (spettacoli di caccia, battaglie navali, rievocazioni di battaglie famose e drammi basati sulla mitologia classica). Ad oggi è possibile effettuare una prenotazione per una visita guidata al suo interno al seguente link: \n https://www.getyourguide.it/roma-l33/roma-tour-di-gruppo-salta-fila-colosseo-foro-palatino-t405524/?ranking_uuid=6abbbdc6-1766-4783-b1a5-257dc030e0db",
+                  "La Fontana di Trevi è la più grande fra le celebri fontane di Roma, costruita sulla facciata di Palazzo Poli da Nicola Salvi, per il concorso indetto da papa Clemente XII nel 1731. È inserita in un'ampia piscina rettangolare dagli angoli arrotondati. La scenografia è dominata da una scogliera rocciosa che occupa tutta la parte inferiore del palazzo, al cui centro troviamo una grande nicchia delimitata da colonne che la fa risaltare come fosse sotto un arco di trionfo. Qui si erge una grande statua del dio Oceano di Pietro Bracci dalle forme muscolose e opulente e dallo sguardo fiero e altezzoso. Simbolo della città che rappresenta e probabilmente anche l'imponenza stessa della fontana è all'origine di leggende e aneddoti che le si infittiscono attorno e che sono entrati a far parte della cultura popolare romana: La tradizione più conosciuta e persistente è legata al lancio della monetina dentro la fontana: compiendo questo atto a occhi chiusi, voltando le spalle verso palazzo Poli, ci si propizierebbe un futuro ritorno nella città. È possibile effettuare una prenotazione per una visita guidata dove è possibile avere accesso anche agli ambienti sotterranei (ben nove metri) per vedere l'acquedotto di 2000 anni al seguente link:  \n https://www.getyourguide.it/roma-l33/fontana-di-trevi-e-sotterranei-tour-guidato-express-t392231/?ranking_uuid=abc9c697-3f0d-4f7c-bf94-0753386b59a7",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -146,7 +146,7 @@ class Colosseo extends StatelessWidget {
                 width: 5,
               ),
             ),
-            Image.asset('assets/images/c2.png',
+            Image.asset('assets/images/font.png',
                 width: 400, height: 300, fit: BoxFit.cover),
           ]),
         ));

@@ -156,22 +156,22 @@ class Attrazioni extends StatelessWidget {
                         Navigator.pushNamed(context, '/colosseo');
                         break; // The switch statement must be told to exit, or it will execute every case.
                       case 1:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/fontana');
                         break;
                       case 2:
                         Navigator.pushNamed(context, '/altare');
                         break;
                       case 3:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/piazza');
                         break;
                       case 4:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/navona');
                         break;
                       case 5:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/sanpietro');
                         break;
                       case 6:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/pspagna');
                         break;
                       case 7:
                         Navigator.pushNamed(context, '/');
@@ -200,22 +200,22 @@ class Attrazioni extends StatelessWidget {
                         Navigator.pushNamed(context, '/colosseo');
                         break; // The switch statement must be told to exit, or it will execute every case.
                       case 1:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/fontana');
                         break;
                       case 2:
                         Navigator.pushNamed(context, '/altare');
                         break;
                       case 3:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/piazza');
                         break;
                       case 4:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/navona');
                         break;
                       case 5:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/sanpietro');
                         break;
                       case 6:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/pspagna');
                         break;
                       case 7:
                         Navigator.pushNamed(context, '/');

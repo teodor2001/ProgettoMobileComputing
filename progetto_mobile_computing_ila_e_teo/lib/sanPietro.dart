@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, file_names
 
 import 'package:flutter/material.dart';
 
-class Colosseo extends StatelessWidget {
-  const Colosseo({Key? key}) : super(key: key);
+class Sanpietro extends StatelessWidget {
+  const Sanpietro({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,7 +106,7 @@ class Colosseo extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text(
-            'Il Colosseo',
+            'San Pietro',
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
@@ -129,7 +129,7 @@ class Colosseo extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  "Il Colosseo, originariamente conosciuto come Anfiteatro Flavio (in latino: Amphitheatrum Flavium) è il più grande anfiteatro romano del mondo (in grado di contenere un numero di spettatori stimato tra 50 000 e 87 000), situato nel centro della città di Roma, nonché il più imponente monumento dell'antica Roma che sia giunto fino a noi. Inserito nel 1980 nella lista dei Patrimoni dell'umanità dell'UNESCO è stato anche inserito fra le Nuove sette meraviglie del mondo. L'anfiteatro fu edificato in epoca Flavia su un'area al limite orientale del Foro Romano. La sua costruzione, iniziata da Vespasiano nel 70 d.C., fu conclusa da Tito, che lo inaugurò il 21 aprile nell'80 d.C. Anticamente era usato per gli spettacoli dei gladiatori e altre manifestazioni pubbliche (spettacoli di caccia, battaglie navali, rievocazioni di battaglie famose e drammi basati sulla mitologia classica). Ad oggi è possibile effettuare una prenotazione per una visita guidata al suo interno al seguente link: \n https://www.getyourguide.it/roma-l33/roma-tour-di-gruppo-salta-fila-colosseo-foro-palatino-t405524/?ranking_uuid=6abbbdc6-1766-4783-b1a5-257dc030e0db",
+                  "La basilica di San Pietro in Vaticano, ufficialmente papale basilica maggiore di San Pietro in Vaticano, è una basilica cattolica ubicata in Piazza San Pietro nello stato della Città del Vaticano; è un capolavoro dell'arte italiana e uno dei simboli di Roma, di cui domina il panorama con la sua cupola. È indicata come la più grande chiesa del mondo sia per le sue dimensioni sia, metaforicamente, per la sua importanza come centro del cattolicesimo, nonché Patrimonio dell'umanità UNESCO denominato Città del Vaticano e istituito nel 1984. La sistemazione della piazza fu realizzata da Gian Lorenzo Bernini, di forma ovale con l'imponente colonnato architravato sormontato da sculture. La basilica di San Pietro vanta una lunghezza di ben 218 metri e un’altezza fino alla cupola 132,30 metri, la superficie totale è di circa 23 000 metri quadrati e può contenere 60 000 fedeli. L'edificio è interamente percorribile lungo il suo perimetro, attraverso cui possiamo accedere anche agli adiacenti Musei Vaticani, i quali sono ogni giorno visitati ogni giorno da migliaia di turisti, in particolare per il famoso affresco di Michelangelo nella cappella Sistina. Vi suggeriamo di effettuare una visita guidata per poter esplorare al meglio questi ambienti e lasciarsi trasportare dalla spiegazione di una guida qualificata. Al seguente link: \n “https://www.getyourguide.it/musei-vaticani-l2738/evita-la-coda-musei-vaticani-e-cappella-sistina-t62214/?ranking_uuid=36d76887-65eb-48f8-bfbd-73c8ecf1f747” ",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -146,7 +146,15 @@ class Colosseo extends StatelessWidget {
                 width: 5,
               ),
             ),
-            Image.asset('assets/images/c2.png',
+            Image.asset('assets/images/sanp.png',
+                width: 400, height: 450, fit: BoxFit.cover),
+            Padding(
+                padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                child: SizedBox(
+                  height: 5,
+                  width: 5,
+                )),
+            Image.asset('assets/images/sistina.png',
                 width: 400, height: 300, fit: BoxFit.cover),
           ]),
         ));

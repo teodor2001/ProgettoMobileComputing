@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
-class Colosseo extends StatelessWidget {
-  const Colosseo({Key? key}) : super(key: key);
+class Navona extends StatelessWidget {
+  const Navona({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,7 +106,7 @@ class Colosseo extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text(
-            'Il Colosseo',
+            "Piazza Navona",
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
@@ -129,7 +129,7 @@ class Colosseo extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  "Il Colosseo, originariamente conosciuto come Anfiteatro Flavio (in latino: Amphitheatrum Flavium) è il più grande anfiteatro romano del mondo (in grado di contenere un numero di spettatori stimato tra 50 000 e 87 000), situato nel centro della città di Roma, nonché il più imponente monumento dell'antica Roma che sia giunto fino a noi. Inserito nel 1980 nella lista dei Patrimoni dell'umanità dell'UNESCO è stato anche inserito fra le Nuove sette meraviglie del mondo. L'anfiteatro fu edificato in epoca Flavia su un'area al limite orientale del Foro Romano. La sua costruzione, iniziata da Vespasiano nel 70 d.C., fu conclusa da Tito, che lo inaugurò il 21 aprile nell'80 d.C. Anticamente era usato per gli spettacoli dei gladiatori e altre manifestazioni pubbliche (spettacoli di caccia, battaglie navali, rievocazioni di battaglie famose e drammi basati sulla mitologia classica). Ad oggi è possibile effettuare una prenotazione per una visita guidata al suo interno al seguente link: \n https://www.getyourguide.it/roma-l33/roma-tour-di-gruppo-salta-fila-colosseo-foro-palatino-t405524/?ranking_uuid=6abbbdc6-1766-4783-b1a5-257dc030e0db",
+                  "Piazza Navona è una delle più celebri piazze monumentali di Roma, ai tempi dell'antica Roma, era lo Stadio di Domiziano che fu fatto costruire dall'imperatore nell'85. Interamente rivestita in sampietrini, ha pianta di forma rettangolare allungata è dotata di tre fontane e di un obelisco. La particolare geometria della piazza è data dal precedente circo che sorgeva al suo posto in periodo romano.  È un simbolo della Roma barocca, con elementi architettonici e scultorei di Gian Lorenzo Bernini (la Fontana dei Quattro Fiumi al centro della piazza, che rappresenta il Danubio, il Gange, il Nilo ed il Rio della Plata, i quattro angoli della Terra), Francesco Borromini e Girolamo Rainaldi (la chiesa di Sant'Agnese in Agone, davanti alla fontana del Bernini). Ha anche altre due fontane: la Fontana del Moro, scolpita da Giacomo della Porta e ritoccata dal Bernini, situata nell'area sud della piazza, e la Fontana del Nettuno (originariamente fontana dei Calderari), situata nell'area nord, opera di Gregorio Zappalà e Antonio Della Bitta.",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -146,7 +146,7 @@ class Colosseo extends StatelessWidget {
                 width: 5,
               ),
             ),
-            Image.asset('assets/images/c2.png',
+            Image.asset('assets/images/nav.png',
                 width: 400, height: 300, fit: BoxFit.cover),
           ]),
         ));

@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
-class Colosseo extends StatelessWidget {
-  const Colosseo({Key? key}) : super(key: key);
+class Piazzaspagna extends StatelessWidget {
+  const Piazzaspagna({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,7 +106,7 @@ class Colosseo extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text(
-            'Il Colosseo',
+            'Piazza di Spagna',
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
@@ -129,7 +129,7 @@ class Colosseo extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  "Il Colosseo, originariamente conosciuto come Anfiteatro Flavio (in latino: Amphitheatrum Flavium) è il più grande anfiteatro romano del mondo (in grado di contenere un numero di spettatori stimato tra 50 000 e 87 000), situato nel centro della città di Roma, nonché il più imponente monumento dell'antica Roma che sia giunto fino a noi. Inserito nel 1980 nella lista dei Patrimoni dell'umanità dell'UNESCO è stato anche inserito fra le Nuove sette meraviglie del mondo. L'anfiteatro fu edificato in epoca Flavia su un'area al limite orientale del Foro Romano. La sua costruzione, iniziata da Vespasiano nel 70 d.C., fu conclusa da Tito, che lo inaugurò il 21 aprile nell'80 d.C. Anticamente era usato per gli spettacoli dei gladiatori e altre manifestazioni pubbliche (spettacoli di caccia, battaglie navali, rievocazioni di battaglie famose e drammi basati sulla mitologia classica). Ad oggi è possibile effettuare una prenotazione per una visita guidata al suo interno al seguente link: \n https://www.getyourguide.it/roma-l33/roma-tour-di-gruppo-salta-fila-colosseo-foro-palatino-t405524/?ranking_uuid=6abbbdc6-1766-4783-b1a5-257dc030e0db",
+                  "Piazza di Spagna, ai piedi della monumentale scalinata di ben 136 gradini che la collega con la chiesa di Trinità dei Monti, è una delle più famose di Roma. Deve il suo nome al palazzo di Spagna, sede dell'ambasciata dello Stato iberico presso la Santa Sede dal 1622. Vista dall'alto appare come la forma ad “ali di farfalla”, formata da due triangoli con il vertice in comune. Al centro della piazza vi è la nota fontana della Barcaccia, che risale al primo periodo barocco, realizzata da Pietro Bernini e da suo figlio, il più celebre Gian Lorenzo. L'8 settembre 1857 Papa Pio IX inaugurò la Colonna dell'Immacolata che presiede Piazza di Spagna in ricordo della definizione del dogma dell'Immacolata. Attualmente l'omaggio floreale di piazza di Spagna, sempre accompagnato da una preghiera mariana del Papa, è una delle cerimonie religiose più amate e popolari di Roma.",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -146,8 +146,8 @@ class Colosseo extends StatelessWidget {
                 width: 5,
               ),
             ),
-            Image.asset('assets/images/c2.png',
-                width: 400, height: 300, fit: BoxFit.cover),
+            Image.asset('assets/images/barcaccia.png',
+                width: 450, height: 450, fit: BoxFit.cover),
           ]),
         ));
   }

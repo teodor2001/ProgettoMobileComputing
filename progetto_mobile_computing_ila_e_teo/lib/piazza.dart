@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
-class Colosseo extends StatelessWidget {
-  const Colosseo({Key? key}) : super(key: key);
+class Piazza extends StatelessWidget {
+  const Piazza({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,7 +106,7 @@ class Colosseo extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text(
-            'Il Colosseo',
+            'Piazza del Popolo',
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
@@ -129,7 +129,7 @@ class Colosseo extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  "Il Colosseo, originariamente conosciuto come Anfiteatro Flavio (in latino: Amphitheatrum Flavium) è il più grande anfiteatro romano del mondo (in grado di contenere un numero di spettatori stimato tra 50 000 e 87 000), situato nel centro della città di Roma, nonché il più imponente monumento dell'antica Roma che sia giunto fino a noi. Inserito nel 1980 nella lista dei Patrimoni dell'umanità dell'UNESCO è stato anche inserito fra le Nuove sette meraviglie del mondo. L'anfiteatro fu edificato in epoca Flavia su un'area al limite orientale del Foro Romano. La sua costruzione, iniziata da Vespasiano nel 70 d.C., fu conclusa da Tito, che lo inaugurò il 21 aprile nell'80 d.C. Anticamente era usato per gli spettacoli dei gladiatori e altre manifestazioni pubbliche (spettacoli di caccia, battaglie navali, rievocazioni di battaglie famose e drammi basati sulla mitologia classica). Ad oggi è possibile effettuare una prenotazione per una visita guidata al suo interno al seguente link: \n https://www.getyourguide.it/roma-l33/roma-tour-di-gruppo-salta-fila-colosseo-foro-palatino-t405524/?ranking_uuid=6abbbdc6-1766-4783-b1a5-257dc030e0db",
+                  "Piazza del Popolo è una delle più celebri piazze di Roma, ai piedi del Pincio e al vertice in cui si incontrano via del Babuino, via di Ripetta e via del Corso, le tre arterie principali del centro storico di Roma. Al centro si trova la fontana dei Leoni e si sviluppa intorno all’obelisco Flaminio. Ha vasche rotonde di travertino, dominate da leoni di marmo bianco in stile egizio, dalle cui bocche sgorgano i getti d’acqua. Al centro dell’emiciclo orientale è collocata la fontana della Dea Roma, ornata da un grande gruppo scultoreo costituito da una statua della dea armata, affiancata da due statue raffiguranti il Tevere e l’Aniene, i due fiumi di Roma e ai cui piedi si trova la lupa che allatta i gemelli. Alle spalle, si trova il parco del Pincio, splendida passeggiata urbana, dalla cui terrazza si ammira un tramonto spettacolare. Esattamente al centro dell’emiciclo opposto, si erge l’imponente gruppo scultoreo che adorna la fontana del Nettuno: una statua di Nettuno con il tridente nella mano destra, ai cui piedi sono posti due tritoni con delfini Mentre sul lato opposto della piazza sorge la splendida Basilica di Santa Maria del Popolo di origine quattrocentesca. furono realizzate le due chiese gemelle, Santa Maria in Montesanto, nota anche come 'Chiesa degli Artisti', e Santa Maria dei Miracoli, progettate in maniera completamente simmetrica.",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -146,7 +146,7 @@ class Colosseo extends StatelessWidget {
                 width: 5,
               ),
             ),
-            Image.asset('assets/images/c2.png',
+            Image.asset('assets/images/piazza.png',
                 width: 400, height: 300, fit: BoxFit.cover),
           ]),
         ));

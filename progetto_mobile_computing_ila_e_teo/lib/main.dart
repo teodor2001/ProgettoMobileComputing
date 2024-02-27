@@ -7,6 +7,11 @@ import 'home.dart';
 import 'itinerario.dart';
 import 'colosseo.dart';
 import 'altare.dart';
+import 'fontana.dart';
+import 'piazza.dart';
+import 'navona.dart';
+import 'sanpietro.dart';
+import 'pspagna.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -36,6 +41,11 @@ class MyApp extends StatelessWidget {
         '/meteo': (context) => const Meteo(),
         '/colosseo': (context) => const Colosseo(),
         '/altare': (context) => const Altare(),
+        '/fontana': (context) => const Fontana(),
+        '/piazza': (context) => const Piazza(),
+        '/navona': (context) => const Navona(),
+        '/sanpietro': (context) => const Sanpietro(),
+        '/pspagna': (context) => const Piazzaspagna(),
       },
     );
   }
