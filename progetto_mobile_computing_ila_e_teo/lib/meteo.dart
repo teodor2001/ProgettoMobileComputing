@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
+  // ignore_for_file: non_constant_identifier_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:flutter_progetto_ila_e_teo/costanti.dart';
 import 'package:intl/intl.dart';
@@ -122,7 +122,7 @@ class MeteoPageState extends State<Meteo> {
               ),
             ),
             Text(
-              "  ${DateFormat("d.m.y").format(infocorrente)}",
+              "  ${DateFormat("d.M.y").format(infocorrente)}",
               style: const TextStyle(
                 fontWeight: FontWeight.w400,
               ),

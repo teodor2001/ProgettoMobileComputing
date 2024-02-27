@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_progetto_ila_e_teo/attrazioni.dart';
+import 'package:flutter_progetto_ila_e_teo/mappa.dart';
 import 'package:flutter_progetto_ila_e_teo/meteo.dart';
 import 'login.dart';
 import 'home.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/meteo': (context) => const Meteo(),
         '/colosseo': (context) => const Colosseo(),
         '/altare': (context) => const Altare(),
+        '/mappa' : (context) => const Mappa(),
       },
     );
   }
