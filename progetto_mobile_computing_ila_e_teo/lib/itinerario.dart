@@ -88,6 +88,18 @@ class Itinerario extends StatelessWidget {
                 ),
               ),
             ),
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, '/mappa'),
+              leading: const Icon(Icons.map, color: Colors.white, size: 30),
+              title: const Text(
+                "Mappa",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
             const Divider(
               color: Colors.white,
             ),

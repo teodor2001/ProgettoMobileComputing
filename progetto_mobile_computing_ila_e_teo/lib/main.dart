@@ -42,15 +42,12 @@ class MyApp extends StatelessWidget {
         '/meteo': (context) => const Meteo(),
         '/colosseo': (context) => const Colosseo(),
         '/altare': (context) => const Altare(),
-<<<<<<< HEAD
         '/fontana': (context) => const Fontana(),
         '/piazza': (context) => const Piazza(),
         '/navona': (context) => const Navona(),
         '/sanpietro': (context) => const Sanpietro(),
         '/pspagna': (context) => const Piazzaspagna(),
-=======
-        '/mappa' : (context) => const Mappa(),
->>>>>>> main
+        '/mappa': (context) => const Mappa(),
       },
     );
   }

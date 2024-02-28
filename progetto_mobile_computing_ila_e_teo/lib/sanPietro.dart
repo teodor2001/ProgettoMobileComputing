@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, file_names, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Sanpietro extends StatelessWidget {
   const Sanpietro({Key? key}) : super(key: key);
@@ -65,6 +66,18 @@ class Sanpietro extends StatelessWidget {
                 leading: const Icon(Icons.sunny, color: Colors.white, size: 30),
                 title: const Text(
                   "Meteo",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              ListTile(
+                onTap: () => Navigator.pushNamed(context, '/mappa'),
+                leading: const Icon(Icons.map, color: Colors.white, size: 30),
+                title: const Text(
+                  "Mappa",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -161,6 +174,11 @@ class Sanpietro extends StatelessWidget {
                 ),
               ),
             ),
+            ElevatedButton(
+              onPressed: () => _launchURL(
+                  'https://www.getyourguide.it/roma-l33/fontana-di-trevi-e-sotterranei-tour-guidato-express-t392231/?ranking_uuid=abc9c697-3f0d-4f7c-bf94-0753386b59a7'), // Inserisci qui l'URL desiderato
+              child: Text('Apri Link'),
+            ),
             Padding(
               padding: EdgeInsets.only(left: 16.0, top: 8.0),
               child: SizedBox(
@@ -220,5 +238,13 @@ class Sanpietro extends StatelessWidget {
                 )),
           ]),
         ));
+  }
+}
+
+_launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Impossibile aprire $url';
   }
 }

@@ -76,7 +76,7 @@ class SideBarMenu extends StatelessWidget {
               ),
               ListTile(
                 onTap: () => Navigator.pushNamed(context, '/mappa'),
-                leading: const Icon(Icons.map , color: Colors.white, size: 30),
+                leading: const Icon(Icons.map, color: Colors.white, size: 30),
                 title: const Text(
                   "Mappa",
                   style: TextStyle(
@@ -148,8 +148,26 @@ class SideBarMenu extends StatelessWidget {
                   width: altezza * 0.05,
                 ),
               ),
-              Image.asset('assets/images/menu.png',
-                  width: 400, height: 300, fit: BoxFit.cover),
+              Container(
+                width: 400,
+                height: 300,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color:
+                          Color.fromARGB(255, 104, 104, 104).withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset('assets/images/menu.png',
+                      width: 400, height: 300, fit: BoxFit.cover),
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.only(left: 16.0, top: 8.0),
                 child: SizedBox(
@@ -182,8 +200,26 @@ class SideBarMenu extends StatelessWidget {
                   width: 5,
                 ),
               ),
-              Image.asset('assets/images/botton1.png',
-                  width: 400, height: 300, fit: BoxFit.cover),
+              Container(
+                width: 400,
+                height: 300,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color:
+                          Color.fromARGB(255, 104, 104, 104).withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset('assets/images/botton1.png',
+                      width: 400, height: 300, fit: BoxFit.cover),
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.only(left: 16.0, top: 8.0),
                 child: SizedBox(
@@ -226,8 +262,26 @@ class SideBarMenu extends StatelessWidget {
                   width: 5,
                 ),
               ),
-              Image.asset('assets/images/botton2.png',
-                  width: 400, height: 300, fit: BoxFit.cover),
+              Container(
+                width: 400,
+                height: 300,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color:
+                          Color.fromARGB(255, 104, 104, 104).withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset('assets/images/botton2.png',
+                      width: 400, height: 300, fit: BoxFit.cover),
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.only(left: 16.0, top: 8.0),
                 child: SizedBox(

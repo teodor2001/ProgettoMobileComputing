@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Altare extends StatelessWidget {
   const Altare({Key? key}) : super(key: key);
@@ -65,6 +66,18 @@ class Altare extends StatelessWidget {
                 leading: const Icon(Icons.sunny, color: Colors.white, size: 30),
                 title: const Text(
                   "Meteo",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              ListTile(
+                onTap: () => Navigator.pushNamed(context, '/mappa'),
+                leading: const Icon(Icons.map, color: Colors.white, size: 30),
+                title: const Text(
+                  "Mappa",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -144,7 +157,7 @@ class Altare extends StatelessWidget {
                   ],
                 ),
                 child: Text(
-                  "Il Monumento nazionale a Vittorio Emanuele II , noto come Altare della Patria, è un monumento nazionale italiano situato a Roma, in piazza Venezia. Con la sua dimensione imponente un’altezza di ben 70m il monumento fu inaugurato ufficialmente ed aperto al pubblico in occasione delle celebrazioni del cinquantenario dell'Unità d'Italia. Da un punto di vista architettonico è stato pensato come un moderno foro, un'agorà su tre livelli collegati da scalinate e sovrastati da un portico caratterizzato da un colonnato. Ha un grande valore rappresentativo, essendo architettonicamente e artisticamente incentrato sul Risorgimento, il complesso processo di unità nazionale e liberazione dalla dominazione straniera portato a compimento sotto il regno di Vittorio Emanuele II di Savoia, cui il monumento è dedicato: per tale motivo il Vittoriano è considerato uno dei simboli patri italiani. Il monumento accoglie anche la tomba del Milite Ignoto, militare italiano caduto al fronte durante la prima guerra mondiale. La tomba del Milite Ignoto è sempre piantonata da due militari (posizionati alle estremità della tomba) appartenenti alle diverse armi delle forze armate italiane che si alternano nel servizio. È possibile visitare l’ampio museo del Risorgimento custodito al suo interno nonché prendere l’ascensore panoramico e godersi la vista su Roma. Visita per maggiori informazioni il seguente link: \nhttps://www.getyourguide.it/roma-l33/roma-ascensore-di-vetro-musei-e-biglietti-per-autobus-hop-on-hop-off-t447482/?ranking_uuid=6fb3416f-f56f-4d04-9e40-89dd8315c38a",
+                  "Il Monumento nazionale a Vittorio Emanuele II , noto come Altare della Patria, è un monumento nazionale italiano situato a Roma, in piazza Venezia. Con la sua dimensione imponente un’altezza di ben 70m il monumento fu inaugurato ufficialmente ed aperto al pubblico in occasione delle celebrazioni del cinquantenario dell'Unità d'Italia. Da un punto di vista architettonico è stato pensato come un moderno foro, un'agorà su tre livelli collegati da scalinate e sovrastati da un portico caratterizzato da un colonnato. Ha un grande valore rappresentativo, essendo architettonicamente e artisticamente incentrato sul Risorgimento, il complesso processo di unità nazionale e liberazione dalla dominazione straniera portato a compimento sotto il regno di Vittorio Emanuele II di Savoia, cui il monumento è dedicato: per tale motivo il Vittoriano è considerato uno dei simboli patri italiani. Il monumento accoglie anche la tomba del Milite Ignoto, militare italiano caduto al fronte durante la prima guerra mondiale. La tomba del Milite Ignoto è sempre piantonata da due militari (posizionati alle estremità della tomba) appartenenti alle diverse armi delle forze armate italiane che si alternano nel servizio. È possibile visitare l’ampio museo del Risorgimento custodito al suo interno nonché prendere l’ascensore panoramico e godersi la vista su Roma. Visita per maggiori informazioni il seguente link",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -160,6 +173,11 @@ class Altare extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
+            ),
+            ElevatedButton(
+              onPressed: () => _launchURL(
+                  'https://www.getyourguide.it/roma-l33/roma-ascensore-di-vetro-musei-e-biglietti-per-autobus-hop-on-hop-off-t447482/?ranking_uuid=6fb3416f-f56f-4d04-9e40-89dd8315c38a'), // Inserisci qui l'URL desiderato
+              child: Text('Apri Link'),
             ),
             Padding(
               padding: EdgeInsets.only(left: 16.0, top: 8.0),
@@ -195,5 +213,13 @@ class Altare extends StatelessWidget {
                 )),
           ]),
         ));
+  }
+}
+
+_launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Impossibile aprire $url';
   }
 }
