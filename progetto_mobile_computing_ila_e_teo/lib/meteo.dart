@@ -1,6 +1,8 @@
-  // ignore_for_file: non_constant_identifier_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: non_constant_identifier_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_progetto_ila_e_teo/costanti.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:weather/weather.dart';
 
@@ -13,13 +15,19 @@ class Meteo extends StatefulWidget {
 }
 
 class MeteoPageState extends State<Meteo> {
-  final WeatherFactory meteo = WeatherFactory(Chiave_API_Meteo);
+  DateTime tempoCorrente = DateTime.now();
+  late Timer timer;
+  final WeatherFactory meteo =
+      WeatherFactory(Chiave_API_Meteo, language: Language.ITALIAN);
   Weather?
       infometeo; //conterrà le informazioni che riguardano il meteo di un X luogo
 
   @override
   void initState() {
     super.initState();
+    // Il timer riaggiorna la data corrente ogni secondo per tenere conto dell'ora giusta
+    timer = Timer.periodic(Duration(seconds: 1), AggiornaTempo);
+    initializeDateFormatting('it_IT', null);
     meteo.currentWeatherByCityName("Rome").then((w) {
       setState(() {
         infometeo = w; //salva lo stato del meteo di Roma dentro a infometeo
@@ -109,7 +117,7 @@ class MeteoPageState extends State<Meteo> {
     return Column(
       children: [
         Text(
-          DateFormat("h:mm a").format(infocorrente),
+          DateFormat("h:mm").format(tempoCorrente),
           style: const TextStyle(
             fontSize: 35,
           ),
@@ -123,13 +131,13 @@ class MeteoPageState extends State<Meteo> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              DateFormat("EEEE").format(infocorrente),
+              DateFormat("EEEE", 'it').format(infocorrente),
               style: const TextStyle(
                 fontWeight: FontWeight.w700,
               ),
             ),
             Text(
-              "  ${DateFormat("d.M.y").format(infocorrente)}",
+              "  ${DateFormat("yMMMMd", 'it').format(infocorrente)}",
               style: const TextStyle(
                 fontWeight: FontWeight.w400,
               ),
@@ -194,14 +202,14 @@ class MeteoPageState extends State<Meteo> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Max: ${infometeo?.tempMax?.celsius?.toStringAsFixed(0)} °C",
+                "Temp Max: ${infometeo?.tempMax?.celsius?.toStringAsFixed(0)} °C",
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 15,
                 ),
               ),
               Text(
-                "Min: ${infometeo?.tempMin?.celsius?.toStringAsFixed(0)} °C",
+                "Temp Min: ${infometeo?.tempMin?.celsius?.toStringAsFixed(0)} °C",
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 15,
@@ -233,5 +241,12 @@ class MeteoPageState extends State<Meteo> {
         ],
       ),
     );
+  }
+
+  void AggiornaTempo(Timer timer) {
+      setState(() {
+      // RIlegge l'ora atualizzandola a quella corrente
+      tempoCorrente = DateTime.now();
+    });
   }
 }
