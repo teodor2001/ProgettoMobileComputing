@@ -18,7 +18,7 @@ final List _text = [
 ];
 
 class Itinerario extends StatelessWidget {
-  const Itinerario({Key? key}) : super(key: key);
+  const Itinerario({super.key});
 
   @override
   Widget build(BuildContext context) {

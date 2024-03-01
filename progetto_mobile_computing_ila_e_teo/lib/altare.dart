@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Altare extends StatelessWidget {
-  const Altare({Key? key}) : super(key: key);
+  const Altare({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class SideBarMenu extends StatelessWidget {
-  const SideBarMenu({Key? key}) : super(key: key);
+  const SideBarMenu({super.key});
   @override
   Widget build(BuildContext context) {
     double larghezza = MediaQuery.of(context).size.width;

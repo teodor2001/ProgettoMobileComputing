@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Form Page"),
+        title: const Text("Guida Turistica Roma"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -51,9 +51,9 @@ class _LoginPageState extends State<LoginPage> {
                           r"[a-zA-z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                       .hasMatch(value!);
                   if (value.isEmpty) {
-                    return "Enter Email";
+                    return "Inserire una e-mail";
                   } else if (!emailValid) {
-                    return "Enter Valid Email";
+                    return "Inserire una e-mail valida";
                   }
                   return null;
                 },
@@ -79,9 +79,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Enter Password';
+                    return 'Inserire la password';
                   } else if (passController.text.length < 6) {
-                    return 'Password Lenght Should not be more than 6 characters';
+                    return 'La password deve contenere almeno 6 caratteri';
                   }
                   return null;
                 },
@@ -121,15 +121,17 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "Already have an account?",
+                    "Sei nuovo?",
                     style: TextStyle(
                       fontSize: 17,
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/registrazione');
+                    },
                     child: const Text(
-                      "Sign Up",
+                      "Registrati",
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,

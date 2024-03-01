@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class Piazza extends StatelessWidget {
-  const Piazza({Key? key}) : super(key: key);
+  const Piazza({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

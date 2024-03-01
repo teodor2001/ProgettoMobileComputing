@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_progetto_ila_e_teo/attrazioni.dart';
 import 'package:flutter_progetto_ila_e_teo/mappa.dart';
 import 'package:flutter_progetto_ila_e_teo/meteo.dart';
+import 'package:flutter_progetto_ila_e_teo/registrazione.dart';
 import 'login.dart';
 import 'home.dart';
 import 'itinerario.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Guida Turistica Roma',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
         '/sanpietro': (context) => const Sanpietro(),
         '/pspagna': (context) => const Piazzaspagna(),
         '/mappa': (context) => const Mappa(),
+        '/registrazione' : (context) => const PaginaRegistrazione(),
       },
     );
   }

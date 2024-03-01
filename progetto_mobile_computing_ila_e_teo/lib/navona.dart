@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class Navona extends StatelessWidget {
-  const Navona({Key? key}) : super(key: key);
+  const Navona({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

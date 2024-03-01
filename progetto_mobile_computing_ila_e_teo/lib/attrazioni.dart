@@ -28,7 +28,7 @@ final List _photos = [
 ];
 
 class Attrazioni extends StatelessWidget {
-  const Attrazioni({Key? key}) : super(key: key);
+  const Attrazioni({super.key});
 
   @override
   Widget build(BuildContext context) {
