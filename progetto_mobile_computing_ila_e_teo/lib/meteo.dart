@@ -19,8 +19,7 @@ class MeteoPageState extends State<Meteo> {
   late Timer timer;
   final WeatherFactory meteo =
       WeatherFactory(Chiave_API_Meteo, language: Language.ITALIAN);
-  Weather?
-      infometeo; //conterrà le informazioni che riguardano il meteo di un X luogo
+  Weather? infometeo;
 
   @override
   void initState() {
@@ -39,9 +38,9 @@ class MeteoPageState extends State<Meteo> {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: Color.fromARGB(255, 188, 160, 230),
-      backgroundColor: sceltaSfondo(infometeo!.weatherConditionCode ?? 0),
+      //backgroundColor: sceltaSfondo(infometeo!.weatherConditionCode ?? 0),
       appBar: AppBar(
-        title: const Text('METEO ',
+        title:Text('METEO ',
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
@@ -111,9 +110,10 @@ class MeteoPageState extends State<Meteo> {
   Widget Luogo() {
     return Text(
       infometeo?.areaName ?? "",
-      style: const TextStyle(
+      style: TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.w500,
+        color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)
       ),
     );
   }
@@ -124,9 +124,10 @@ class MeteoPageState extends State<Meteo> {
     return Column(
       children: [
         Text(
-          DateFormat("h:mm").format(tempoCorrente),
-          style: const TextStyle(
+          DateFormat("H:mm").format(tempoCorrente),
+          style: TextStyle(
             fontSize: 35,
+            color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)
           ),
         ),
         const SizedBox(
@@ -139,14 +140,16 @@ class MeteoPageState extends State<Meteo> {
           children: [
             Text(
               DateFormat("EEEE", 'it').format(infocorrente),
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w700,
+                color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)
               ),
             ),
             Text(
               "  ${DateFormat("yMMMMd", 'it').format(infocorrente)}",
-              style: const TextStyle(
-                fontWeight: FontWeight.w400,
+              style: TextStyle(
+              fontWeight: FontWeight.w400,
+              color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)
               ),
             ),
           ],
@@ -170,8 +173,8 @@ class MeteoPageState extends State<Meteo> {
         ),
         Text(
           infometeo?.weatherDescription ?? "",
-          style: const TextStyle(
-            color: Colors.black,
+          style: TextStyle(
+            color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0),
             fontSize: 20,
           ),
         ),
@@ -181,8 +184,8 @@ class MeteoPageState extends State<Meteo> {
 
   Widget Temperatura() {
     return Text("${infometeo?.temperature?.celsius?.toStringAsFixed(0)} °C",
-        style: const TextStyle(
-          color: Colors.black,
+        style: TextStyle(
+          color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0),
           fontSize: 90,
           fontWeight: FontWeight.w500,
         ));
@@ -210,16 +213,16 @@ class MeteoPageState extends State<Meteo> {
             children: [
               Text(
                 "Temp Max: ${infometeo?.tempMax?.celsius?.toStringAsFixed(0)} °C",
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
                   fontSize: 15,
+                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)
                 ),
               ),
               Text(
                 "Temp Min: ${infometeo?.tempMin?.celsius?.toStringAsFixed(0)} °C",
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
+                style: TextStyle(
+                color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0),
+                fontSize: 15,
                 ),
               )
             ],
@@ -231,15 +234,15 @@ class MeteoPageState extends State<Meteo> {
             children: [
               Text(
                 "Vento: ${infometeo?.windSpeed?.toStringAsFixed(0)} m/s",
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0),
                   fontSize: 15,
                 ),
               ),
               Text(
                 "Umidità: ${infometeo?.humidity?.toStringAsFixed(0)} %",
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0),
                   fontSize: 15,
                 ),
               )
@@ -283,23 +286,23 @@ class MeteoPageState extends State<Meteo> {
   AssetImage immagineSfondo(int? weatherCode) {
     switch (weatherCode! ~/ 100) {
       case 2: // Tempesta
-        return AssetImage('assets/images/Neve.png');
+        return AssetImage('assets/images/Tempesta.jpg');
       case 3: // Leggera pioggia
-        return AssetImage('assets/images/Neve.png');
+        return AssetImage('assets/images/Tempesta.jpg');
       case 5: // Pioggia
-        return AssetImage('assets/images/Neve.png');
+        return AssetImage('assets/images/Tempesta.jpg');
       case 6: // Neve
-        return AssetImage('assets/images/Neve.png');
+        return AssetImage('assets/images/Tempesta.jpg');
       case 7: // Nebbioso
-        return AssetImage('assets/images/Neve.png');
+        return AssetImage('assets/images/Tempesta.jpg');
       case 8: // Sereno o leggermente nuvoloso
         if (weatherCode == 800) {
-          return AssetImage('assets/images/Neve.png');
+          return AssetImage('assets/images/Tempesta.jpg');
         } else {
-          return AssetImage('assets/images/Neve.png');
+          return AssetImage('assets/images/Tempesta.jpg');
         }
       default:
-        return AssetImage('assets/images/Neve.png');
+        return AssetImage('assets/images/Tempesta.jpg');
     }
   }
 }
