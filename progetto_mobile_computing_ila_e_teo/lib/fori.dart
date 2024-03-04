@@ -1,10 +1,8 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Colosseo extends StatelessWidget {
-  const Colosseo({super.key});
+class Fori extends StatelessWidget {
+  const Fori({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,7 +117,7 @@ class Colosseo extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text(
-            'Il Colosseo',
+            'Fori Imperiali',
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
@@ -141,7 +139,7 @@ class Colosseo extends StatelessWidget {
           child: Column(children: [
             Center(
               child: Container(
-                padding: EdgeInsets.all(25.0),
+                padding: EdgeInsets.all(30.0),
                 margin: EdgeInsets.all(20), // padding intorno al testo nel box
                 decoration: BoxDecoration(
                   border: Border.all(
@@ -157,7 +155,7 @@ class Colosseo extends StatelessWidget {
                   ],
                 ),
                 child: Text(
-                  "Il Colosseo, originariamente conosciuto come Anfiteatro Flavio è il più grande anfiteatro romano del mondo (in grado di contenere un numero di spettatori stimato tra 50 000 e 87 000), situato nel centro della città di Roma, nonché il più imponente monumento dell'antica Roma che sia giunto fino a noi. Inserito nel 1980 nella lista dei Patrimoni dell'umanità dell'UNESCO è stato anche inserito fra le Nuove sette meraviglie del mondo. L'anfiteatro fu edificato in epoca Flavia su un'area al limite orientale del Foro Romano. La sua costruzione, iniziata da Vespasiano nel 70 d.C., fu conclusa da Tito, che lo inaugurò il 21 aprile nell'80 d.C. Anticamente era usato per gli spettacoli dei gladiatori e altre manifestazioni pubbliche (spettacoli di caccia, battaglie navali, rievocazioni di battaglie famose e drammi basati sulla mitologia classica). \nAd oggi è possibile effettuare una prenotazione per una visita guidata al suo interno al link che ti forniamo qui sotto",
+                  "Costituiscono una serie di cinque piazze monumentali edificate nel corso di un secolo e mezzo (tra il 46 a.C. e il 113 d.C.) nel cuore della città di Roma da parte di Giulio Cesare e degli imperatori Augusto, Vespasiano, Nerva e Traiano. È possibile passeggiare lungo questa via storica di Roma e osservare a cielo aperto gli scavi e i resti storici di quell’epoca. Si può prenotare una visita guidata al seguente link: ",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -176,7 +174,7 @@ class Colosseo extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () => _launchURL(
-                  'https://www.getyourguide.it/roma-l33/roma-tour-di-gruppo-salta-fila-colosseo-foro-palatino-t405524/?ranking_uuid=6abbbdc6-1766-4783-b1a5-257dc030e0db'), // Inserisci qui l'URL desiderato
+                  'https://www.getyourguide.it/roma-l33/roma-tour-al-crepuscolo-del-colosseo-e-visita-ai-fori-imperiali-t487730/?ranking_uuid=91e5ad70-f9ac-408c-abfa-2ed8d42a7656'), // Inserisci qui l'URL desiderato
               child: Text('Apri Link'),
             ),
             Padding(
@@ -186,6 +184,31 @@ class Colosseo extends StatelessWidget {
                 width: 5,
               ),
             ),
+            Container(
+              width: 400,
+              height: 500,
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 104, 104, 104).withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset('assets/images/fori.png',
+                    width: 400, height: 450, fit: BoxFit.cover),
+              ),
+            ),
+            Padding(
+                padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                child: SizedBox(
+                  height: 5,
+                  width: 5,
+                )),
             Container(
               width: 400,
               height: 300,
@@ -201,7 +224,7 @@ class Colosseo extends StatelessWidget {
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.asset('assets/images/c2.png',
+                child: Image.asset('assets/images/fori2.png',
                     width: 400, height: 300, fit: BoxFit.cover),
               ),
             ),

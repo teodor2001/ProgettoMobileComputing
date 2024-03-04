@@ -193,13 +193,13 @@ class Attrazioni extends StatelessWidget {
                         Navigator.pushNamed(context, '/pspagna');
                         break;
                       case 7:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/fori');
                         break;
                       case 8:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/castel');
                         break;
                       case 9:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/corso');
                         break;
                     }
                   },
@@ -243,13 +243,13 @@ class Attrazioni extends StatelessWidget {
                         Navigator.pushNamed(context, '/pspagna');
                         break;
                       case 7:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/fori');
                         break;
                       case 8:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/castel');
                         break;
                       case 9:
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/corso');
                         break;
                     }
                   },

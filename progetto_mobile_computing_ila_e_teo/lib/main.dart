@@ -14,6 +14,9 @@ import 'piazza.dart';
 import 'navona.dart';
 import 'sanpietro.dart';
 import 'pspagna.dart';
+import 'fori.dart';
+import 'castel.dart';
+import 'corso.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -48,8 +51,11 @@ class MyApp extends StatelessWidget {
         '/navona': (context) => const Navona(),
         '/sanpietro': (context) => const Sanpietro(),
         '/pspagna': (context) => const Piazzaspagna(),
+        '/fori': (context) => const Fori(),
+        '/castel': (context) => const Castel(),
+        '/corso': (context) => const Corso(),
         '/mappa': (context) => const Mappa(),
-        '/registrazione' : (context) => const PaginaRegistrazione(),
+        '/registrazione': (context) => const PaginaRegistrazione(),
       },
     );
   }

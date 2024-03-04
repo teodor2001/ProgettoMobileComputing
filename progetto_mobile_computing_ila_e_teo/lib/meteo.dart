@@ -244,7 +244,7 @@ class MeteoPageState extends State<Meteo> {
   }
 
   void AggiornaTempo(Timer timer) {
-      setState(() {
+    setState(() {
       // RIlegge l'ora atualizzandola a quella corrente
       tempoCorrente = DateTime.now();
     });
