@@ -69,10 +69,16 @@ class MeteoPageState extends State<Meteo> {
             CircularProgressIndicator(), //serve per far comparire una schermata di caricamento in caso i dati non siano ancora stati caricati correttamente
       );
     }
-    return SizedBox(
+    return Container(
       //costruisce una pagina che contiene le informazioni relative a luogo data meteo ecc
-      width: MediaQuery.sizeOf(context).width,
-      height: MediaQuery.sizeOf(context).height,
+      width: double.infinity,
+      height: double.infinity,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: immagineSfondo(infometeo!.weatherConditionCode ?? 0),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -271,6 +277,29 @@ class MeteoPageState extends State<Meteo> {
         }
       default: //normale
         return Colors.white;
+    }
+  }
+
+  AssetImage immagineSfondo(int? weatherCode) {
+    switch (weatherCode! ~/ 100) {
+      case 2: // Tempesta
+        return AssetImage('assets/images/Neve.png');
+      case 3: // Leggera pioggia
+        return AssetImage('assets/images/Neve.png');
+      case 5: // Pioggia
+        return AssetImage('assets/images/Neve.png');
+      case 6: // Neve
+        return AssetImage('assets/images/Neve.png');
+      case 7: // Nebbioso
+        return AssetImage('assets/images/Neve.png');
+      case 8: // Sereno o leggermente nuvoloso
+        if (weatherCode == 800) {
+          return AssetImage('assets/images/Neve.png');
+        } else {
+          return AssetImage('assets/images/Neve.png');
+        }
+      default:
+        return AssetImage('assets/images/Neve.png');
     }
   }
 }
