@@ -28,7 +28,7 @@ class MeteoPageState extends State<Meteo> {
     // Il timer riaggiorna la data corrente ogni secondo per tenere conto dell'ora giusta
     timer = Timer.periodic(Duration(seconds: 1), AggiornaTempo);
     initializeDateFormatting('it_IT', null);
-    meteo.currentWeatherByCityName("Rome").then((w) {
+    meteo.currentWeatherByCityName("Roma").then((w) {
       setState(() {
         infometeo = w; //salva lo stato del meteo di Roma dentro a infometeo
       });
@@ -38,7 +38,8 @@ class MeteoPageState extends State<Meteo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 188, 160, 230),
+      //backgroundColor: Color.fromARGB(255, 188, 160, 230),
+      backgroundColor: sceltaSfondo(infometeo!.weatherConditionCode ?? 0),
       appBar: AppBar(
         title: const Text('METEO ',
             style: TextStyle(
@@ -248,5 +249,28 @@ class MeteoPageState extends State<Meteo> {
       // RIlegge l'ora atualizzandola a quella corrente
       tempoCorrente = DateTime.now();
     });
+  }
+
+  Color sceltaSfondo(int codiceMeteo) {
+    switch (codiceMeteo ~/ 100) {
+      case 2: // Tempesta
+        return Colors.purple;
+      case 3: // Leggera Pioggia
+        return Colors.lightBlue;
+      case 5: // Pioggia
+        return Colors.blue;
+      case 6: // Neve
+        return Colors.white;
+      case 7: // Nebbioso
+        return Colors.grey;
+      case 8: // Sereno e leggermente nuvoloso
+        if (codiceMeteo == 800) {
+          return Colors.yellow;
+        } else {
+          return Colors.orange;
+        }
+      default: //normale
+        return Colors.white;
+    }
   }
 }
