@@ -18,6 +18,114 @@ class MappaPageState extends State<Mappa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 188, 160, 230),
+      drawer: Drawer(
+        backgroundColor: const Color(0xff784abc),
+        child: ListView(
+          children: [
+            const UserAccountsDrawerHeader(
+              accountName: Text(""),
+              accountEmail: Text(""),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/prova.png"),
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, '/home'),
+              leading:
+                  const Icon(Icons.home_filled, color: Colors.white, size: 30),
+              title: const Text(
+                "Home",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () => 'null',
+              leading:
+                  const Icon(Icons.favorite, color: Colors.white, size: 30),
+              title: const Text(
+                "Favorite",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () => 'null',
+              leading: const Icon(Icons.notifications,
+                  color: Colors.white, size: 30),
+              title: const Text(
+                "Notifiche",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, '/meteo'),
+              leading: const Icon(Icons.sunny, color: Colors.white, size: 30),
+              title: const Text(
+                "Meteo",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, '/mappa'),
+              leading: const Icon(Icons.map, color: Colors.white, size: 30),
+              title: const Text(
+                "Mappa",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            const Divider(
+              color: Colors.white,
+            ),
+            ListTile(
+              onTap: () => 'null',
+              leading:
+                  const Icon(Icons.settings, color: Colors.white, size: 30),
+              title: const Text(
+                "Impostazioni",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, '/'),
+              leading: const Icon(Icons.logout, color: Colors.white, size: 30),
+              title: const Text(
+                "Logout",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: Text('Progetto Ila e Teo'),
       ),

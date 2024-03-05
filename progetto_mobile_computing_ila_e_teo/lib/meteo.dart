@@ -27,7 +27,7 @@ class MeteoPageState extends State<Meteo> {
     // Il timer riaggiorna la data corrente ogni secondo per tenere conto dell'ora giusta
     timer = Timer.periodic(Duration(seconds: 1), AggiornaTempo);
     initializeDateFormatting('it_IT', null);
-    meteo.currentWeatherByCityName("Roma").then((w) {
+    meteo.currentWeatherByCityName("Rome").then((w) {
       setState(() {
         infometeo = w; //salva lo stato del meteo di Roma dentro a infometeo
       });
@@ -39,6 +39,114 @@ class MeteoPageState extends State<Meteo> {
     return Scaffold(
       //backgroundColor: Color.fromARGB(255, 188, 160, 230),
       //backgroundColor: sceltaSfondo(infometeo!.weatherConditionCode ?? 0),
+      backgroundColor: Color.fromARGB(255, 188, 160, 230),
+      drawer: Drawer(
+        backgroundColor: const Color(0xff784abc),
+        child: ListView(
+          children: [
+            const UserAccountsDrawerHeader(
+              accountName: Text(""),
+              accountEmail: Text(""),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/prova.png"),
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, '/home'),
+              leading:
+                  const Icon(Icons.home_filled, color: Colors.white, size: 30),
+              title: const Text(
+                "Home",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () => 'null',
+              leading:
+                  const Icon(Icons.favorite, color: Colors.white, size: 30),
+              title: const Text(
+                "Favorite",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () => 'null',
+              leading: const Icon(Icons.notifications,
+                  color: Colors.white, size: 30),
+              title: const Text(
+                "Notifiche",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, '/meteo'),
+              leading: const Icon(Icons.sunny, color: Colors.white, size: 30),
+              title: const Text(
+                "Meteo",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, '/mappa'),
+              leading: const Icon(Icons.map, color: Colors.white, size: 30),
+              title: const Text(
+                "Mappa",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            const Divider(
+              color: Colors.white,
+            ),
+            ListTile(
+              onTap: () => 'null',
+              leading:
+                  const Icon(Icons.settings, color: Colors.white, size: 30),
+              title: const Text(
+                "Impostazioni",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, '/'),
+              leading: const Icon(Icons.logout, color: Colors.white, size: 30),
+              title: const Text(
+                "Logout",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title:Text('METEO ',
             style: TextStyle(
@@ -265,18 +373,18 @@ class MeteoPageState extends State<Meteo> {
       case 2: // Tempesta
         return Colors.purple;
       case 3: // Leggera Pioggia
-        return Colors.lightBlue;
+        return Colors.white;
       case 5: // Pioggia
-        return Colors.blue;
+        return Colors.white;
       case 6: // Neve
         return Colors.white;
       case 7: // Nebbioso
         return Colors.grey;
       case 8: // Sereno e leggermente nuvoloso
         if (codiceMeteo == 800) {
-          return Colors.yellow;
+          return Colors.black;
         } else {
-          return Colors.orange;
+          return Colors.black;
         }
       default: //normale
         return Colors.white;
@@ -286,23 +394,23 @@ class MeteoPageState extends State<Meteo> {
   AssetImage immagineSfondo(int? weatherCode) {
     switch (weatherCode! ~/ 100) {
       case 2: // Tempesta
-        return AssetImage('assets/images/Tempesta.jpg');
+        return AssetImage('assets/images/TempestaSfondo.jpg');
       case 3: // Leggera pioggia
-        return AssetImage('assets/images/Tempesta.jpg');
+        return AssetImage('assets/images/PioggiaLeggeraSfondo.jpg');
       case 5: // Pioggia
-        return AssetImage('assets/images/Tempesta.jpg');
+        return AssetImage('assets/images/PioggiaSfondo.jpg');
       case 6: // Neve
-        return AssetImage('assets/images/Tempesta.jpg');
+        return AssetImage('assets/images/NeveSfondo.jpg');
       case 7: // Nebbioso
-        return AssetImage('assets/images/Tempesta.jpg');
+        return AssetImage('assets/images/NebbiaSfondo.jpg');
       case 8: // Sereno o leggermente nuvoloso
         if (weatherCode == 800) {
-          return AssetImage('assets/images/Tempesta.jpg');
+          return AssetImage('assets/images/SerenoSfondo.jpg');
         } else {
-          return AssetImage('assets/images/Tempesta.jpg');
+          return AssetImage('assets/images/NuvolosoSfondo.jpg');
         }
       default:
-        return AssetImage('assets/images/Tempesta.jpg');
+        return AssetImage('assets/images/SerenoSfondo.jpg');
     }
   }
 }
