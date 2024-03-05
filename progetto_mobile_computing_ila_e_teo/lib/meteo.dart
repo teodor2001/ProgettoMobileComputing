@@ -27,7 +27,7 @@ class MeteoPageState extends State<Meteo> {
     // Il timer riaggiorna la data corrente ogni secondo per tenere conto dell'ora giusta
     timer = Timer.periodic(Duration(seconds: 1), AggiornaTempo);
     initializeDateFormatting('it_IT', null);
-    meteo.currentWeatherByCityName("Rome").then((w) {
+    meteo.currentWeatherByCityName("Roma").then((w) {
       setState(() {
         infometeo = w; //salva lo stato del meteo di Roma dentro a infometeo
       });
@@ -379,7 +379,7 @@ class MeteoPageState extends State<Meteo> {
       case 6: // Neve
         return Colors.white;
       case 7: // Nebbioso
-        return Colors.grey;
+        return Colors.black;
       case 8: // Sereno e leggermente nuvoloso
         if (codiceMeteo == 800) {
           return Colors.black;

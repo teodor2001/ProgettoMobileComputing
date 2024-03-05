@@ -219,11 +219,29 @@ class Itinerario1 extends StatelessWidget {
         backgroundColor: Color(0xff784abc),
       ),
       body: Center(
-        child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Text(
-              'PROVA 1 GIORNO',
-            )),
+        child: Container(
+          decoration: BoxDecoration(
+          image: DecorationImage(
+          image: AssetImage("assets/images/Colosseo.jpg"),
+          fit: BoxFit.cover
+          )
+          ),
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          /*color: Colors.yellow,
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(
+                'VEDIAMO SE FUNZIONA',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+          ),*/
+        ),
       ),
     );
   }
