@@ -14,7 +14,7 @@ final List _text = [
   Data(text: "Itinerario per 1 giorno di permanenza:"),
   Data(text: "Itinerario per 2 giorni di permanenza:"),
   Data(text: "Itinerario per 3 giorni di permanenza:"),
-  Data(text: "Itinerario per 5 giorni di permanenza:"),
+  Data(text: "Itinerario per 4 giorni di permanenza:"),
 ];
 
 class Itinerario extends StatelessWidget {
@@ -56,19 +56,6 @@ class Itinerario extends StatelessWidget {
                   const Icon(Icons.favorite, color: Colors.white, size: 30),
               title: const Text(
                 "Favorite",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            ListTile(
-              onTap: () => 'null',
-              leading: const Icon(Icons.notifications,
-                  color: Colors.white, size: 30),
-              title: const Text(
-                "Notifiche",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -218,29 +205,207 @@ class Itinerario1 extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Color(0xff784abc),
       ),
+      backgroundColor: Color.fromARGB(255, 196, 165, 242),
       body: Center(
-        child: Container(
-          decoration: BoxDecoration(
-          image: DecorationImage(
-          image: AssetImage("assets/images/Colosseo.jpg"),
-          fit: BoxFit.cover
-          )
-          ),
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          /*color: Colors.yellow,
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                'VEDIAMO SE FUNZIONA',
-                style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 24,
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/colosseo');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Colosseo',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
-          ),*/
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/fori');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Fori imperiali',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/altare');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Altare della Patria',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/corso');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Via del Corso',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/fontana');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Fontana di Trevi',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Image.asset('assets/images/mappa1.jpg',
+                  width: 400, height: 400, fit: BoxFit.cover),
+            ),
+            ListTile(
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/mappa');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Clicca qui per consultare la mappa',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+                title: Padding(
+                    padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                    child: SizedBox(
+                      height: 15,
+                      width: 5,
+                    ))),
+          ],
         ),
       ),
     );
@@ -270,12 +435,321 @@ class Itinerario2 extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Color(0xff784abc),
       ),
+      backgroundColor: Color.fromARGB(255, 196, 165, 242),
       body: Center(
-        child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Text(
-              'PROVA 2 GIORNI',
-            )),
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+              title: Text(
+                'PRIMO GIORNO:',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/colosseo');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Colosseo',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/fori');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Fori imperiali',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/altare');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Altare della Patria',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/corso');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Via del Corso',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/fontana');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Fontana di Trevi',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'SECONDO GIORNO',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/pspagna');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Piazza di Spagna',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/navona');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Piazza Navona',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/piazza');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Piazza del Popolo',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Image.asset('assets/images/mappa1.jpg',
+                  width: 400, height: 400, fit: BoxFit.cover),
+            ),
+            ListTile(
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/mappa');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Clicca qui per consultare la mappa',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+                title: Padding(
+                    padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                    child: SizedBox(
+                      height: 15,
+                      width: 5,
+                    ))),
+          ],
+        ),
       ),
     );
   }
@@ -304,10 +778,394 @@ class Itinerario3 extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Color(0xff784abc),
       ),
+      backgroundColor: Color.fromARGB(255, 196, 165, 242),
       body: Center(
-          child: Text(
-        'PROVA 3 GIORNI',
-      )),
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+              title: Text(
+                'PRIMO GIORNO',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/colosseo');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Colosseo',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/fori');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Fori imperiali',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/altare');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Altare della Patria',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/corso');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Via del Corso',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/fontana');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Fontana di Trevi',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'SECONDO GIORNO',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/pspagna');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Piazza di Spagna',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/navona');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Piazza Navona',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/piazza');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Piazza del Popolo',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'TERZO GIORNO',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/sanPietro');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'San Pietro',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/castel');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Castel Sant Angelo',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Image.asset('assets/images/mappa1.jpg',
+                  width: 400, height: 400, fit: BoxFit.cover),
+            ),
+            ListTile(
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/mappa');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Clicca qui per consultare la mappa',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+                title: Padding(
+                    padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                    child: SizedBox(
+                      height: 15,
+                      width: 5,
+                    ))),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -318,7 +1176,7 @@ class Itinerario4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ITINERARIO 5 GIORNI ',
+        title: const Text('ITINERARIO 4 GIORNI ',
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
@@ -335,12 +1193,423 @@ class Itinerario4 extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Color(0xff784abc),
       ),
+      backgroundColor: Color.fromARGB(255, 196, 165, 242),
       body: Center(
-        child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Text(
-              'PROVA 5 GIORNI',
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/colosseo');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Colosseo',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/fori');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Fori imperiali',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/altare');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Altare della Patria',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/corso');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Via del Corso',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/fontana');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Fontana di Trevi',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+                title: Text(
+              'SECONDO GIORNO',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             )),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/pspagna');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Piazza di Spagna',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/navona');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Piazza Navona',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/piazza');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Piazza del Popolo',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'TERZO GIORNO',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/sanPietro');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'San Pietro',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/castel');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Castel Sant Angelo',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'QUARTO GIORNO',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.arrow_right),
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/villa');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Villa Borghese',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Image.asset('assets/images/mappa1.jpg',
+                  width: 400, height: 400, fit: BoxFit.cover),
+            ),
+            ListTile(
+              title: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/mappa');
+                },
+                style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff784abc),
+                    textStyle: const TextStyle(
+                        fontSize: 24, fontStyle: FontStyle.italic)),
+                child: Text(
+                  'Clicca qui per consultare la mappa',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 3,
+                      ),
+                    ],
+                    background: Paint()
+                      ..color = Color(0xff784abc)
+                      ..style = PaintingStyle.fill,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            ListTile(
+                title: Padding(
+                    padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                    child: SizedBox(
+                      height: 15,
+                      width: 5,
+                    ))),
+          ],
+        ),
       ),
     );
   }

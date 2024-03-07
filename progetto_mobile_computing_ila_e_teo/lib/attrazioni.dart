@@ -25,6 +25,7 @@ final List _photos = [
   Data(image: "assets/images/foriImperiali.png", text: "Fori Imperiali"),
   Data(image: "assets/images/angelo.png", text: "Caste Sant'Angelo"),
   Data(image: "assets/images/viaCorso.png", text: "Via del corso"),
+  Data(image: "assets/images/villa1.png", text: "Villa Borghese")
 ];
 
 class Attrazioni extends StatelessWidget {
@@ -66,19 +67,6 @@ class Attrazioni extends StatelessWidget {
                   const Icon(Icons.favorite, color: Colors.white, size: 30),
               title: const Text(
                 "Favorite",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            ListTile(
-              onTap: () => 'null',
-              leading: const Icon(Icons.notifications,
-                  color: Colors.white, size: 30),
-              title: const Text(
-                "Notifiche",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -201,6 +189,9 @@ class Attrazioni extends StatelessWidget {
                       case 9:
                         Navigator.pushNamed(context, '/corso');
                         break;
+                      case 10:
+                        Navigator.pushNamed(context, '/villa');
+                        break;
                     }
                   },
                   child: Container(
@@ -250,6 +241,9 @@ class Attrazioni extends StatelessWidget {
                         break;
                       case 9:
                         Navigator.pushNamed(context, '/corso');
+                        break;
+                      case 10:
+                        Navigator.pushNamed(context, '/villa');
                         break;
                     }
                   },

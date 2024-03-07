@@ -148,7 +148,7 @@ class MeteoPageState extends State<Meteo> {
         ),
       ),
       appBar: AppBar(
-        title:Text('METEO ',
+        title: Text('METEO ',
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
@@ -219,10 +219,9 @@ class MeteoPageState extends State<Meteo> {
     return Text(
       infometeo?.areaName ?? "",
       style: TextStyle(
-        fontSize: 20,
-        fontWeight: FontWeight.w500,
-        color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)
-      ),
+          fontSize: 20,
+          fontWeight: FontWeight.w500,
+          color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
     );
   }
 
@@ -234,9 +233,8 @@ class MeteoPageState extends State<Meteo> {
         Text(
           DateFormat("H:mm").format(tempoCorrente),
           style: TextStyle(
-            fontSize: 35,
-            color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)
-          ),
+              fontSize: 35,
+              color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
         ),
         const SizedBox(
           height: 10,
@@ -249,16 +247,14 @@ class MeteoPageState extends State<Meteo> {
             Text(
               DateFormat("EEEE", 'it').format(infocorrente),
               style: TextStyle(
-                fontWeight: FontWeight.w700,
-                color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)
-              ),
+                  fontWeight: FontWeight.w700,
+                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
             ),
             Text(
               "  ${DateFormat("yMMMMd", 'it').format(infocorrente)}",
               style: TextStyle(
-              fontWeight: FontWeight.w400,
-              color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)
-              ),
+                  fontWeight: FontWeight.w400,
+                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
             ),
           ],
         ),
@@ -322,15 +318,14 @@ class MeteoPageState extends State<Meteo> {
               Text(
                 "Temp Max: ${infometeo?.tempMax?.celsius?.toStringAsFixed(0)} °C",
                 style: TextStyle(
-                  fontSize: 15,
-                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)
-                ),
+                    fontSize: 15,
+                    color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
               ),
               Text(
                 "Temp Min: ${infometeo?.tempMin?.celsius?.toStringAsFixed(0)} °C",
                 style: TextStyle(
-                color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0),
-                fontSize: 15,
+                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0),
+                  fontSize: 15,
                 ),
               )
             ],

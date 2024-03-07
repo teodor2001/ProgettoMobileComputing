@@ -48,19 +48,6 @@ class Piazzaspagna extends StatelessWidget {
                 ),
               ),
               ListTile(
-                onTap: () => 'null',
-                leading: const Icon(Icons.notifications,
-                    color: Colors.white, size: 30),
-                title: const Text(
-                  "Notifiche",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-              ListTile(
                 onTap: () => Navigator.pushNamed(context, '/meteo'),
                 leading: const Icon(Icons.sunny, color: Colors.white, size: 30),
                 title: const Text(

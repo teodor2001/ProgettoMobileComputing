@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, file_names, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
-class Piazza extends StatelessWidget {
-  const Piazza({super.key});
+class Villa extends StatelessWidget {
+  const Villa({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,7 +105,7 @@ class Piazza extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text(
-            'Piazza del Popolo',
+            'Villa Borghese',
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
@@ -143,7 +143,7 @@ class Piazza extends StatelessWidget {
                   ],
                 ),
                 child: Text(
-                  "Piazza del Popolo è una delle più celebri piazze di Roma, ai piedi del Pincio e al vertice in cui si incontrano via del Babuino, via di Ripetta e via del Corso, le tre arterie principali del centro storico di Roma. Al centro si trova la fontana dei Leoni e si sviluppa intorno all’obelisco Flaminio. Ha vasche rotonde di travertino, dominate da leoni di marmo bianco in stile egizio, dalle cui bocche sgorgano i getti d’acqua. Al centro dell’emiciclo orientale è collocata la fontana della Dea Roma, ornata da un grande gruppo scultoreo costituito da una statua della dea armata, affiancata da due statue raffiguranti il Tevere e l’Aniene, i due fiumi di Roma e ai cui piedi si trova la lupa che allatta i gemelli. Alle spalle, si trova il parco del Pincio, splendida passeggiata urbana, dalla cui terrazza si ammira un tramonto spettacolare. Esattamente al centro dell’emiciclo opposto, si erge l’imponente gruppo scultoreo che adorna la fontana del Nettuno: una statua di Nettuno con il tridente nella mano destra, ai cui piedi sono posti due tritoni con delfini Mentre sul lato opposto della piazza sorge la splendida Basilica di Santa Maria del Popolo di origine quattrocentesca. furono realizzate le due chiese gemelle, Santa Maria in Montesanto, nota anche come 'Chiesa degli Artisti', e Santa Maria dei Miracoli, progettate in maniera completamente simmetrica.",
+                  "Villa Borghese è un grande parco cittadino che comprende sistemazioni a verde di diverso tipo, dal giardino all'italiana alle ampie aree di stile inglese, edifici, piccoli fabbricati, fontane e laghetti. Potrete passeggiare per il parco, affittare bici o risciò, fare un giro in barca nel laghetto caratteristico e godersi la vista su Roma dalla celebre terrazza del Pincio che affaccia a picco su Piazza del Popolo. Attrazione molto adatta alle famiglie.",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -169,6 +169,31 @@ class Piazza extends StatelessWidget {
             ),
             Container(
               width: 400,
+              height: 500,
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 104, 104, 104).withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset('assets/images/villa.png',
+                    width: 400, height: 450, fit: BoxFit.cover),
+              ),
+            ),
+            Padding(
+                padding: EdgeInsets.only(left: 16.0, top: 8.0),
+                child: SizedBox(
+                  height: 5,
+                  width: 5,
+                )),
+            Container(
+              width: 400,
               height: 300,
               decoration: BoxDecoration(
                 boxShadow: [
@@ -182,7 +207,7 @@ class Piazza extends StatelessWidget {
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.asset('assets/images/piazza.png',
+                child: Image.asset('assets/images/pincio.png',
                     width: 400, height: 300, fit: BoxFit.cover),
               ),
             ),

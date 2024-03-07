@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -39,19 +41,6 @@ class Corso extends StatelessWidget {
                     const Icon(Icons.favorite, color: Colors.white, size: 30),
                 title: const Text(
                   "Favorite",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-              ListTile(
-                onTap: () => 'null',
-                leading: const Icon(Icons.notifications,
-                    color: Colors.white, size: 30),
-                title: const Text(
-                  "Notifiche",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
