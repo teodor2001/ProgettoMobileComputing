@@ -66,7 +66,7 @@ class Attrazioni extends StatelessWidget {
               leading:
                   const Icon(Icons.favorite, color: Colors.white, size: 30),
               title: const Text(
-                "Favorite",
+                "Preferiti",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,

@@ -40,7 +40,7 @@ class Altare extends StatelessWidget {
                 leading:
                     const Icon(Icons.favorite, color: Colors.white, size: 30),
                 title: const Text(
-                  "Favorite",
+                  "Preferiti",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -144,7 +144,7 @@ class Altare extends StatelessWidget {
                   ],
                 ),
                 child: Text(
-                  "Il Monumento nazionale a Vittorio Emanuele II , noto come Altare della Patria, è un monumento nazionale italiano situato a Roma, in piazza Venezia. Con la sua dimensione imponente un’altezza di ben 70m il monumento fu inaugurato ufficialmente ed aperto al pubblico in occasione delle celebrazioni del cinquantenario dell'Unità d'Italia. Da un punto di vista architettonico è stato pensato come un moderno foro, un'agorà su tre livelli collegati da scalinate e sovrastati da un portico caratterizzato da un colonnato. Ha un grande valore rappresentativo, essendo architettonicamente e artisticamente incentrato sul Risorgimento, il complesso processo di unità nazionale e liberazione dalla dominazione straniera portato a compimento sotto il regno di Vittorio Emanuele II di Savoia, cui il monumento è dedicato: per tale motivo il Vittoriano è considerato uno dei simboli patri italiani. Il monumento accoglie anche la tomba del Milite Ignoto, militare italiano caduto al fronte durante la prima guerra mondiale. La tomba del Milite Ignoto è sempre piantonata da due militari (posizionati alle estremità della tomba) appartenenti alle diverse armi delle forze armate italiane che si alternano nel servizio. È possibile visitare l’ampio museo del Risorgimento custodito al suo interno nonché prendere l’ascensore panoramico e godersi la vista su Roma. Visita per maggiori informazioni il seguente link",
+                  "Il Monumento nazionale a Vittorio Emanuele II , noto come Altare della Patria, è un monumento nazionale italiano situato a piazza Venezia. Con la sua imponente dimensione, vantando ben 70m di altezza, il monumento fu inaugurato ufficialmente ed aperto al pubblico in occasione delle celebrazioni del cinquantenario dell'Unità d'Italia. Ha un grande valore rappresentativo del complesso processo di unità nazionale e liberazione dalla dominazione straniera portato a compimento sotto il regno di Vittorio Emanuele II di Savoia, cui il monumento è dedicato: per tale motivo il Vittoriano è considerato uno dei simboli patri italiani. Il monumento accoglie anche la tomba del Milite Ignoto, militare italiano caduto al fronte durante la prima guerra mondiale. La tomba del Milite Ignoto è sempre piantonata da due militari (posizionati alle estremità della tomba) appartenenti alle diverse armi delle forze armate italiane che si alternano nel servizio. \nÈ possibile visitare l’ampio museo del Risorgimento custodito al suo interno nonché prendere l’ascensore panoramico e godersi la vista su Roma. Visita per maggiori informazioni il seguente link",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,

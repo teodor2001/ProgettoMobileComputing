@@ -71,20 +71,7 @@ class MeteoPageState extends State<Meteo> {
               leading:
                   const Icon(Icons.favorite, color: Colors.white, size: 30),
               title: const Text(
-                "Favorite",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            ListTile(
-              onTap: () => 'null',
-              leading: const Icon(Icons.notifications,
-                  color: Colors.white, size: 30),
-              title: const Text(
-                "Notifiche",
+                "Preferiti",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -389,7 +376,7 @@ class MeteoPageState extends State<Meteo> {
   AssetImage immagineSfondo(int? weatherCode) {
     switch (weatherCode! ~/ 100) {
       case 2: // Tempesta
-        return AssetImage('assets/images/TempestaSfondo.jpg');
+        return AssetImage('assets/images/Tempesta.jpg');
       case 3: // Leggera pioggia
         return AssetImage('assets/images/PioggiaLeggeraSfondo.jpg');
       case 5: // Pioggia

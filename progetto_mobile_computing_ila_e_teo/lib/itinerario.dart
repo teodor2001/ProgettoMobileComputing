@@ -55,7 +55,7 @@ class Itinerario extends StatelessWidget {
               leading:
                   const Icon(Icons.favorite, color: Colors.white, size: 30),
               title: const Text(
-                "Favorite",
+                "Preferiti",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -1064,7 +1064,7 @@ class Itinerario3 extends StatelessWidget {
               leading: Icon(Icons.arrow_right),
               title: TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/sanPietro');
+                  Navigator.pushNamed(context, '/sanpietro');
                 },
                 style: TextButton.styleFrom(
                     backgroundColor: Color(0xff784abc),
@@ -1197,6 +1197,16 @@ class Itinerario4 extends StatelessWidget {
       body: Center(
         child: ListView(
           children: <Widget>[
+            ListTile(
+              title: Text(
+                'PRIMO GIORNO:',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
             ListTile(
               leading: Icon(Icons.arrow_right),
               title: TextButton(
@@ -1468,7 +1478,7 @@ class Itinerario4 extends StatelessWidget {
               leading: Icon(Icons.arrow_right),
               title: TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/sanPietro');
+                  Navigator.pushNamed(context, '/sanpietro');
                 },
                 style: TextButton.styleFrom(
                     backgroundColor: Color(0xff784abc),

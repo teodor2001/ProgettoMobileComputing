@@ -4,6 +4,7 @@ import 'package:flutter_progetto_ila_e_teo/attrazioni.dart';
 import 'package:flutter_progetto_ila_e_teo/mappa.dart';
 import 'package:flutter_progetto_ila_e_teo/meteo.dart';
 import 'package:flutter_progetto_ila_e_teo/registrazione.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'login.dart';
 import 'home.dart';
 import 'itinerario.dart';
@@ -32,6 +33,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en', 'US'), // Inglese
+        const Locale('it', 'IT'), // Italiano
+        // Aggiungi altre lingue supportate qui...
+      ],
       title: 'Guida Turistica Roma',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

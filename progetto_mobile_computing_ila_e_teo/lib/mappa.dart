@@ -50,20 +50,7 @@ class MappaPageState extends State<Mappa> {
               leading:
                   const Icon(Icons.favorite, color: Colors.white, size: 30),
               title: const Text(
-                "Favorite",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            ListTile(
-              onTap: () => 'null',
-              leading: const Icon(Icons.notifications,
-                  color: Colors.white, size: 30),
-              title: const Text(
-                "Notifiche",
+                "Preferiti",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
