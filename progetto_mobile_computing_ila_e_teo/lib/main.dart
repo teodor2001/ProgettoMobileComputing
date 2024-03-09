@@ -33,13 +33,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: [
+      localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
-      supportedLocales: [
-        const Locale('en', 'US'), // Inglese
-        const Locale('it', 'IT'), // Italiano
+      supportedLocales: const [
+        Locale('en', 'US'), // Inglese
+        Locale('it', 'IT'), // Italiano
         // Aggiungi altre lingue supportate qui...
       ],
       title: 'Guida Turistica Roma',

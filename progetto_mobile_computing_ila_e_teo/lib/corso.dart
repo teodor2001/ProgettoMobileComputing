@@ -112,7 +112,7 @@ class Corso extends StatelessWidget {
               fontSize: 30,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
-              shadows: [
+              shadows: const [
                 Shadow(
                   color: Colors.black,
                   offset: Offset(2, 2),
@@ -136,9 +136,9 @@ class Corso extends StatelessWidget {
                     style: BorderStyle.solid,
                     color: Colors.white,
                   ),
-                  boxShadow: <BoxShadow>[
+                  boxShadow: const <BoxShadow>[
                     BoxShadow(
-                        color: const Color.fromARGB(75, 0, 0, 0),
+                        color: Color.fromARGB(75, 0, 0, 0),
                         blurRadius: 15.0,
                         offset: Offset(0.0, 0.75))
                   ],
@@ -149,7 +149,7 @@ class Corso extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontSize: 20,
-                    shadows: [
+                    shadows: const [
                       Shadow(
                         color: Colors.black,
                         offset: Offset(2, 2),

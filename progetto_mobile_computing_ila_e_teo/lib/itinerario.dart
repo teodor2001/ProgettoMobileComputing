@@ -404,7 +404,9 @@ class Itinerario1 extends StatelessWidget {
                     child: SizedBox(
                       height: 15,
                       width: 5,
-                    ))),
+                    )
+                    )
+                    ),
           ],
         ),
       ),
