@@ -5,6 +5,7 @@ import 'package:flutter_progetto_ila_e_teo/mappa.dart';
 import 'package:flutter_progetto_ila_e_teo/meteo.dart';
 import 'package:flutter_progetto_ila_e_teo/registrazione.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
 import 'login.dart';
 import 'home.dart';
 import 'itinerario.dart';
@@ -23,7 +24,21 @@ import 'villa.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+        create: (context) => LanguageProvider(), child: const MyApp()),
+  );
+}
+
+class LanguageProvider extends ChangeNotifier {
+  Locale _locale = Locale('en', 'US');
+
+  Locale get locale => _locale;
+
+  void changeLanguage(Locale locale) {
+    _locale = locale;
+    notifyListeners();
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -42,6 +57,7 @@ class MyApp extends StatelessWidget {
         Locale('it', 'IT'), // Italiano
         // Aggiungi altre lingue supportate qui...
       ],
+      locale: Provider.of<LanguageProvider>(context).locale,
       title: 'Guida Turistica Roma',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

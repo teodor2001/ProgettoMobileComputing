@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore, prefer_const_literals_to_create_immutables
 //prova
 import 'package:flutter/material.dart';
+import 'package:flutter_progetto_ila_e_teo/main.dart';
+import 'package:provider/provider.dart';
 
 class SideBarMenu extends StatelessWidget {
   const SideBarMenu({super.key});
@@ -124,6 +126,18 @@ class SideBarMenu extends StatelessWidget {
           ),
           centerTitle: true,
           backgroundColor: const Color(0xff784abc),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.language, color: Colors.white),
+              onPressed: () {
+                // Mostra un dialogo o una modalità per selezionare la lingua
+                showDialog(
+                  context: context,
+                  builder: (context) => LanguageSelectorDialog(),
+                );
+              },
+            ),
+          ],
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -313,5 +327,35 @@ class SideBarMenu extends StatelessWidget {
             ],
           ),
         ));
+  }
+}
+
+class LanguageSelectorDialog extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text('Select Language'),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _buildLanguageButton(context, 'English', 'en', 'US'),
+          _buildLanguageButton(context, 'Italiano', 'it', 'IT'),
+          // Aggiungi altri pulsanti per le lingue supportate...
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLanguageButton(BuildContext context, String language,
+      String countryCode, String languageCode) {
+    return TextButton(
+      onPressed: () {
+        Provider.of<LanguageProvider>(context, listen: false)
+            .changeLanguage(Locale(languageCode, countryCode));
+        Navigator.pop(
+            context); // Chiudi il dialogo dopo aver selezionato la lingua
+      },
+      child: Text(language),
+    );
   }
 }
