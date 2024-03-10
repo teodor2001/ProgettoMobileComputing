@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 
 
@@ -92,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                   if (_formfield.currentState!.validate()) {
                     //meglio usare log invece di print perché si possono anche allegare eventuali errori e si evitano problemi di sicurezza
                     //del tipo passare informazioni private
-                    log("I dati sono stati registrati correttamente, reindirizzo alla homa page");
+                    //log("I dati sono stati registrati correttamente, reindirizzo alla homa page");
                     emailController.clear();
                     passController.clear();
                     Navigator.pushNamed(context, '/home');

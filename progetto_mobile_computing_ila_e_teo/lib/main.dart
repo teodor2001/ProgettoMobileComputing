@@ -6,6 +6,7 @@ import 'package:flutter_progetto_ila_e_teo/meteo.dart';
 import 'package:flutter_progetto_ila_e_teo/registrazione.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 import 'login.dart';
 import 'home.dart';
 import 'itinerario.dart';
@@ -21,6 +22,7 @@ import 'castel.dart';
 import 'corso.dart';
 import 'villa.dart';
 
+
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
@@ -31,7 +33,7 @@ void main() {
 }
 
 class LanguageProvider extends ChangeNotifier {
-  Locale _locale = Locale('en', 'US');
+  Locale _locale = const Locale('en', 'US');
 
   Locale get locale => _locale;
 
@@ -47,6 +49,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    var locale = Provider.of<LanguageProvider>(context).locale;
     return MaterialApp(
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
@@ -57,7 +60,7 @@ class MyApp extends StatelessWidget {
         Locale('it', 'IT'), // Italiano
         // Aggiungi altre lingue supportate qui...
       ],
-      locale: Provider.of<LanguageProvider>(context).locale,
+      locale: locale,
       title: 'Guida Turistica Roma',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
