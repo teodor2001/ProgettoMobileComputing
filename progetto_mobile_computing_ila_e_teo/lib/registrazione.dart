@@ -1,177 +1,134 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'dart:io';
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:app_settings/app_settings.dart';
+import 'package:http/http.dart' as http;
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: 'Registration Form',
+      debugShowCheckedModeBanner: false,
+      home: PaginaRegistrazione(),
+    );
+  }
+}
 
 class PaginaRegistrazione extends StatefulWidget {
   const PaginaRegistrazione({super.key});
 
   @override
-  State<PaginaRegistrazione> createState() => PaginaRegistrazioneState();
+  PaginaRegistrazioneState createState() => PaginaRegistrazioneState();
 }
 
 class PaginaRegistrazioneState extends State<PaginaRegistrazione> {
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  bool _isLoading = false;
-  String _databasePath =
-      ''; // Variabile per memorizzare il percorso del database
+  final _formKey = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  String _message = '';
+
+  Future<void> _register() async {
+    var url =
+        'http://192.168.1.180:5000/register'; // Assicurati di usare l'indirizzo IP locale del server Python
+    var body = jsonEncode({
+      'name': _nameController.text,
+      'email': _emailController.text,
+      'password': _passwordController.text,
+    });
+
+    try {
+      var response = await http.post(
+        Uri.parse(url),
+        headers: {'Content-Type': 'application/json'},
+        body: body,
+      );
+
+      if (response.statusCode == 201) {
+        setState(() {
+          _message = 'Registrazione avvenuta con successo';
+        });
+      } else {
+        setState(() {
+          _message = 'Errore durante la registrazione: ${response.statusCode}';
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _message = 'Errore durante la registrazione: $e';
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Registrazione'),
+        title: const Text('Pagina di Registrazione'),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: _usernameController,
-              decoration: InputDecoration(labelText: 'E-mail'),
-            ),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
-              obscureText: true,
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _isLoading
-                  ? null
-                  : () async {
-                      setState(() {
-                        _isLoading = true;
-                      });
-                      try {
-                        await _checkAndRequestPermission(context);
-                        await memorizzaDati(
-                          _usernameController.text,
-                          _passwordController.text,
-                        );
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('Dati salvati con successo.'),
-                          ),
-                        );
-                        // Aggiorna il percorso del database dopo averlo memorizzato
-                        _updateDatabasePath();
-                      } catch (e) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              'Si è verificato un errore durante il salvataggio dei dati: $e',
-                            ),
-                          ),
-                        );
-                      } finally {
-                        setState(() {
-                          _isLoading = false;
-                        });
-                      }
-                    },
-              child:
-                  _isLoading ? CircularProgressIndicator() : Text('Registrati'),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Percorso del database: $_databasePath',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ],
+      body: Form(
+        key: _formKey,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              TextFormField(
+                controller: _nameController,
+                decoration: const InputDecoration(labelText: 'Nome'),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Inserire il nome';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 16.0),
+              TextFormField(
+                controller: _emailController,
+                decoration: const InputDecoration(labelText: 'Email'),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Inserire l\'email';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 16.0),
+              TextFormField(
+                controller: _passwordController,
+                decoration: const InputDecoration(labelText: 'Password'),
+                obscureText: true,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Inserire la password';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 16.0),
+              ElevatedButton(
+                onPressed: () async {
+                  if (_formKey.currentState!.validate()) {
+                    await _register();
+                  }
+                },
+                child: const Text('Registrati'),
+              ),
+              const SizedBox(height: 16.0),
+              Text(
+                _message,
+                style: const TextStyle(color: Colors.red),
+              ),
+            ],
+          ),
         ),
       ),
     );
-  }
-
-  Future<void> _checkAndRequestPermission(BuildContext context) async {
-    if (Platform.isAndroid) {
-      var status = await Permission.storage.status;
-      if (!status.isGranted) {
-        var result = await Permission.storage.request();
-        if (result.isGranted) {
-          // Permesso concesso
-        } else if (result.isDenied) {
-          showDialog(
-            context: context,
-            builder: (BuildContext dialogContext) {
-              return AlertDialog(
-                title: Text('Permessi richiesti'),
-                content: Text(
-                  'È necessario il permesso di scrittura esterna per salvare i dati. Vuoi abilitare i permessi dall\'app impostazioni?',
-                ),
-                actions: <Widget>[
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(dialogContext).pop();
-                    },
-                    child: Text('Annulla'),
-                  ),
-                  TextButton(
-                    onPressed: () async {
-                      Navigator.of(dialogContext).pop();
-                      await AppSettings
-                          .openAppSettings(); // Apre le impostazioni dell'app
-                    },
-                    child: Text('Impostazioni'),
-                  ),
-                ],
-              );
-            },
-          );
-          throw Exception('Permesso di scrittura esterna negato');
-        }
-      }
-    }
-  }
-
-  Future<Database> creaDatabase() async {
-    try {
-      Directory appDocDir = await getApplicationDocumentsDirectory();
-      String appDocPath = appDocDir.path;
-      String databasePath = join(appDocPath, 'databaseUtenti.db');
-      return await openDatabase(databasePath, onCreate: (db, version) async {
-        await db.execute('''
-          CREATE TABLE utenti (
-            id INTEGER PRIMARY KEY,
-            email TEXT,
-            password TEXT
-          )
-        ''');
-      }, version: 1);
-    } catch (e) {
-      print('Errore durante l\'apertura del database: $e');
-      rethrow;
-    }
-  }
-
-  Future<void> memorizzaDati(String email, String password) async {
-    Database database = await creaDatabase();
-    await database.insert(
-      'utenti',
-      {'email': email, 'password': password},
-      conflictAlgorithm: ConflictAlgorithm.replace,
-    );
-  }
-
-  // Funzione per aggiornare il percorso del database
-  Future<void> _updateDatabasePath() async {
-    try {
-      Directory appDocDir = await getApplicationDocumentsDirectory();
-      String appDocPath = appDocDir.path;
-      String databasePath = join(appDocPath, 'databaseUtenti.db');
-      setState(() {
-        _databasePath = databasePath;
-      });
-    } catch (e) {
-      print('Errore durante l\'aggiornamento del percorso del database: $e');
-    }
   }
 }

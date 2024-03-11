@@ -27,7 +27,7 @@ class MeteoPageState extends State<Meteo> {
     // Il timer riaggiorna la data corrente ogni secondo per tenere conto dell'ora giusta
     timer = Timer.periodic(Duration(seconds: 1), AggiornaTempo);
     initializeDateFormatting('it_IT', null);
-    meteo.currentWeatherByCityName("Roma").then((w) {
+    meteo.currentWeatherByCityName("Rome").then((w) {
       setState(() {
         infometeo = w; //salva lo stato del meteo di Roma dentro a infometeo
       });
