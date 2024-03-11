@@ -36,10 +36,10 @@ class LoginPageState extends State<LoginPage> {
         Map<String, dynamic> data = jsonDecode(response.body);
         return {'email': data['email'], 'password': data['password']};
       } else {
-        throw Exception('Failed to load user credentials');
+        throw Exception('Errore di caricamento dei dati');
       }
     } catch (e) {
-      throw Exception('Failed to connect to server: $e');
+      throw Exception('Errore di connesione al server: $e');
     }
   }
 */
