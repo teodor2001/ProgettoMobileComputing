@@ -11,7 +11,7 @@ class LoginPage extends StatefulWidget {
 // CREDENZIALI BURATTINO
 Map<String, String> utentiFake = {
   'ila@puliani.com': 'ilaria',
-  'teo@epascu.com': 'teodor',
+  'teo@pascu.com': 'teodor',
 };
 
 class LoginPageState extends State<LoginPage> {
@@ -25,7 +25,7 @@ class LoginPageState extends State<LoginPage> {
 
   //LOGIN TRAMITE SERVERINOPOTENTISSIMO
 /*
-  Future<Map<String, String>> _getUserCredentials(
+  Future<Map<String, String>> datiUtenti(
       String email, String password) async {
     var url = Uri.parse(
         'http://192.168.1.180:5000/login?email=$email&password=$password');
@@ -44,7 +44,7 @@ class LoginPageState extends State<LoginPage> {
   }
 */
 
-Future<Map<String, String>> _getUserCredentials(
+Future<Map<String, String>> datiUtenti(
       String email, String password) async {
     // Verifica se le credenziali corrispondono ai dati di login di prova
     if (utentiFake.containsKey(email) && utentiFake[email] == password) {
@@ -135,7 +135,7 @@ Future<Map<String, String>> _getUserCredentials(
                     if (_formKey.currentState!.validate()) {
                       try {
                         Map<String, String> credentials =
-                            await _getUserCredentials(
+                            await datiUtenti(
                                 emailController.text, passController.text);
                         if (credentials.isNotEmpty &&
                             credentials['password'] == passController.text) {
@@ -154,7 +154,7 @@ Future<Map<String, String>> _getUserCredentials(
                         setState(() {
                           showError = true;
                         });
-                        print('Error: $e');
+                        print('Errore: $e');
                       }
                     }
                   },
