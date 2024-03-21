@@ -11,8 +11,6 @@ class SideBarMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     double larghezza = MediaQuery.of(context).size.width;
     double altezza = MediaQuery.of(context).size.height;
-    final locale = Localizations.localeOf(context);
-    final selectedLanguage = '${locale.languageCode}-${locale.countryCode}';
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 188, 160, 230),
         drawer: Drawer(
@@ -179,9 +177,11 @@ class SideBarMenu extends StatelessWidget {
                   width: 20,
                 ),
               ),
-              Center(
-                child: _buildTranslatedWidget(selectedLanguage),
-              ),
+              Center(child: Consumer<LanguageProvider>(
+                  builder: (context, languageProvider, _) {
+                return _buildTranslatedWidget(
+                    languageProvider.locale.languageCode);
+              })),
               Padding(
                 padding: EdgeInsets.only(left: 16.0, top: 8.0),
                 child: SizedBox(
@@ -349,60 +349,69 @@ class LanguageSelectorDialog extends StatelessWidget {
   }
 }
 
-Widget _buildTranslatedWidget(String language) {
-  switch (language) {
+Widget _buildTranslatedWidget(String languageCode) {
+  switch (languageCode) {
     case 'it':
-      return Text(
-        "Benvenuto, \nquesta guida ti permetterà di scoprire le bellezze di questa città, di orientarti e trovare l'itinerario perfetto per te in base ai tuoi interessi.\nTi daremo tutte le informazioni utili che \ndevi sapere prima di venire qui, in modo da goderti a pieno la tua esperienza!!",
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-          fontSize: 20,
-          shadows: [
-            Shadow(
-              color: Colors.black,
-              offset: Offset(2, 2),
-              blurRadius: 3,
-            ),
-          ],
+      return Container(
+        alignment: Alignment.center,
+        child: Text(
+          "Benvenuto, \nquesta guida ti permetterà di scoprire le bellezze di questa città, di orientarti e trovare l'itinerario perfetto per te in base ai tuoi interessi.\nTi daremo tutte le informazioni utili che \ndevi sapere prima di venire qui, in modo da goderti a pieno la tua esperienza!!",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            fontSize: 20,
+            shadows: [
+              Shadow(
+                color: Colors.black,
+                offset: Offset(2, 2),
+                blurRadius: 3,
+              ),
+            ],
+          ),
+          textAlign: TextAlign.center,
         ),
-        textAlign: TextAlign.center,
       );
 
     case 'en':
-      return Text(
-        "Welcome, \nthis guide will allow you to discover the beauties of this city, orient yourself, and find the perfect itinerary for you based on your interests.\nWe will provide you with all the useful information that \nyou need to know before coming here, so that you can fully enjoy your experience!!",
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-          fontSize: 20,
-          shadows: [
-            Shadow(
-              color: Colors.black,
-              offset: Offset(2, 2),
-              blurRadius: 3,
-            ),
-          ],
+      return Container(
+        alignment: Alignment.center,
+        child: Text(
+          "Welcome, \nthis guide will allow you to discover the beauties of this city, orient yourself, and find the perfect itinerary for you based on your interests.\nWe will provide you with all the useful information that \nyou need to know before coming here, so that you can fully enjoy your experience!!",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            fontSize: 20,
+            shadows: [
+              Shadow(
+                color: Colors.black,
+                offset: Offset(2, 2),
+                blurRadius: 3,
+              ),
+            ],
+          ),
+          textAlign: TextAlign.center,
         ),
-        textAlign: TextAlign.center,
       );
 
     default:
-      return Text(
-        "Benvenuto, \nquesta guida ti permetterà di scoprire le bellezze di questa città, di orientarti e trovare l'itinerario perfetto per te in base ai tuoi interessi.\nTi daremo tutte le informazioni utili che \ndevi sapere prima di venire qui, in modo da goderti a pieno la tua esperienza!!",
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-          fontSize: 20,
-          shadows: [
-            Shadow(
-              color: Colors.black,
-              offset: Offset(2, 2),
-              blurRadius: 3,
-            ),
-          ],
+      return Container(
+        alignment: Alignment.center,
+        child: Text(
+          "Benvenuto, \nquesta guida ti permetterà di scoprire le bellezze di questa città, di orientarti e trovare l'itinerario perfetto per te in base ai tuoi interessi.\nTi daremo tutte le informazioni utili che \ndevi sapere prima di venire qui, in modo da goderti a pieno la tua esperienza!!",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            fontSize: 20,
+            shadows: [
+              Shadow(
+                color: Colors.black,
+                offset: Offset(2, 2),
+                blurRadius: 3,
+              ),
+            ],
+          ),
+          textAlign: TextAlign.center,
         ),
-        textAlign: TextAlign.center,
       );
   }
 }
