@@ -1,15 +1,19 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore, prefer_const_literals_to_create_immutables
-//prova
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:flutter_progetto_ila_e_teo/main.dart';
 import 'package:provider/provider.dart';
 
 class SideBarMenu extends StatelessWidget {
   const SideBarMenu({super.key});
+
   @override
   Widget build(BuildContext context) {
     double larghezza = MediaQuery.of(context).size.width;
     double altezza = MediaQuery.of(context).size.height;
+    final locale = Localizations.localeOf(context);
+    final selectedLanguage = '${locale.languageCode}-${locale.countryCode}';
+    print(selectedLanguage);
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 188, 160, 230),
         drawer: Drawer(
@@ -177,22 +181,7 @@ class SideBarMenu extends StatelessWidget {
                 ),
               ),
               Center(
-                child: Text(
-                  "Benvenuto, \nquesta guida ti permetterà di scoprire le bellezze di questa città, di orientarti e trovare l'itinerario perfetto per te in base ai tuoi interessi.\nTi daremo tutte le informazioni utili che \ndevi sapere prima di venire qui, in modo da goderti a pieno la tua esperienza!!",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 20,
-                    shadows: [
-                      Shadow(
-                        color: Colors.black,
-                        offset: Offset(2, 2),
-                        blurRadius: 3,
-                      ),
-                    ],
-                  ),
-                  textAlign: TextAlign.center,
-                ),
+                child: _buildTranslatedWidget(selectedLanguage),
               ),
               Padding(
                 padding: EdgeInsets.only(left: 16.0, top: 8.0),
@@ -331,6 +320,7 @@ class SideBarMenu extends StatelessWidget {
 }
 
 class LanguageSelectorDialog extends StatelessWidget {
+  const LanguageSelectorDialog({super.key});
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -357,5 +347,63 @@ class LanguageSelectorDialog extends StatelessWidget {
       },
       child: Text(language),
     );
+  }
+}
+
+Widget _buildTranslatedWidget(String language) {
+  switch (language) {
+    case 'it':
+      return Text(
+        "Benvenuto, \nquesta guida ti permetterà di scoprire le bellezze di questa città, di orientarti e trovare l'itinerario perfetto per te in base ai tuoi interessi.\nTi daremo tutte le informazioni utili che \ndevi sapere prima di venire qui, in modo da goderti a pieno la tua esperienza!!",
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+          fontSize: 20,
+          shadows: [
+            Shadow(
+              color: Colors.black,
+              offset: Offset(2, 2),
+              blurRadius: 3,
+            ),
+          ],
+        ),
+        textAlign: TextAlign.center,
+      );
+
+    case 'en':
+      return Text(
+        "Welcome, \nthis guide will allow you to discover the beauties of this city, orient yourself, and find the perfect itinerary for you based on your interests.\nWe will provide you with all the useful information that \nyou need to know before coming here, so that you can fully enjoy your experience!!",
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+          fontSize: 20,
+          shadows: [
+            Shadow(
+              color: Colors.black,
+              offset: Offset(2, 2),
+              blurRadius: 3,
+            ),
+          ],
+        ),
+        textAlign: TextAlign.center,
+      );
+
+    default:
+      return Text(
+        "Benvenuto, \nquesta guida ti permetterà di scoprire le bellezze di questa città, di orientarti e trovare l'itinerario perfetto per te in base ai tuoi interessi.\nTi daremo tutte le informazioni utili che \ndevi sapere prima di venire qui, in modo da goderti a pieno la tua esperienza!!",
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+          fontSize: 20,
+          shadows: [
+            Shadow(
+              color: Colors.black,
+              offset: Offset(2, 2),
+              blurRadius: 3,
+            ),
+          ],
+        ),
+        textAlign: TextAlign.center,
+      );
   }
 }
