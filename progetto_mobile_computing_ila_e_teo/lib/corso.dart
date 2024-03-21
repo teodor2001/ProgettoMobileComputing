@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Corso extends StatelessWidget {
   const Corso({super.key});
@@ -220,13 +219,5 @@ class Corso extends StatelessWidget {
                 )),
           ]),
         ));
-  }
-}
-
-_launchURL(String url) async {
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Impossibile aprire $url';
   }
 }

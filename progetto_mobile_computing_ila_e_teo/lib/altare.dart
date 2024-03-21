@@ -204,8 +204,9 @@ class Altare extends StatelessWidget {
 }
 
 _launchURL(String url) async {
-  if (await canLaunch(url)) {
-    await launch(url);
+  Uri uri = Uri.parse(url);
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(uri);
   } else {
     throw 'Impossibile aprire $url';
   }

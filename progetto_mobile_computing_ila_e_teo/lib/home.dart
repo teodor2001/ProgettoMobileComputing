@@ -13,7 +13,6 @@ class SideBarMenu extends StatelessWidget {
     double altezza = MediaQuery.of(context).size.height;
     final locale = Localizations.localeOf(context);
     final selectedLanguage = '${locale.languageCode}-${locale.countryCode}';
-    print(selectedLanguage);
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 188, 160, 230),
         drawer: Drawer(

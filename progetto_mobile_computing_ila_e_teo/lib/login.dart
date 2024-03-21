@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -8,6 +10,7 @@ class LoginPage extends StatefulWidget {
   @override
   State<LoginPage> createState() => LoginPageState();
 }
+
 // CREDENZIALI BURATTINO
 Map<String, String> utentiFake = {
   'ila@puliani.com': 'ilaria',
@@ -20,8 +23,6 @@ class LoginPageState extends State<LoginPage> {
   final passController = TextEditingController();
   bool passToggle = true;
   bool showError = false;
-
-
 
   //LOGIN TRAMITE SERVERINOPOTENTISSIMO
 /*
@@ -44,8 +45,7 @@ class LoginPageState extends State<LoginPage> {
   }
 */
 
-Future<Map<String, String>> datiUtenti(
-      String email, String password) async {
+  Future<Map<String, String>> datiUtenti(String email, String password) async {
     // Verifica se le credenziali corrispondono ai dati di login di prova
     if (utentiFake.containsKey(email) && utentiFake[email] == password) {
       return {'email': email, 'password': password};
@@ -134,9 +134,8 @@ Future<Map<String, String>> datiUtenti(
                   onTap: () async {
                     if (_formKey.currentState!.validate()) {
                       try {
-                        Map<String, String> credentials =
-                            await datiUtenti(
-                                emailController.text, passController.text);
+                        Map<String, String> credentials = await datiUtenti(
+                            emailController.text, passController.text);
                         if (credentials.isNotEmpty &&
                             credentials['password'] == passController.text) {
                           emailController.clear();
