@@ -161,7 +161,7 @@ class MappaPageState extends State<Mappa> {
                   color: Colors.blue,
                 ),
               );
-            });
+            } );
           } else {
             gestioneErrori(context, "Non è stato trovato un percorso");
           }

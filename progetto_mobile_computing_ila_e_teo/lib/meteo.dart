@@ -419,19 +419,19 @@ class MeteoEng extends StatefulWidget {
 class MeteoPageStateEng extends State<MeteoEng> {
   DateTime tempoCorrente = DateTime.now();
   late Timer timer;
-  final WeatherFactory meteo =
-      WeatherFactory(Chiave_API_Meteo, language: Language.ITALIAN);
-  Weather? infometeo;
+  final WeatherFactory meteoENG =
+      WeatherFactory(Chiave_API_Meteo, language: Language.ENGLISH);
+  Weather? infometeoENG;
 
   @override
   void initState() {
     super.initState();
     // Il timer riaggiorna la data corrente ogni secondo per tenere conto dell'ora giusta
     timer = Timer.periodic(Duration(seconds: 1), AggiornaTempo);
-    initializeDateFormatting('it_IT', null);
-    meteo.currentWeatherByCityName("Rome").then((w) {
+    initializeDateFormatting('en_EN', null);
+    meteoENG.currentWeatherByCityName("Rome").then((w) {
       setState(() {
-        infometeo = w; //salva lo stato del meteo di Roma dentro a infometeo
+        infometeoENG = w; //salva lo stato del meteo di Roma dentro a infometeo
       });
     });
   }
@@ -571,7 +571,7 @@ class MeteoPageStateEng extends State<MeteoEng> {
   }
 
   Widget costruisciMeteo() {
-    if (infometeo == null) {
+    if (infometeoENG == null) {
       return const Center(
         child:
             CircularProgressIndicator(), //serve per far comparire una schermata di caricamento in caso i dati non siano ancora stati caricati correttamente
@@ -583,7 +583,7 @@ class MeteoPageStateEng extends State<MeteoEng> {
       height: double.infinity,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: immagineSfondo(infometeo!.weatherConditionCode ?? 0),
+          image: immagineSfondo(infometeoENG!.weatherConditionCode ?? 0),
           fit: BoxFit.cover,
         ),
       ),
@@ -618,16 +618,16 @@ class MeteoPageStateEng extends State<MeteoEng> {
 
   Widget Luogo() {
     return Text(
-      infometeo?.areaName ?? "",
+      infometeoENG?.areaName ?? "",
       style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w500,
-          color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
+          color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0)),
     );
   }
 
   Widget InfoData() {
-    DateTime infocorrente = infometeo!
+    DateTime infocorrente = infometeoENG!
         .date!; //vado a prevelare i dati del preciso momento in cui questo widget viene chiamato
     return Column(
       children: [
@@ -635,7 +635,7 @@ class MeteoPageStateEng extends State<MeteoEng> {
           DateFormat("H:mm").format(tempoCorrente),
           style: TextStyle(
               fontSize: 35,
-              color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
+              color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0)),
         ),
         const SizedBox(
           height: 10,
@@ -646,16 +646,16 @@ class MeteoPageStateEng extends State<MeteoEng> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              DateFormat("EEEE", 'it').format(infocorrente),
+              DateFormat("EEEE", 'en').format(infocorrente),
               style: TextStyle(
                   fontWeight: FontWeight.w700,
-                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
+                  color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0)),
             ),
             Text(
-              "  ${DateFormat("yMMMMd", 'it').format(infocorrente)}",
+              "  ${DateFormat("yMMMMd", 'en').format(infocorrente)}",
               style: TextStyle(
                   fontWeight: FontWeight.w400,
-                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
+                  color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0)),
             ),
           ],
         ),
@@ -665,16 +665,16 @@ class MeteoPageStateEng extends State<MeteoEng> {
 
   Widget LuogoEng() {
     return Text(
-      infometeo?.areaName ?? "",
+      infometeoENG?.areaName ?? "",
       style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w500,
-          color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
+          color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0)),
     );
   }
 
   Widget InfoDataEng() {
-    DateTime infocorrente = infometeo!
+    DateTime infocorrente = infometeoENG!
         .date!; //vado a prevelare i dati del preciso momento in cui questo widget viene chiamato
     return Column(
       children: [
@@ -682,7 +682,7 @@ class MeteoPageStateEng extends State<MeteoEng> {
           DateFormat("H:mm").format(tempoCorrente),
           style: TextStyle(
               fontSize: 35,
-              color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
+              color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0)),
         ),
         const SizedBox(
           height: 10,
@@ -693,16 +693,16 @@ class MeteoPageStateEng extends State<MeteoEng> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              DateFormat("EEEE", 'it').format(infocorrente),
+              DateFormat("EEEE", 'en').format(infocorrente),
               style: TextStyle(
                   fontWeight: FontWeight.w700,
-                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
+                  color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0)),
             ),
             Text(
-              "  ${DateFormat("yMMMMd", 'it').format(infocorrente)}",
+              "  ${DateFormat("yMMMMd", 'en').format(infocorrente)}",
               style: TextStyle(
                   fontWeight: FontWeight.w400,
-                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
+                  color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0)),
             ),
           ],
         ),
@@ -721,12 +721,12 @@ class MeteoPageStateEng extends State<MeteoEng> {
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: NetworkImage(
-                      "http://openweathermap.org/img/wn/${infometeo?.weatherIcon}@4x.png"))),
+                      "http://openweathermap.org/img/wn/${infometeoENG?.weatherIcon}@4x.png"))),
         ),
         Text(
-          infometeo?.weatherDescription ?? "",
+          infometeoENG?.weatherDescription ?? "",
           style: TextStyle(
-            color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0),
+            color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0),
             fontSize: 20,
           ),
         ),
@@ -735,9 +735,9 @@ class MeteoPageStateEng extends State<MeteoEng> {
   }
 
   Widget Temperatura() {
-    return Text("${infometeo?.temperature?.celsius?.toStringAsFixed(0)} °C",
+    return Text("${infometeoENG?.temperature?.celsius?.toStringAsFixed(0)} °C",
         style: TextStyle(
-          color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0),
+          color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0),
           fontSize: 90,
           fontWeight: FontWeight.w500,
         ));
@@ -764,15 +764,15 @@ class MeteoPageStateEng extends State<MeteoEng> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Max Temp: ${infometeo?.tempMax?.celsius?.toStringAsFixed(0)} °C",
+                "Max Temp: ${infometeoENG?.tempMax?.celsius?.toStringAsFixed(0)} °C",
                 style: TextStyle(
                     fontSize: 15,
-                    color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0)),
+                    color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0)),
               ),
               Text(
-                "Min Temp: ${infometeo?.tempMin?.celsius?.toStringAsFixed(0)} °C",
+                "Min Temp: ${infometeoENG?.tempMin?.celsius?.toStringAsFixed(0)} °C",
                 style: TextStyle(
-                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0),
+                  color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0),
                   fontSize: 15,
                 ),
               )
@@ -784,16 +784,16 @@ class MeteoPageStateEng extends State<MeteoEng> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Wind: ${infometeo?.windSpeed?.toStringAsFixed(0)} m/s",
+                "Wind: ${infometeoENG?.windSpeed?.toStringAsFixed(0)} m/s",
                 style: TextStyle(
-                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0),
+                  color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0),
                   fontSize: 15,
                 ),
               ),
               Text(
-                "Humidity: ${infometeo?.humidity?.toStringAsFixed(0)} %",
+                "Humidity: ${infometeoENG?.humidity?.toStringAsFixed(0)} %",
                 style: TextStyle(
-                  color: sceltaSfondo(infometeo?.weatherConditionCode ?? 0),
+                  color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0),
                   fontSize: 15,
                 ),
               )
