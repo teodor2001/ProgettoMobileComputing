@@ -399,12 +399,12 @@ class MeteoPageState extends State<Meteo> {
         return AssetImage('assets/images/NebbiaSfondo.jpg');
       case 8: // Sereno o leggermente nuvoloso
         if (weatherCode == 800) {
-          return AssetImage('assets/images/SerenoSfondo.jpg');
+          return AssetImage('assets/images/serenoSfondo.jpg');
         } else {
           return AssetImage('assets/images/NuvolosoSfondo.jpg');
         }
       default:
-        return AssetImage('assets/images/SerenoSfondo.jpg');
+        return AssetImage('assets/images/serenoSfondo.jpg');
     }
   }
 }
@@ -848,12 +848,12 @@ class MeteoPageStateEng extends State<MeteoEng> {
         return AssetImage('assets/images/NebbiaSfondo.jpg');
       case 8: // Sereno o leggermente nuvoloso
         if (weatherCode == 800) {
-          return AssetImage('assets/images/SerenoSfondo.jpg');
+          return AssetImage('assets/images/sereno.jpg');
         } else {
           return AssetImage('assets/images/NuvolosoSfondo.jpg');
         }
       default:
-        return AssetImage('assets/images/SerenoSfondo.jpg');
+        return AssetImage('assets/images/sereno.jpg');
     }
   }
 }

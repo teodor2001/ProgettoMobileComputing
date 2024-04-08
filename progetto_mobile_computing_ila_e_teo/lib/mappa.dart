@@ -34,7 +34,7 @@ class MappaPageState extends State<Mappa> {
   List<String> ListaSuggeriti = [];
   Timer? timer;
   List<Polyline> ListaLinee = [];
-    List<String> indicazioniStradali = [];
+  List<String> indicazioniStradali = [];
 
   @override
   void initState() {
@@ -135,7 +135,7 @@ class MappaPageState extends State<Mappa> {
               double lng = coord[0];
               return LatLng(lat, lng);
             }).toList();
-                       //DA IMPLEMENTARE LA PARTE PER LE INDICAZIONI
+            //DA IMPLEMENTARE LA PARTE PER LE INDICAZIONI
             List<dynamic> steps =
                 features[0]['properties']['segments'][0]['steps'];
             List<String> istruzioni = steps.map<String>((step) {
