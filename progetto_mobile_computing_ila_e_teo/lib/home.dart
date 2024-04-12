@@ -65,11 +65,11 @@ class SideBarMenu extends StatelessWidget {
                 color: Colors.white,
               ),
               ListTile(
-                onTap: () => 'null',
+                onTap: () => Navigator.pushNamed(context, '/mangiare'),
                 leading:
                     const Icon(Icons.settings, color: Colors.white, size: 30),
                 title: const Text(
-                  "Impostazioni",
+                  "Piatti tipici",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -394,11 +394,11 @@ class SideBarMenuEnglish extends StatelessWidget {
                 color: Colors.white,
               ),
               ListTile(
-                onTap: () => 'null',
+                onTap: () => Navigator.pushNamed(context, '/mangiare'),
                 leading:
                     const Icon(Icons.settings, color: Colors.white, size: 30),
                 title: const Text(
-                  "Settings",
+                  "Typical dishes",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

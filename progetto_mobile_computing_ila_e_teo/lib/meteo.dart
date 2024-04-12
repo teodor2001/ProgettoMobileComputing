@@ -841,19 +841,19 @@ class MeteoPageStateEng extends State<MeteoEng> {
       case 3: // Leggera pioggia
         return AssetImage('assets/images/PioggiaLeggeraSfondo.jpg');
       case 5: // Pioggia
-        return AssetImage('assets/images/PioggiaSfondo.jpg');
+        return AssetImage('assets/images/pioggiaSfondo.jpg');
       case 6: // Neve
         return AssetImage('assets/images/NeveSfondo.jpg');
       case 7: // Nebbioso
         return AssetImage('assets/images/NebbiaSfondo.jpg');
       case 8: // Sereno o leggermente nuvoloso
         if (weatherCode == 800) {
-          return AssetImage('assets/images/sereno.jpg');
+          return AssetImage('assets/images/serenoSfondo.jpg');
         } else {
           return AssetImage('assets/images/NuvolosoSfondo.jpg');
         }
       default:
-        return AssetImage('assets/images/sereno.jpg');
+        return AssetImage('assets/images/serenoSfondo.jpg');
     }
   }
 }

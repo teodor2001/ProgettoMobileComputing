@@ -22,6 +22,7 @@ import 'fori.dart';
 import 'castel.dart';
 import 'corso.dart';
 import 'villa.dart';
+import 'mangiare.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -75,6 +76,7 @@ class MyApp extends StatelessWidget {
             '/attrazioni': (context) => const Attrazioni(),
             '/itinerario': (context) => const Itinerario(),
             '/meteo': (context) => const Meteo(),
+            '/mangiare': (context) => const Mangiare(),
             '/colosseo': (context) => const Colosseo(),
             '/altare': (context) => const Altare(),
             '/fontana': (context) => const Fontana(),
