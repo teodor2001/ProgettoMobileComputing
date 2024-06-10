@@ -61,13 +61,10 @@ class SideBarMenu extends StatelessWidget {
                   ),
                 ),
               ),
-              const Divider(
-                color: Colors.white,
-              ),
               ListTile(
                 onTap: () => Navigator.pushNamed(context, '/mangiare'),
                 leading:
-                    const Icon(Icons.settings, color: Colors.white, size: 30),
+                    const Icon(Icons.food_bank, color: Colors.white, size: 30),
                 title: const Text(
                   "Piatti tipici",
                   style: TextStyle(
@@ -76,6 +73,9 @@ class SideBarMenu extends StatelessWidget {
                     fontSize: 20,
                   ),
                 ),
+              ),
+              const Divider(
+                color: Colors.white,
               ),
               ListTile(
                 onTap: () => Navigator.pushNamed(context, '/'),
@@ -390,13 +390,10 @@ class SideBarMenuEnglish extends StatelessWidget {
                   ),
                 ),
               ),
-              const Divider(
-                color: Colors.white,
-              ),
               ListTile(
                 onTap: () => Navigator.pushNamed(context, '/mangiare'),
                 leading:
-                    const Icon(Icons.settings, color: Colors.white, size: 30),
+                    const Icon(Icons.food_bank, color: Colors.white, size: 30),
                 title: const Text(
                   "Typical dishes",
                   style: TextStyle(
@@ -405,6 +402,9 @@ class SideBarMenuEnglish extends StatelessWidget {
                     fontSize: 20,
                   ),
                 ),
+              ),
+              const Divider(
+                color: Colors.white,
               ),
               ListTile(
                 onTap: () => Navigator.pushNamed(context, '/'),

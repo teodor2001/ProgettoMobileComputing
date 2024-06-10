@@ -161,7 +161,7 @@ class MappaPageState extends State<Mappa> {
                   color: Colors.blue,
                 ),
               );
-            } );
+            });
           } else {
             gestioneErrori(context, "Non è stato trovato un percorso");
           }
@@ -295,19 +295,6 @@ class MappaPageState extends State<Mappa> {
               ),
             ),
             ListTile(
-              onTap: () => 'null',
-              leading:
-                  const Icon(Icons.favorite, color: Colors.white, size: 30),
-              title: const Text(
-                "Preferiti",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            ListTile(
               onTap: () => Navigator.pushNamed(context, '/meteo'),
               leading: const Icon(Icons.sunny, color: Colors.white, size: 30),
               title: const Text(
@@ -331,21 +318,21 @@ class MappaPageState extends State<Mappa> {
                 ),
               ),
             ),
-            const Divider(
-              color: Colors.white,
-            ),
             ListTile(
-              onTap: () => 'null',
+              onTap: () => Navigator.pushNamed(context, '/mangiare'),
               leading:
-                  const Icon(Icons.settings, color: Colors.white, size: 30),
+                  const Icon(Icons.food_bank, color: Colors.white, size: 30),
               title: const Text(
-                "Impostazioni",
+                "Piatti tipici",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
               ),
+            ),
+            const Divider(
+              color: Colors.white,
             ),
             ListTile(
               onTap: () => Navigator.pushNamed(context, '/'),

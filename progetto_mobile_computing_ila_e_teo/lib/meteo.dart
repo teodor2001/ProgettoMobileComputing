@@ -90,21 +90,21 @@ class MeteoPageState extends State<Meteo> {
                 ),
               ),
             ),
-            const Divider(
-              color: Colors.white,
-            ),
             ListTile(
-              onTap: () => 'null',
+              onTap: () => Navigator.pushNamed(context, '/mangiare'),
               leading:
-                  const Icon(Icons.settings, color: Colors.white, size: 30),
+                  const Icon(Icons.food_bank, color: Colors.white, size: 30),
               title: const Text(
-                "Impostazioni",
+                "Piatti tipici",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
               ),
+            ),
+            const Divider(
+              color: Colors.white,
             ),
             ListTile(
               onTap: () => Navigator.pushNamed(context, '/'),
@@ -492,21 +492,21 @@ class MeteoPageStateEng extends State<MeteoEng> {
                 ),
               ),
             ),
-            const Divider(
-              color: Colors.white,
-            ),
             ListTile(
-              onTap: () => 'null',
+              onTap: () => Navigator.pushNamed(context, '/mangiare'),
               leading:
-                  const Icon(Icons.settings, color: Colors.white, size: 30),
+                  const Icon(Icons.food_bank, color: Colors.white, size: 30),
               title: const Text(
-                "Settings",
+                "Typical dishes",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
               ),
+            ),
+            const Divider(
+              color: Colors.white,
             ),
             ListTile(
               onTap: () => Navigator.pushNamed(context, '/'),
@@ -767,7 +767,8 @@ class MeteoPageStateEng extends State<MeteoEng> {
                 "Max Temp: ${infometeoENG?.tempMax?.celsius?.toStringAsFixed(0)} °C",
                 style: TextStyle(
                     fontSize: 15,
-                    color: sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0)),
+                    color:
+                        sceltaSfondo(infometeoENG?.weatherConditionCode ?? 0)),
               ),
               Text(
                 "Min Temp: ${infometeoENG?.tempMin?.celsius?.toStringAsFixed(0)} °C",
