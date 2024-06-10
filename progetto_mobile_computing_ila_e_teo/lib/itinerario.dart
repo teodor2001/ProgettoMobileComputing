@@ -1707,21 +1707,21 @@ class ItinerarioEng extends StatelessWidget {
                 ),
               ),
             ),
-            const Divider(
-              color: Colors.white,
-            ),
             ListTile(
-              onTap: () => 'null',
+              onTap: () => Navigator.pushNamed(context, '/mangiare'),
               leading:
-                  const Icon(Icons.settings, color: Colors.white, size: 30),
+                  const Icon(Icons.food_bank, color: Colors.white, size: 30),
               title: const Text(
-                "Settings",
+                "Typical dishes",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
               ),
+            ),
+            const Divider(
+              color: Colors.white,
             ),
             ListTile(
               onTap: () => Navigator.pushNamed(context, '/'),

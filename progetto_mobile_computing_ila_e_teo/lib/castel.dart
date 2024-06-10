@@ -113,7 +113,7 @@ class Castel extends StatelessWidget {
             actions: [
               IconButton(
                 icon: Image.asset(
-                  'assets/images/italian_flag.png', // Percorso dell'immagine
+                  'assets/images/it.png', // Percorso dell'immagine
                   width: 24, // Larghezza desiderata dell'immagine
                   height: 24, // Altezza desiderata dell'immagine
                 ),
@@ -125,7 +125,7 @@ class Castel extends StatelessWidget {
               ),
               IconButton(
                 icon: Image.asset(
-                  'assets/images/english_flag.png', // Percorso dell'immagine
+                  'assets/images/en.png', // Percorso dell'immagine
                   width: 26, // Larghezza desiderata dell'immagine
                   height: 35, // Altezza desiderata dell'immagine
                 ),
@@ -359,7 +359,7 @@ class CastelEng extends StatelessWidget {
             actions: [
               IconButton(
                 icon: Image.asset(
-                  'assets/images/italian_flag.png', // Percorso dell'immagine
+                  'assets/images/it.png', // Percorso dell'immagine
                   width: 24, // Larghezza desiderata dell'immagine
                   height: 24, // Altezza desiderata dell'immagine
                 ),
@@ -371,7 +371,7 @@ class CastelEng extends StatelessWidget {
               ),
               IconButton(
                 icon: Image.asset(
-                  'assets/images/english_flag.png', // Percorso dell'immagine
+                  'assets/images/en.png', // Percorso dell'immagine
                   width: 26, // Larghezza desiderata dell'immagine
                   height: 35, // Altezza desiderata dell'immagine
                 ),
