@@ -5,6 +5,15 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Colosseo extends StatelessWidget {
   const Colosseo({super.key});
+  Future<void> _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await launchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Impossibile aprire $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -173,6 +182,7 @@ class Colosseo extends StatelessWidget {
                 ),
               ),
             ),
+
             ElevatedButton(
               onPressed: () => _launchURL(
                   'https://www.getyourguide.it/roma-l33/roma-tour-di-gruppo-salta-fila-colosseo-foro-palatino-t405524/?ranking_uuid=6abbbdc6-1766-4783-b1a5-257dc030e0db'), // Inserisci qui l'URL desiderato
@@ -215,17 +225,26 @@ class Colosseo extends StatelessWidget {
   }
 }
 
-_launchURL(String url) async {
+/*_launchURL(String url) async {
   Uri uri = Uri.parse(url);
   if (await canLaunchUrl(uri)) {
     await launchUrl(uri);
   } else {
     throw 'Impossibile aprire $url';
   }
-}
+}*/
 
 class ColosseoEng extends StatelessWidget {
   const ColosseoEng({super.key});
+  Future<void> _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await launchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Impossibile aprire $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
