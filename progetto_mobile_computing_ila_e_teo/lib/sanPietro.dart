@@ -5,6 +5,13 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Sanpietro extends StatelessWidget {
   const Sanpietro({super.key});
+      Future<void> _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await launchUrl(uri)) {
+    } else {
+      throw 'Impossibile aprire $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -239,18 +246,15 @@ class Sanpietro extends StatelessWidget {
         ));
   }
 }
-
-_launchURL(String url) async {
-  Uri uri = Uri.parse(url);
-  if (await canLaunchUrl(uri)) {
-    await launchUrl(uri);
-  } else {
-    throw 'Impossibile aprire $url';
-  }
-}
-
 class SanpietroEng extends StatelessWidget {
   const SanpietroEng({super.key});
+      Future<void> _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await launchUrl(uri)) {
+    } else {
+      throw 'Impossibile aprire $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

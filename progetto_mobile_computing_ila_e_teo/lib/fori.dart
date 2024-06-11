@@ -5,6 +5,13 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Fori extends StatelessWidget {
   const Fori({super.key});
+      Future<void> _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await launchUrl(uri)) {
+    } else {
+      throw 'Impossibile aprire $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -239,18 +246,15 @@ class Fori extends StatelessWidget {
         ));
   }
 }
-
-_launchURL(String url) async {
-  Uri uri = Uri.parse(url);
-  if (await canLaunchUrl(uri)) {
-    await launchUrl(uri);
-  } else {
-    throw 'Impossibile aprire $url';
-  }
-}
-
 class ForiEng extends StatelessWidget {
   const ForiEng({super.key});
+      Future<void> _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await launchUrl(uri)) {
+    } else {
+      throw 'Impossibile aprire $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

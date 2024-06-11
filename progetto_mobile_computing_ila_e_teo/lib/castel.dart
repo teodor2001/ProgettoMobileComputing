@@ -5,6 +5,13 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Castel extends StatelessWidget {
   const Castel({super.key});
+      Future<void> _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await launchUrl(uri)) {
+    } else {
+      throw 'Impossibile aprire $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -240,17 +247,16 @@ class Castel extends StatelessWidget {
   }
 }
 
-_launchURL(String url) async {
-  Uri uri = Uri.parse(url);
-  if (await canLaunchUrl(uri)) {
-    await launchUrl(uri);
-  } else {
-    throw 'Impossibile aprire $url';
-  }
-}
 
 class CastelEng extends StatelessWidget {
   const CastelEng({super.key});
+      Future<void> _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await launchUrl(uri)) {
+    } else {
+      throw 'Impossibile aprire $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

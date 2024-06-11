@@ -5,6 +5,14 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Altare extends StatelessWidget {
   const Altare({super.key});
+    Future<void> _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await launchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Impossibile aprire $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -214,18 +222,16 @@ class Altare extends StatelessWidget {
         ));
   }
 }
-
-_launchURL(String url) async {
-  Uri uri = Uri.parse(url);
-  if (await canLaunchUrl(uri)) {
-    await launchUrl(uri);
-  } else {
-    throw 'Impossibile aprire $url';
-  }
-}
-
 class AltareEng extends StatelessWidget {
   const AltareEng({super.key});
+      Future<void> _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await launchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Impossibile aprire $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

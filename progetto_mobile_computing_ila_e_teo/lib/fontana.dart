@@ -5,6 +5,13 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Fontana extends StatelessWidget {
   const Fontana({super.key});
+      Future<void> _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await launchUrl(uri)) {
+    } else {
+      throw 'Impossibile aprire $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -215,17 +222,15 @@ class Fontana extends StatelessWidget {
   }
 }
 
-_launchURL(String url) async {
-  Uri uri = Uri.parse(url);
-  if (await canLaunchUrl(uri)) {
-    await launchUrl(uri);
-  } else {
-    throw 'Impossibile aprire $url';
-  }
-}
-
 class FontanaEng extends StatelessWidget {
   const FontanaEng({super.key});
+      Future<void> _launchURL(String url) async {
+    Uri uri = Uri.parse(url);
+    if (await launchUrl(uri)) {
+    } else {
+      throw 'Impossibile aprire $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

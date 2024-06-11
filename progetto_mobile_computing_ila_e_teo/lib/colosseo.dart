@@ -8,7 +8,6 @@ class Colosseo extends StatelessWidget {
   Future<void> _launchURL(String url) async {
     Uri uri = Uri.parse(url);
     if (await launchUrl(uri)) {
-      await launchUrl(uri);
     } else {
       throw 'Impossibile aprire $url';
     }
@@ -239,7 +238,6 @@ class ColosseoEng extends StatelessWidget {
   Future<void> _launchURL(String url) async {
     Uri uri = Uri.parse(url);
     if (await launchUrl(uri)) {
-      await launchUrl(uri);
     } else {
       throw 'Impossibile aprire $url';
     }
