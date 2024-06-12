@@ -7,8 +7,6 @@ import 'package:latlong2/latlong.dart';
 import 'package:location/location.dart' as location;
 import 'package:geocoding/geocoding.dart';
 import 'dart:async';
-import 'package:open_route_service/open_route_service.dart' as openrouteservice;
-import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 
 class Mappa extends StatefulWidget {
   const Mappa({super.key});
@@ -20,7 +18,8 @@ class Mappa extends StatefulWidget {
 class MappaPageState extends State<Mappa> {
   LatLng romaTermini = LatLng(41.9028, 12.4964);
   LatLng colosseo = LatLng(41.8902, 12.4922);
-  late LatLng posIniziale = LatLng(41.9028, 12.4964);
+  late LatLng posIniziale = LatLng(41.9028,
+      12.4964); //la uso solo per avercela inizializzata all'avvio, poi la cambio col tasto
   LatLng? posCorrente;
   // Coordinate GPS di Roma Termini e Colosseo
   final LatLng RomaTermini = LatLng(41.9028, 12.4964); // Roma Termini
@@ -29,27 +28,27 @@ class MappaPageState extends State<Mappa> {
   TextEditingController searchController = TextEditingController();
   String testoRicerca = '';
   bool caricamento = true;
-  MapController _mapController = MapController();
+  MapController mapContr = MapController();
   List<Marker> ListaPosizioni = [];
   List<String> ListaSuggeriti = [];
-  Timer? timer;
+  Timer? testTimer;
   List<Polyline> ListaLinee = [];
   List<String> indicazioniStradali = [];
 
   @override
   void initState() {
     super.initState();
-    recuperaPosCorrente();
-    _mapController = MapController();
+    TrovaPosCorrente();
+    mapContr = MapController();
   }
 
   @override
   void dispose() {
-    timer?.cancel();
+    testTimer?.cancel();
     super.dispose();
   }
 
-  Future<void> recuperaPosCorrente() async {
+  Future<void> TrovaPosCorrente() async {
     final location.Location loc = location.Location();
     loc.changeSettings(
       accuracy: location.LocationAccuracy.high,
@@ -63,10 +62,10 @@ class MappaPageState extends State<Mappa> {
           "Coordinate correnti: ${locationData.latitude}, ${locationData.longitude}");
       setState(() {
         posCorrente = LatLng(locationData.latitude!, locationData.longitude!);
-        posIniziale = posCorrente!; // Update posIniziale
+        posIniziale = posCorrente!;
       });
-      aggiornaPosizione(posCorrente, null);
-      _mapController.move(posCorrente!, 14.0);
+      aggiornaSegnalini(posCorrente, null);
+      mapContr.move(posCorrente!, 14.0);
     } catch (error) {
       print("Errore durante il caricamento della posizione: $error");
     }
@@ -80,18 +79,18 @@ class MappaPageState extends State<Mappa> {
     });
 
     try {
-      await Future.delayed(Duration(milliseconds: 500)); // Aggiungi un ritardo
+      await Future.delayed(Duration(
+          milliseconds: 500)); // c'è un delay così ha tempo di caricare
       List<Location> locations = await locationFromAddress(query);
       if (locations.isNotEmpty) {
         setState(() {
           posCorrente = LatLng(locations[0].latitude, locations[0].longitude);
           caricamento = false;
         });
-        aggiornaPosizione(posCorrente, posCorrente);
-        // _mapController.move(posCorrente!, 14.0);
-
+        aggiornaSegnalini(posIniziale, posCorrente);
+        mapContr.move(posCorrente!, 14.0);
         if (posCorrente != null) {
-          DisegnaLinee(context, posCorrente!, posIniziale);
+          DisegnaLinee(context, posIniziale, posCorrente);
         }
       } else {
         setState(() {
@@ -125,61 +124,46 @@ class MappaPageState extends State<Mappa> {
         Map<String, dynamic> responseData = json.decode(response.body);
         print('Risposta: $responseData');
 
-        if (response.statusCode == 200) {
-          Map<String, dynamic> responseData = json.decode(response.body);
-          List<dynamic> features = responseData['features'];
-          if (features.isNotEmpty) {
-            List<dynamic> coordinates = features[0]['geometry']['coordinates'];
-            List<LatLng> polylinePoints = coordinates.map((coord) {
-              double lat = coord[1];
-              double lng = coord[0];
-              return LatLng(lat, lng);
-            }).toList();
-            //DA IMPLEMENTARE LA PARTE PER LE INDICAZIONI
-            List<dynamic> steps =
-                features[0]['properties']['segments'][0]['steps'];
-            List<String> istruzioni = steps.map<String>((step) {
-              return step['instruction'] as String;
-            }).toList();
-            setState(() {
-              ListaLinee.clear();
-              ListaLinee.add(
-                Polyline(
-                  points: polylinePoints,
-                  strokeWidth: 3,
-                  color: Colors.blue,
-                ),
-              );
-              indicazioniStradali = istruzioni;
-            });
-            setState(() {
-              ListaLinee.clear();
-              ListaLinee.add(
-                Polyline(
-                  points: polylinePoints,
-                  strokeWidth: 3,
-                  color: Colors.blue,
-                ),
-              );
-            });
-          } else {
-            gestioneErrori(context, "Non è stato trovato un percorso");
-          }
+        List<dynamic> features = responseData['features'];
+        if (features.isNotEmpty) {
+          List<dynamic> coordinates = features[0]['geometry']['coordinates'];
+          List<LatLng> polylinePoints = coordinates.map((coord) {
+            double lat = coord[1];
+            double lng = coord[0];
+            return LatLng(lat, lng);
+          }).toList();
+
+          //DA IMPLEMENTARE LA PARTE PER LE INDICAZIONI
+          List<dynamic> steps =
+              features[0]['properties']['segments'][0]['steps'];
+          List<String> istruzioni = steps.map<String>((step) {
+            return step['instruction'] as String;
+          }).toList();
+          setState(() {
+            ListaLinee.clear();
+            ListaLinee.add(
+              Polyline(
+                points: polylinePoints,
+                strokeWidth: 3,
+                color: Colors.blue,
+              ),
+            );
+            indicazioniStradali = istruzioni;
+          });
         } else {
-          gestioneErrori(
-              context, "La risposta non contiene informazioni sul percorso");
+          GestioneErrori(context, "Non è stato trovato un percorso");
         }
       } else {
-        gestioneErrori(context,
+        GestioneErrori(context,
             "Caricamento del percorso non riuscito: ${response.reasonPhrase}");
       }
     } catch (error) {
-      gestioneErrori(
+      GestioneErrori(
           context, "Errore durante l'individuazione del percorso: $error");
     }
   }
 
-  void gestioneErrori(BuildContext context, String message) {
+  void GestioneErrori(BuildContext context, String message) {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -197,10 +181,8 @@ class MappaPageState extends State<Mappa> {
     );
   }
 
-  void aggiornaPosizione(LatLng? userLocation, LatLng? searchedLocation) {
-    /*  if (userLocation != null && searchedLocation != null) {
-      ListaPosizioni.clear();
-      }*/
+  void aggiornaSegnalini(LatLng? userLocation, LatLng? searchedLocation) {
+    ListaPosizioni.clear();
     if (userLocation != null) {
       ListaPosizioni.add(
         Marker(
@@ -231,19 +213,19 @@ class MappaPageState extends State<Mappa> {
     }
   }
 
-  void getListaSuggeriti(String query) {
-    if (timer?.isActive ?? false) timer?.cancel();
-    timer = Timer(const Duration(milliseconds: 500), () {
+  void suggerimentiBarraRicerca(String query) {
+    if (testTimer?.isActive ?? false) testTimer?.cancel();
+    testTimer = Timer(const Duration(milliseconds: 500), () {
       if (query.length >= 3) {
         setState(() {
           caricamento = true;
         });
-        recuperaListaSuggeriti(query);
+        recuperaSuggeriti(query);
       }
     });
   }
 
-  Future<void> recuperaListaSuggeriti(String query) async {
+  Future<void> recuperaSuggeriti(String query) async {
     try {
       List<Location> locations = await locationFromAddress(query);
       List<Placemark> placemarks = await placemarkFromCoordinates(
@@ -318,6 +300,9 @@ class MappaPageState extends State<Mappa> {
                 ),
               ),
             ),
+            const Divider(
+              color: Colors.white,
+            ),
             ListTile(
               onTap: () => Navigator.pushNamed(context, '/mangiare'),
               leading:
@@ -330,9 +315,6 @@ class MappaPageState extends State<Mappa> {
                   fontSize: 20,
                 ),
               ),
-            ),
-            const Divider(
-              color: Colors.white,
             ),
             ListTile(
               onTap: () => Navigator.pushNamed(context, '/'),
@@ -358,7 +340,7 @@ class MappaPageState extends State<Mappa> {
               setState(() {
                 testoRicerca = value;
               });
-              getListaSuggeriti(value);
+              suggerimentiBarraRicerca(value);
             },
             decoration: InputDecoration(
               hintText: "Cerca qui il tuo luogo di interesse",
@@ -402,12 +384,13 @@ class MappaPageState extends State<Mappa> {
               Expanded(
                 flex: 2,
                 child: FlutterMap(
+                  mapController: mapContr,
                   options: MapOptions(
                     initialCenter: posCorrente ?? posIniziale,
                     initialZoom: 14.0,
                     onPositionChanged: (position, hasGesture) {
                       if (!hasGesture) {
-                        aggiornaPosizione(posCorrente, posCorrente);
+                        aggiornaSegnalini(posCorrente, posCorrente);
                       }
                     },
                   ),
@@ -433,19 +416,16 @@ class MappaPageState extends State<Mappa> {
             right: 0,
             bottom: 0,
             child: Container(
-              height: 60, // Altezza ridotta della barra delle indicazioni
-              alignment:
-                  Alignment.bottomCenter, // Posizionamento al centro in basso
+              height: 60,
+              alignment: Alignment.bottomCenter,
               color: Colors.white,
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               child: ListView.builder(
-                scrollDirection:
-                    Axis.horizontal, // Permette lo scorrimento orizzontale
+                scrollDirection: Axis.horizontal,
                 itemCount: indicazioniStradali.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.only(
-                        right: 10.0), // Spazio tra le indicazioni
+                    margin: EdgeInsets.only(right: 10.0),
                     child: Chip(
                       label: Text(indicazioniStradali[index]),
                     ),
@@ -458,7 +438,7 @@ class MappaPageState extends State<Mappa> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          recuperaPosCorrente();
+          TrovaPosCorrente();
         },
         child: Icon(Icons.my_location),
       ),
