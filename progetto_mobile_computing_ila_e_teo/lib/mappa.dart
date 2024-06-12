@@ -300,9 +300,7 @@ class MappaPageState extends State<Mappa> {
                 ),
               ),
             ),
-            const Divider(
-              color: Colors.white,
-            ),
+
             ListTile(
               onTap: () => Navigator.pushNamed(context, '/mangiare'),
               leading:
@@ -315,6 +313,9 @@ class MappaPageState extends State<Mappa> {
                   fontSize: 20,
                 ),
               ),
+            ),
+                        const Divider(
+              color: Colors.white,
             ),
             ListTile(
               onTap: () => Navigator.pushNamed(context, '/'),
