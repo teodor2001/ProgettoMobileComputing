@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
             // Aggiungi altre lingue supportate qui...
           ],
           locale: languageProvider.locale,
-          title: 'Guida Turistica Roma',
+          title: 'Guida per Roma',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,

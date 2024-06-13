@@ -424,7 +424,7 @@ class SideBarMenuEnglish extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text(
-            "Rome'Guide",
+            "Rome's Guide",
             style: TextStyle(
               color: Colors.white,
               fontSize: 25,
