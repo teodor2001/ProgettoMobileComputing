@@ -95,7 +95,7 @@ class Navona extends StatelessWidget {
               "Piazza Navona",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [
@@ -302,7 +302,7 @@ class NavonaEng extends StatelessWidget {
               "Piazza Navona",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

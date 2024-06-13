@@ -104,7 +104,7 @@ class Colosseo extends StatelessWidget {
               'Colosseo',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [
@@ -334,7 +334,7 @@ class ColosseoEng extends StatelessWidget {
               'Colosseo',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

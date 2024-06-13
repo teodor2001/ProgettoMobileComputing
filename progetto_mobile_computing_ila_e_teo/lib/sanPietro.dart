@@ -103,7 +103,7 @@ class Sanpietro extends StatelessWidget {
               'San Pietro',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [
@@ -346,7 +346,7 @@ class SanpietroEng extends StatelessWidget {
               'San Pietro',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

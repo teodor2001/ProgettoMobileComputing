@@ -104,7 +104,7 @@ class Altare extends StatelessWidget {
               "L'Altare della Patria",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [
@@ -323,7 +323,7 @@ class AltareEng extends StatelessWidget {
               "L'Altare della Patria",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

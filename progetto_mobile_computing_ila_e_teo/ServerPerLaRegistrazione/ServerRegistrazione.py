@@ -50,7 +50,7 @@ def login():
 
 if __name__ == '__main__':
     print("*" * 50)
-    message = "Ciao sono un serverino POTENTISSIMO"
+    message = "SERVER PER LA REGISTRAZIONE TRAMITE DATABASE AVVIATO"
     print("*" + message.center(48) + "*")
     print("*" * 50)
     app.run(host='0.0.0.0', debug=True)

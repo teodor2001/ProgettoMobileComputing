@@ -95,7 +95,7 @@ class Villa extends StatelessWidget {
               'Villa Borghese',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [
@@ -327,7 +327,7 @@ class VillaEng extends StatelessWidget {
               'Villa Borghese',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

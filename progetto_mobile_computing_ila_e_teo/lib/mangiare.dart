@@ -93,10 +93,10 @@ class Mangiare extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text(
-            'Piatti tipici romani',
+            'Cucina Romana',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
               shadows: [
@@ -337,10 +337,10 @@ class MangiareEn extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text(
-            "Typical Roman dishes",
+            "Roman cuisine",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
               shadows: [

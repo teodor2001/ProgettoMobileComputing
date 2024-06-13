@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -23,7 +25,7 @@ class LoginPageState extends State<LoginPage> {
   bool showError = false;
 
   //LOGIN TRAMITE SERVERINOPOTENTISSIMO
-/*
+
   Future<Map<String, String>> datiUtenti(
       String email, String password) async {
     var url = Uri.parse(
@@ -41,8 +43,8 @@ class LoginPageState extends State<LoginPage> {
       throw Exception('Errore di connesione al server: $e');
     }
   }
-*/
 
+/*
   Future<Map<String, String>> datiUtenti(String email, String password) async {
     // Verifica se le credenziali corrispondono ai dati di login di prova
     if (utentiFake.containsKey(email) && utentiFake[email] == password) {
@@ -50,7 +52,7 @@ class LoginPageState extends State<LoginPage> {
     } else {
       throw Exception('Credenziali non valide');
     }
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -58,10 +60,10 @@ class LoginPageState extends State<LoginPage> {
       backgroundColor: Color.fromARGB(255, 188, 160, 230),
       appBar: AppBar(
         title: const Text(
-          "Guida Turistica Roma",
+          "Guida per Roma",
           style: TextStyle(
             color: Colors.white,
-            fontSize: 30,
+            fontSize: 25,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
             shadows: [
@@ -266,7 +268,7 @@ class LoginPageStateEng extends State<LoginPageEng> {
   bool showError = false;
 
   //LOGIN TRAMITE SERVERINOPOTENTISSIMO
-/*
+
   Future<Map<String, String>> datiUtenti(
       String email, String password) async {
     var url = Uri.parse(
@@ -284,8 +286,8 @@ class LoginPageStateEng extends State<LoginPageEng> {
       throw Exception('Errore di connesione al server: $e');
     }
   }
-*/
 
+/*
   Future<Map<String, String>> datiUtenti(String email, String password) async {
     // Verifica se le credenziali corrispondono ai dati di login di prova
     if (utentiFake.containsKey(email) && utentiFake[email] == password) {
@@ -298,7 +300,7 @@ class LoginPageStateEng extends State<LoginPageEng> {
   Map<String, String> utentiFake = {
     'ila@puliani.com': 'ilaria',
     'teo@pascu.com': 'teodor',
-  };
+  }; */
 
   @override
   Widget build(BuildContext context) {
@@ -306,10 +308,10 @@ class LoginPageStateEng extends State<LoginPageEng> {
       backgroundColor: Color.fromARGB(255, 188, 160, 230),
       appBar: AppBar(
         title: const Text(
-          "Rome's guide for tourists",
+          "Rome's Guide",
           style: TextStyle(
             color: Colors.white,
-            fontSize: 30,
+            fontSize: 25,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.bold,
             shadows: [

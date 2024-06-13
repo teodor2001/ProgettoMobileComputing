@@ -95,10 +95,10 @@ class SideBarMenu extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text(
-            'Guida turistica Roma',
+            'Guida per Roma',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
               shadows: [
@@ -424,10 +424,10 @@ class SideBarMenuEnglish extends StatelessWidget {
         ),
         appBar: AppBar(
           title: Text(
-            "Rome's guide for tourists",
+            "Rome'Guide",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
               shadows: [

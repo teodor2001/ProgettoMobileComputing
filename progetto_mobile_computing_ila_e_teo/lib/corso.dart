@@ -95,7 +95,7 @@ class Corso extends StatelessWidget {
               'Via del Corso',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: const [
@@ -327,7 +327,7 @@ class CorsoEng extends StatelessWidget {
               'Via del Corso',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: const [

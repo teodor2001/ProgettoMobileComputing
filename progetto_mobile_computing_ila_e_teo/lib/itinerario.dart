@@ -123,7 +123,7 @@ class Itinerario extends StatelessWidget {
             'Scegli il tuo itinerario',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontWeight: FontWeight.bold,
               fontStyle: FontStyle.italic,
               shadows: [
@@ -216,7 +216,7 @@ class Itinerario1 extends StatelessWidget {
         title: const Text('ITINERARIO 1 GIORNO ',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
               shadows: [
@@ -446,7 +446,7 @@ class Itinerario2 extends StatelessWidget {
         title: const Text('ITINERARIO 2 GIORNI ',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
               shadows: [
@@ -789,7 +789,7 @@ class Itinerario3 extends StatelessWidget {
         title: const Text('ITINERARIO 3 GIORNI ',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
               shadows: [
@@ -1204,7 +1204,7 @@ class Itinerario4 extends StatelessWidget {
         title: const Text('ITINERARIO 4 GIORNI ',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
               shadows: [
@@ -1743,7 +1743,7 @@ class ItinerarioEng extends StatelessWidget {
             'Select your itinerary',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontWeight: FontWeight.bold,
               fontStyle: FontStyle.italic,
               shadows: [
@@ -1836,7 +1836,7 @@ class Itinerario1Eng extends StatelessWidget {
         title: const Text('ITINERARY FOR 1 DAY',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
               shadows: [
@@ -2066,7 +2066,7 @@ class Itinerario2Eng extends StatelessWidget {
         title: const Text('ITINERARY FOR 2 DAYS',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
               shadows: [
@@ -2409,7 +2409,7 @@ class Itinerario3Eng extends StatelessWidget {
         title: const Text('ITINERARY FOR 3 DAYS',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
               shadows: [
@@ -2824,7 +2824,7 @@ class Itinerario4Eng extends StatelessWidget {
         title: const Text('ITINERARY FOR 4 DAYS',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold,
               shadows: [

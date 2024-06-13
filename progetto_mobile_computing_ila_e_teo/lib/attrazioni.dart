@@ -121,7 +121,7 @@ class Attrazioni extends StatelessWidget {
           'Le attrazioni più amate',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 30,
+            fontSize: 25,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
             shadows: [
@@ -377,7 +377,7 @@ class AttrazioniEng extends StatelessWidget {
           'Most loved attractions',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 30,
+            fontSize: 25,
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
             shadows: [

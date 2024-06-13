@@ -103,7 +103,7 @@ class Castel extends StatelessWidget {
               'Castel Sant Angelo',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [
@@ -348,7 +348,7 @@ class CastelEng extends StatelessWidget {
               'Castel Sant Angelo',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

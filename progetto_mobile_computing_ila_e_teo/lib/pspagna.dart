@@ -95,7 +95,7 @@ class Piazzaspagna extends StatelessWidget {
               'Piazza di Spagna',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [
@@ -302,7 +302,7 @@ class PiazzaSpagnaEng extends StatelessWidget {
               'Piazza di Spagna',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

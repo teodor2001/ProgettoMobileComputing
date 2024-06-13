@@ -103,7 +103,7 @@ class Fontana extends StatelessWidget {
               'La Fontana di Trevi',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [
@@ -322,7 +322,7 @@ class FontanaEng extends StatelessWidget {
               'La Fontana di Trevi',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [
